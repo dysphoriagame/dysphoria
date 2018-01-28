@@ -1,0 +1,60 @@
+<tw-storydata name="SnowmanTest" startnode="1" creator="Twine" creator-version="2.2.1" ifid="C88D7875-044B-4462-8441-28734691F905" zoom="1" format="Snowman" format-version="1.3.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">body {
+  background-color: black;
+  color: white;
+  font-family: "Sans-Serif";
+}
+
+a {
+ color: cyan; 
+}
+
+button {
+	border: none;
+  	border-radius: 5px;
+  	color: white;
+  	background-color: #313131;
+}
+
+.desc {
+  position: absolute;
+  background-color: #424242;
+  padding: 20px;
+  width: 60%;
+  height: 60%;
+}
+
+.map {//TODO: Layout
+  position: absolute;
+  background-color: #424242;
+  padding: 20px;
+  width: 30%;
+  height: 60%;
+}
+
+
+
+
+
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">// Add Map
+document.write('<div class="map"></div>');
+
+
+
+
+
+
+</script><tw-passagedata pid="1" name="Hello" tags="" position="401,201" size="100,100">&lt;% s.loc = &#39;+&#39;; %&gt;
+
+&lt;div class=&quot;desc&quot;&gt;
+	&lt;% 
+	  Passage.getName = () =&gt; {
+		  s.name = prompt(&quot;Enter your name&quot;);
+		  $(&quot;#continue&quot;).fadeIn();
+	  };
+  	%&gt;
+  Hello! Click &lt;button onclick=&quot;Passage.getName()&quot;&gt;here&lt;/button&gt; to begin.
+  &lt;div id=&quot;continue&quot; hidden&gt;
+  	[[Second]] 
+  &lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="2" name="Second" tags="" position="547,202" size="100,100">[[Hello]]
+</tw-passagedata></tw-storydata>
