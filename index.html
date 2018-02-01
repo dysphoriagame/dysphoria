@@ -1,4 +1,4 @@
-<tw-storydata name="SnowmanTest" startnode="1" creator="Twine" creator-version="2.2.1" ifid="C88D7875-044B-4462-8441-28734691F905" zoom="1" format="Snowman" format-version="1.3.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">body {
+<tw-storydata name="index" startnode="1" creator="Twine" creator-version="2.2.1" ifid="C88D7875-044B-4462-8441-28734691F905" zoom="1" format="Snowman" format-version="1.3.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">body {
   background-color: black;
   color: white;
   font-family: "Sans-Serif";
@@ -15,46 +15,83 @@ button {
   	background-color: #313131;
 }
 
+.desc, .map, .inv, .action {
+  display: block;
+  position: fixed;
+  background-color: #424242;
+  padding: 20px;
+}
+
 .desc {
-  position: absolute;
-  background-color: #424242;
-  padding: 20px;
-  width: 60%;
-  height: 60%;
+  top: 2vh;
+  left: 2vw;
+  width: 64vw;
+  height: 40vh;
 }
 
-.map {//TODO: Layout
-  position: absolute;
-  background-color: #424242;
-  padding: 20px;
-  width: 30%;
-  height: 60%;
+.action {
+  bottom: 2vh;
+  left: 2vw;
+  width: 64vw;
+  height: 40vh;
+}
+
+.map {
+  top: 2vh;
+  right: 2vw;
+  width: 22vw;
+  height: 20vh;
+}
+
+.inv {
+  bottom: 2vh;
+  right: 2vw;
+  width: 22vw;
+  height: 60vh;
 }
 
 
 
 
 
-</style><script role="script" id="twine-user-script" type="text/twine-javascript">// Add Map
-document.write('<div class="map"></div>');
 
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">// https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver 
+// Tracks changes in DOM, specifically change of passage to update non-Twine UI elements (map, action bar, inv)
+let mo = new MutationObserver( () => {
+	if(!window.changingPassage) {
+		// Enable passage change switch
+		window.changingPassage = true;
+		// Delay 1s to compensate for any animations or anything
+		setTimeout( () => {
+			console.log("Woosh");
+			//TODO: Handle passage change here
+			// Disable passage change switch
+			window.changingPassage = false;
+		}, 1000);
+	}
+});
+let moOps = {childList: true, attributes: true, subtree: true};
 
+$('#passage').ready( () => {
+		$('#passage').wrap('<div id="desc" class="desc"></div>');						  		$('body').append('<div id="map" class="map">Map</div>');	
+		$('body').append('<div id="inv" class="inv">Inventory</div>');	
+		$('body').append('<div id="action" class="action">Action</div>');	
 
+		mo.observe($('#passage')[0], moOps);
+	});
 
+</script><tw-passagedata pid="1" name="Hello" tags="" position="401,201" size="100,100">&lt;% 	
+	s.loc = &#39;+&#39;;
+	
+	Passage.getName = () =&gt; {
+		s.name = prompt(&quot;Enter your name&quot;);
+		$(&quot;#continue&quot;).fadeIn();
+	};
+%&gt;
 
+Hello! Click &lt;button onclick=&quot;Passage.getName()&quot;&gt;here&lt;/button&gt; to begin.
 
-</script><tw-passagedata pid="1" name="Hello" tags="" position="401,201" size="100,100">&lt;% s.loc = &#39;+&#39;; %&gt;
-
-&lt;div class=&quot;desc&quot;&gt;
-	&lt;% 
-	  Passage.getName = () =&gt; {
-		  s.name = prompt(&quot;Enter your name&quot;);
-		  $(&quot;#continue&quot;).fadeIn();
-	  };
-  	%&gt;
-  Hello! Click &lt;button onclick=&quot;Passage.getName()&quot;&gt;here&lt;/button&gt; to begin.
-  &lt;div id=&quot;continue&quot; hidden&gt;
-  	[[Second]] 
-  &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="2" name="Second" tags="" position="547,202" size="100,100">[[Hello]]
-</tw-passagedata></tw-storydata>
+&lt;div id=&quot;continue&quot; hidden&gt;
+	[[Second]] 
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="2" name="Second" tags="" position="547,202" size="100,100">[[Hello]]</tw-passagedata></tw-storydata>
