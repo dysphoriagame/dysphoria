@@ -55,6 +55,7 @@ button {
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">// https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver 
 // Tracks changes in DOM, specifically change of passage to update non-Twine UI elements (map, action bar, inv)
 let mo = new MutationObserver( () => {
@@ -79,6 +80,7 @@ $('#passage').ready( () => {
 
 		mo.observe($('#passage')[0], moOps);
 	});
+
 
 </script><tw-passagedata pid="1" name="Hello" tags="" position="401,201" size="100,100">&lt;% 	
 	s.loc = &#39;+&#39;;
