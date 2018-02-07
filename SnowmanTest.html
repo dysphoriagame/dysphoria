@@ -23,6 +23,7 @@ button {
 }
 
 .desc {
+  text-indent: 35px;
   top: 2vh;
   left: 2vw;
   width: 64vw;
@@ -49,6 +50,10 @@ button {
   width: 22vw;
   height: 60vh;
 }
+
+
+
+
 
 
 
@@ -84,9 +89,112 @@ $('#passage').ready( () => {
 
 
 
-</script><tw-passagedata pid="1" name="Hello" tags="" position="375,75" size="100,100">&lt;% 	
+
+
+
+
+</script><tw-passagedata pid="1" name="You hurry forward" tags="Character-Selection" position="225,25" size="100,100">&lt;% 	
 	s.loc = &#39;+&#39;;
+%&gt;
+&lt;div&gt;
+	You enter an empty booth—there aren’t many of them left—and sit down. A quill and a piece of parchment sit on the counter before you. You bend over the paper, peering down at the thin scrawl of writing marred by too many fancy flourishes.
+&lt;/div&gt;
+&lt;div&gt;
+	After much deciphering, you manage to make out: “Welcome, new adventurer yclept…”
+&lt;/div&gt;
+&lt;div&gt;
+	You frown. [[Yclept? What does that mean?]]
+&lt;/div&gt;
+
+</tw-passagedata><tw-passagedata pid="2" name="Human" tags="" position="25,275" size="100,100">&lt;%
+	s.RACE = &quot;Human&quot;;
+%&gt;
+&lt;div&gt;
+	The parchment goes blank, and stays like so for a moment, as if thinking. Then: “What a curious sort of initiate we here have. Divining…ah, yes. Perfect.”
+&lt;/div&gt;
+&lt;div&gt;
+	You watch, eyes wide, as the page goes blank once more. You wait anxiously for the most important part—the part you have waited for ever since your father first told you tales of wild adventures, of mysterious magics and daring heroes, of truly wondrous things…
+&lt;/div&gt;
+&lt;div&gt;
+	At last, the parchment begins to cover itself in writing again: “[[And your party role shall be…]]”
+&lt;/div&gt;
+
+
+
+
+</tw-passagedata><tw-passagedata pid="3" name="Elf" tags="" position="150,275" size="100,100">&lt;%
+
+	s.RACE = &quot;Elf&quot;;
+
+%&gt;
+&lt;div&gt;
+	The parchment goes blank, and stays like so for a moment, as if thinking. Then: “What a curious sort of initiate we here have. Divining…ah, yes. Perfect.”
+&lt;/div&gt;
+&lt;div&gt;
+	You watch, eyes wide, as the page goes blank once more. You wait anxiously for the most important part—the part you have waited for ever since your father first told you tales of wild adventures, of mysterious magics and daring heroes, of truly wondrous things…
+&lt;/div&gt;
+&lt;div&gt;
+	At last, the parchment begins to cover itself in writing again: “[[And your party role shall be…]]”
+&lt;/div&gt;
+
+</tw-passagedata><tw-passagedata pid="4" name="Dwarf" tags="" position="300,275" size="100,100">&lt;%
+
+	s.RACE = &quot;Dwarf&quot;;
+
+%&gt;
+&lt;div&gt;
+	The parchment goes blank, and stays like so for a moment, as if thinking. Then: “What a curious sort of initiate we here have. Divining…ah, yes. Perfect.”
+&lt;/div&gt;
+&lt;div&gt;
+	You watch, eyes wide, as the page goes blank once more. You wait anxiously for the most important part—the part you have waited for ever since your father first told you tales of wild adventures, of mysterious magics and daring heroes, of truly wondrous things…
+&lt;/div&gt;
+&lt;div&gt;
+	At last, the parchment begins to cover itself in writing again: “[[And your party role shall be…]]”
+&lt;/div&gt;
+
+</tw-passagedata><tw-passagedata pid="5" name="Orc" tags="" position="425,275" size="100,100">&lt;%
+
+	s.RACE = &quot;Orc&quot;;
+
+%&gt;
+&lt;div&gt;
+	The parchment goes blank, and stays like so for a moment, as if thinking. Then: “What a curious sort of initiate we here have. Divining…ah, yes. Perfect.”
+&lt;/div&gt;
+&lt;div&gt;
+	You watch, eyes wide, as the page goes blank once more. You wait anxiously for the most important part—the part you have waited for ever since your father first told you tales of wild adventures, of mysterious magics and daring heroes, of truly wondrous things…
+&lt;/div&gt;
+&lt;div&gt;
+	At last, the parchment begins to cover itself in writing again: “[[And your party role shall be…]]”
+&lt;/div&gt;
+
+</tw-passagedata><tw-passagedata pid="6" name="Knight" tags="" position="100,525" size="100,100">&lt;%
+
+	s.ROLE = &quot;Knight&quot;;
 	
+%&gt;
+
+asdf</tw-passagedata><tw-passagedata pid="7" name="Mage" tags="" position="225,525" size="100,100">&lt;%
+
+	s.ROLE = &quot;Mage&quot;;
+	
+%&gt;
+asdf</tw-passagedata><tw-passagedata pid="8" name="Rogue" tags="" position="350,525" size="100,100">&lt;%
+
+	s.ROLE = &quot;Rogue&quot;;
+	
+%&gt;
+asdf</tw-passagedata><tw-passagedata pid="9" name="And your party role shall be…" tags="" position="225,400" size="100,100">&lt;div&gt;
+	You don’t even hesitate; as soon as you see the word “role,” you begin hastily scribbling, ink splattering in all directions.
+	&lt;div&gt;
+	[[Knight]], you write, quill nearly piercing through the paper.
+	&lt;/div&gt;
+	&lt;div&gt;
+	[[Mage]], you scrawl, so quickly it is nearly illegible.
+	&lt;/div&gt;
+	&lt;div&gt;
+	[[Rogue]], you inscribe, quill slashing against the parchment.
+	&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="10" name="Yclept? What does that mean?" tags="" position="225,150" size="100,100">&lt;% 	
 	Passage.getName = () =&gt; {
 	
 		s.NAME = prompt(&quot;Enter your name&quot;); 
@@ -101,21 +209,13 @@ $('#passage').ready( () => {
 	
 	Passage.getGender = () =&gt; {
 	
-		s.GENDER = prompt(&quot;Enter your Gender&quot;); 
+		s.GENDER1 = prompt(&quot;Enter your Gender&quot;, &quot;He, She, They, etc.&quot;); 
+		s.GENDER2 = prompt(&quot;Enter your Gender&quot;, &quot;Him, Her, Them, etc.&quot;); 
+		s.GENDER3 = prompt(&quot;Enter your Gender&quot;, &quot;His, Hers, Theirs, etc.&quot;); 
 		
-		if(s.GENDER.toUpperCase() == &quot;FEMALE&quot;
-		  || s.GENDER.toUpperCase() == &quot;GIRL&quot;
-		  || s.GENDER.toUpperCase() == &quot;WOMAN&quot;){
+		if(s.GENDER1 != &quot;&quot; &amp;&amp; s.GENDER2 != &quot;&quot; &amp;&amp; s.GENDER3 != &quot;&quot;){
 			$(&quot;#retry2&quot;).fadeOut();
 			$(&quot;#continue2&quot;).fadeIn();
-			s.GENDER = &quot;Female&quot;;
-		}
-		else if(s.GENDER.toUpperCase() == &quot;MALE&quot;
-		  || s.GENDER.toUpperCase() == &quot;BOY&quot;
-		  || s.GENDER.toUpperCase() == &quot;MAN&quot;){
-		  $(&quot;#retry2&quot;).fadeOut();
-			$(&quot;#continue2&quot;).fadeIn();
-			s.GENDER = &quot;Male&quot;;
 		}
 		else{
 			$(&quot;#retry2&quot;).fadeIn();
@@ -123,30 +223,27 @@ $('#passage').ready( () => {
 	};
 %&gt;
 
-Hello! Click &lt;button onclick=&quot;Passage.getName()&quot;&gt;here&lt;/button&gt; to begin.
+&lt;div&gt;
+	A minute passes, and the words hastily rearrange themselves on the page: “What be your *name*, novice?”
+&lt;/div&gt;
+&lt;div&gt;
+	You pick up the quill and write your &lt;button onclick=&quot;Passage.getName()&quot;&gt;name&lt;/button&gt;.
+&lt;/div&gt;
 
 &lt;div id=&quot;continue&quot; hidden&gt;
-	Click &lt;button onclick=&quot;Passage.getGender()&quot;&gt;here&lt;/button&gt; to choose a gender.	
+	“And your &lt;button onclick=&quot;Passage.getGender()&quot;&gt;gender&lt;/button&gt; be? Arrange like so, he, him, his, and so on and such forth.”
 &lt;/div&gt;
 
 &lt;div id=&quot;continue2&quot; hidden&gt;
-	Lastly, what race do you wish to be? [[Human]], [[Elf]], [[Dwarf]], or [[Orc]]
+	“Of what race born?”
+	You write: [[Human]], [[Elf]], [[Dwarf]], [[Orc]]
 &lt;/div&gt;
 	
 &lt;div id=&quot;retry2&quot; hidden&gt;
-		Please enter &quot;Male&quot; or &quot;Female&quot;. 
-	&lt;/div&gt;
-
-&lt;div id=&quot;retry&quot; hidden&gt;
-	Please enter a name. 
+	**Please enter a pronoun for all three prompts.**
 &lt;/div&gt;
 
-</tw-passagedata><tw-passagedata pid="2" name="Human" tags="" position="150,225" size="100,100">You are a &lt;%= s.GENDER.toLowerCase() %&gt; human named &lt;%= s.NAME %&gt;
-
-[[Hello]] </tw-passagedata><tw-passagedata pid="3" name="Elf" tags="" position="300,225" size="100,100">You are a &lt;%= s.GENDER.toLowerCase() %&gt; elf named &lt;%= s.NAME %&gt;
-
-[[Hello]] </tw-passagedata><tw-passagedata pid="4" name="Dwarf" tags="" position="450,225" size="100,100">You are a &lt;%= s.GENDER.toLowerCase() %&gt; dwarf named &lt;%= s.NAME %&gt;
-
-[[Hello]] </tw-passagedata><tw-passagedata pid="5" name="Orc" tags="" position="600,225" size="100,100">You are a &lt;%= s.GENDER.toLowerCase() %&gt; orc named &lt;%= s.NAME %&gt;
-
-[[Hello]] </tw-passagedata></tw-storydata>
+&lt;div id=&quot;retry&quot; hidden&gt;
+	**Please enter a name.**
+&lt;/div&gt;
+</tw-passagedata></tw-storydata>
