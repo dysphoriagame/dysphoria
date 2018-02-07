@@ -29,14 +29,14 @@ button {
   top: 2vh;
   left: 2vw;
   width: 64vw;
-  height: 40vh;
+  height: 65vh;
 }
 
 .action {
   bottom: 2vh;
   left: 2vw;
   width: 64vw;
-  height: 40vh;
+  height: 15vh;
 }
 
 .map {
@@ -57,11 +57,10 @@ button {
  background-color: black; 
 }
 
-
-
-
-
-
+tooltip {
+  display: inline-block;
+  color: green;
+}
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">$(document).ready( () => {		      					       
 	$.getScript("https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js", () => {
 				toastr.options.timeOut = -1;
@@ -85,14 +84,15 @@ $('#passage').ready( () => {
 
 $(document).on('showpassage:after', () => {
 	console.log("Woosh");
-	$('.tooltip').hover( (e) => {
+	$('tooltip').hover( (e) => {
 		console.log(e);
 		toastr.clear();
-		toastr.info(e.currentTarget.id);
+		toastr.info($(e.currentTarget).attr('text'));
 	}, (e) => {
 		//console.log(e);
 		toastr.clear();
 	});
+	$('.fade').fadeIn(2000);
 
 });</script><tw-passagedata pid="1" name="Hello" tags="" position="263,221" size="100,100">&lt;% 	
 	s.loc = &#39;+&#39;;
@@ -102,9 +102,9 @@ $(document).on('showpassage:after', () => {
 		$(&quot;#continue&quot;).fadeIn();
 	};
 %&gt;
-
-Hello! [Click] &lt;button onclick=&quot;Passage.getName()&quot;&gt;here&lt;/button&gt; to begin.
-
+&lt;div hidden class=&quot;fade&quot;&gt;
+  Hello! [Click] &lt;button onclick=&quot;Passage.getName()&quot;&gt;here&lt;/button&gt; to begin.
+&lt;/div&gt;
 &lt;div id=&quot;continue&quot; hidden&gt;
 	[[Second]] 
 &lt;/div&gt;
@@ -112,4 +112,11 @@ Hello! [Click] &lt;button onclick=&quot;Passage.getName()&quot;&gt;here&lt;/butt
 
 &lt;span class=&quot;tooltip&quot; id=&quot;A good man. As dedicated to the smithy as he is to his family. His breath smells like charred bread and his hands are caked in blackened callouses, but his broad face always bears a smile for you, and that is all that matters.&quot;&gt; Father &lt;/span&gt;
 
-</tw-passagedata><tw-passagedata pid="2" name="Second" tags="" position="428,223" size="100,100">[[Hello]]</tw-passagedata></tw-storydata>
+</tw-passagedata><tw-passagedata pid="2" name="Second" tags="" position="428,223" size="100,100">[[Hello]]</tw-passagedata><tw-passagedata pid="3" name="Intro" tags="" position="201.5,600" size="100,100">You had dreamed of venturing to the mystical land of Eorundem ever since you were a child. Your &lt;tooltip text=&quot;A good man. As dedicated to the smithy as he is to his family. His breath smells like charred bread and his hands are caked in blackened callouses, but his broad face always bears a smile for you, and that is all that matters.
+&quot;&gt;father&lt;/tooltip&gt; would tell you grand tales of its rivers teeming with lost treasures, of the magical creatures that roamed its verdant hills, of the fathomless caverns that shivered with beastly roars, and of the endless forests that bristled with magic and seemed to whisper at night. And who could forget the ancient foe that plagued the land every several years? The &lt;tooltip text=&quot;Your father knew many stories. Ballad of Bhavulthrolo, wandering bard who serenaded a mountain until it moved out of his way, if only to escape his horrendous singing. Legend of Llyr Windeater, Prince of Kites, who wore a paper cape of many colours that granted him the gift of flight. Song of Seluria, intrepid adventurer who defeated Ye Olde Evil seven times singlehandedly. That is, Seluria only had one hand.&quot;&gt;stories&lt;/tooltip&gt;
+of &lt;tooltip text=&quot; Evil incarnate. The name rather gives it away, doesn’t it? It only resurrects every few years before it is defeated by whatever brave band of adventurers can reach it. Lucky you, it has recently risen to power once more, and you are certain you will be the one to defeat it.&quot;&gt;Ye Olde Evil’s&lt;/tooltip&gt; repeated vanquishing were among your favourites.
+
+[[Now...]]</tw-passagedata><tw-passagedata pid="4" name="Now..." tags="" position="401.5,601" size="100,100">Now that you have come of age, it is no surprise you’ve chosen to set off for Eorundem, your &lt;tooltip text=&quot;A kind woman. Her hands have mended your childhood cuts and scrapes as deftly as they have sewn clothes back together.&quot;&gt;mother’s&lt;/tooltip&gt;
+blessing still lingering on your cheek. [[It is time for an adventure.]]</tw-passagedata><tw-passagedata pid="5" name="It is time for an adventure." tags="" position="599.5,602" size="100,100">You join a caravan—a motley band of merchants and travelers—heading into Eorundem, claiming a seat among sacks of spices and crates of dried fruit. You spend your days with wide, awestruck eyes as the everchanging &lt;tooltip id=&quot;The sky seems boundless out here. It is as if the very world has opened itself up. The horizon has never seemed so far away before, and nothing—no village huts or crowding trees—breaks the great expanse of blue overhead. In the distance, you can see stone temples carved from the mountain range, glistening with ice. The lush meadows stretch in all directions from the dusty road, their grasses swelling and rolling in the wind, their slopes flecked with flowers. White stags with six pink eyes watch your procession from the safety of the forests, but they scatter when something roars from deep within the woods. 
+&quot;&gt;landscape&lt;/tooltip&gt; rolls languidly by; at night you watch strange constellations chase each other across the sky. Your travels are briefly halted by a stampede of three-headed, fire-breathing buffalo, and two wagons losing their wheels to mischievous gremlins—and for three days straight a deluge of strange rain coats the rivers in fine silver. However, these slight mishaps only further whet your appetite for adventure, and [[your anticipation only grows.]]</tw-passagedata><tw-passagedata pid="6" name="your anticipation only grows." tags="" position="801.5,601" size="100,100">After what seems like an eternity, the caravan leader announces that you are but a day away from Cysa, capital city of Eorundem, the Flower-by-the-Sea. You are not the only excited one; the air just about crackles with energy that night, and suppertime chatter is particularly loud and laughter-filled. Having slopped a &lt;tooltip text=&quot;You know you should eat more, but your stomach is knotted with nerves.&quot;&gt;small helping&lt;/tooltip&gt; 
+of meat stew on your platter, you take a seat near a &lt;tooltip text=&quot;She wears a modest blouse tucked into a long skirt, thick socks tucked into mud-splattered boots, a charm hanging from a simple string around her neck. Her flaxen hair is pulled back into a practical ponytail, and freckles dust her nose and cheeks.&quot;&gt;young woman&lt;/tooltip&gt; with kind eyes. You have seen her here and there throughout the past weeks. She always seemed rather friendly and helpful, but your paths never crossed until now. [[She smiles as you sit down.]]</tw-passagedata><tw-passagedata pid="7" name="She smiles as you sit down." tags="" position="1007.5,602" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
