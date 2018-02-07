@@ -56,6 +56,7 @@ button {
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">// https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver 
 // Tracks changes in DOM, specifically change of passage to update non-Twine UI elements (map, action bar, inv)
 let mo = new MutationObserver( () => {
@@ -82,18 +83,70 @@ $('#passage').ready( () => {
 	});
 
 
-</script><tw-passagedata pid="1" name="Hello" tags="" position="401,201" size="100,100">&lt;% 	
+
+</script><tw-passagedata pid="1" name="Hello" tags="" position="375,75" size="100,100">&lt;% 	
 	s.loc = &#39;+&#39;;
 	
 	Passage.getName = () =&gt; {
-		s.name = prompt(&quot;Enter your name&quot;);
-		$(&quot;#continue&quot;).fadeIn();
+	
+		s.NAME = prompt(&quot;Enter your name&quot;); 
+		
+		if(s.NAME != &quot;&quot;){
+			$(&quot;#retry&quot;).fadeOut();
+			$(&quot;#continue&quot;).fadeIn();
+		} else{
+			$(&quot;#retry&quot;).fadeIn();
+		}
+	};
+	
+	Passage.getGender = () =&gt; {
+	
+		s.GENDER = prompt(&quot;Enter your Gender&quot;); 
+		
+		if(s.GENDER.toUpperCase() == &quot;FEMALE&quot;
+		  || s.GENDER.toUpperCase() == &quot;GIRL&quot;
+		  || s.GENDER.toUpperCase() == &quot;WOMAN&quot;){
+			$(&quot;#retry2&quot;).fadeOut();
+			$(&quot;#continue2&quot;).fadeIn();
+			s.GENDER = &quot;Female&quot;;
+		}
+		else if(s.GENDER.toUpperCase() == &quot;MALE&quot;
+		  || s.GENDER.toUpperCase() == &quot;BOY&quot;
+		  || s.GENDER.toUpperCase() == &quot;MAN&quot;){
+		  $(&quot;#retry2&quot;).fadeOut();
+			$(&quot;#continue2&quot;).fadeIn();
+			s.GENDER = &quot;Male&quot;;
+		}
+		else{
+			$(&quot;#retry2&quot;).fadeIn();
+		}
 	};
 %&gt;
 
 Hello! Click &lt;button onclick=&quot;Passage.getName()&quot;&gt;here&lt;/button&gt; to begin.
 
 &lt;div id=&quot;continue&quot; hidden&gt;
-	[[Second]] 
+	Click &lt;button onclick=&quot;Passage.getGender()&quot;&gt;here&lt;/button&gt; to choose a gender.	
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="2" name="Second" tags="" position="547,202" size="100,100">[[Hello]]</tw-passagedata></tw-storydata>
+
+&lt;div id=&quot;continue2&quot; hidden&gt;
+	Lastly, what race do you wish to be? [[Human]], [[Elf]], [[Dwarf]], or [[Orc]]
+&lt;/div&gt;
+	
+&lt;div id=&quot;retry2&quot; hidden&gt;
+		Please enter &quot;Male&quot; or &quot;Female&quot;. 
+	&lt;/div&gt;
+
+&lt;div id=&quot;retry&quot; hidden&gt;
+	Please enter a name. 
+&lt;/div&gt;
+
+</tw-passagedata><tw-passagedata pid="2" name="Human" tags="" position="150,225" size="100,100">You are a &lt;%= s.GENDER.toLowerCase() %&gt; human named &lt;%= s.NAME %&gt;
+
+[[Hello]] </tw-passagedata><tw-passagedata pid="3" name="Elf" tags="" position="300,225" size="100,100">You are a &lt;%= s.GENDER.toLowerCase() %&gt; elf named &lt;%= s.NAME %&gt;
+
+[[Hello]] </tw-passagedata><tw-passagedata pid="4" name="Dwarf" tags="" position="450,225" size="100,100">You are a &lt;%= s.GENDER.toLowerCase() %&gt; dwarf named &lt;%= s.NAME %&gt;
+
+[[Hello]] </tw-passagedata><tw-passagedata pid="5" name="Orc" tags="" position="600,225" size="100,100">You are a &lt;%= s.GENDER.toLowerCase() %&gt; orc named &lt;%= s.NAME %&gt;
+
+[[Hello]] </tw-passagedata></tw-storydata>
