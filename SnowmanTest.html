@@ -53,14 +53,16 @@ button {
   height: 60vh;
 }
 
-.toast-info {
- background-color: black; 
+.toast-info, .toast {
+ background-color: black;
+ opacity: 1;
 }
 
 tooltip {
   display: inline-block;
   color: green;
 }
+
 
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">$(document).ready( () => {		      					       
 	$.getScript("https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js", () => {
@@ -96,6 +98,7 @@ $(document).on('showpassage:after', () => {
 	$('.fade').fadeIn(2000);
 
 });
+
 </script><tw-passagedata pid="1" name="Hello" tags="" position="201,399" size="100,100">&lt;% 	
 	s.loc = &#39;+&#39;;
 	
