@@ -62,6 +62,7 @@ button {
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">// https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver 
 // Tracks changes in DOM, specifically change of passage to update non-Twine UI elements (map, action bar, inv)
 let mo = new MutationObserver( () => {
@@ -93,7 +94,8 @@ $('#passage').ready( () => {
 
 
 
-</script><tw-passagedata pid="1" name="You hurry forward" tags="Character-Selection" position="225,25" size="100,100">&lt;% 	
+
+</script><tw-passagedata pid="1" name="You hurry forward" tags="Character-Selection" position="1725,25" size="100,100">&lt;% 	
 	s.loc = &#39;+&#39;;
 %&gt;
 &lt;div&gt;
@@ -106,7 +108,7 @@ $('#passage').ready( () => {
 	You frown. [[Yclept? What does that mean?]]
 &lt;/div&gt;
 
-</tw-passagedata><tw-passagedata pid="2" name="Human" tags="" position="25,275" size="100,100">&lt;%
+</tw-passagedata><tw-passagedata pid="2" name="Human" tags="" position="1525,275" size="100,100">&lt;%
 	s.RACE = &quot;Human&quot;;
 %&gt;
 &lt;div&gt;
@@ -122,7 +124,7 @@ $('#passage').ready( () => {
 
 
 
-</tw-passagedata><tw-passagedata pid="3" name="Elf" tags="" position="150,275" size="100,100">&lt;%
+</tw-passagedata><tw-passagedata pid="3" name="Elf" tags="" position="1650,275" size="100,100">&lt;%
 
 	s.RACE = &quot;Elf&quot;;
 
@@ -137,7 +139,7 @@ $('#passage').ready( () => {
 	At last, the parchment begins to cover itself in writing again: “[[And your party role shall be…]]”
 &lt;/div&gt;
 
-</tw-passagedata><tw-passagedata pid="4" name="Dwarf" tags="" position="300,275" size="100,100">&lt;%
+</tw-passagedata><tw-passagedata pid="4" name="Dwarf" tags="" position="1800,275" size="100,100">&lt;%
 
 	s.RACE = &quot;Dwarf&quot;;
 
@@ -152,7 +154,7 @@ $('#passage').ready( () => {
 	At last, the parchment begins to cover itself in writing again: “[[And your party role shall be…]]”
 &lt;/div&gt;
 
-</tw-passagedata><tw-passagedata pid="5" name="Orc" tags="" position="425,275" size="100,100">&lt;%
+</tw-passagedata><tw-passagedata pid="5" name="Orc" tags="" position="1925,275" size="100,100">&lt;%
 
 	s.RACE = &quot;Orc&quot;;
 
@@ -167,23 +169,23 @@ $('#passage').ready( () => {
 	At last, the parchment begins to cover itself in writing again: “[[And your party role shall be…]]”
 &lt;/div&gt;
 
-</tw-passagedata><tw-passagedata pid="6" name="Knight" tags="" position="100,525" size="100,100">&lt;%
+</tw-passagedata><tw-passagedata pid="6" name="Knight" tags="" position="1600,525" size="100,100">&lt;%
 
 	s.ROLE = &quot;Knight&quot;;
 	
 %&gt;
 
-asdf</tw-passagedata><tw-passagedata pid="7" name="Mage" tags="" position="225,525" size="100,100">&lt;%
+asdf</tw-passagedata><tw-passagedata pid="7" name="Mage" tags="" position="1725,525" size="100,100">&lt;%
 
 	s.ROLE = &quot;Mage&quot;;
 	
 %&gt;
-asdf</tw-passagedata><tw-passagedata pid="8" name="Rogue" tags="" position="350,525" size="100,100">&lt;%
+asdf</tw-passagedata><tw-passagedata pid="8" name="Rogue" tags="" position="1850,525" size="100,100">&lt;%
 
 	s.ROLE = &quot;Rogue&quot;;
 	
 %&gt;
-asdf</tw-passagedata><tw-passagedata pid="9" name="And your party role shall be…" tags="" position="225,400" size="100,100">&lt;div&gt;
+asdfa</tw-passagedata><tw-passagedata pid="9" name="And your party role shall be…" tags="" position="1725,400" size="100,100">&lt;div&gt;
 	You don’t even hesitate; as soon as you see the word “role,” you begin hastily scribbling, ink splattering in all directions.
 	&lt;div&gt;
 	[[Knight]], you write, quill nearly piercing through the paper.
@@ -194,16 +196,18 @@ asdf</tw-passagedata><tw-passagedata pid="9" name="And your party role shall be�
 	&lt;div&gt;
 	[[Rogue]], you inscribe, quill slashing against the parchment.
 	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="10" name="Yclept? What does that mean?" tags="" position="225,150" size="100,100">&lt;% 	
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="10" name="Yclept? What does that mean?" tags="" position="1725,150" size="100,100">&lt;% 	
 	Passage.getName = () =&gt; {
 	
 		s.NAME = prompt(&quot;Enter your name&quot;); 
 		
-		if(s.NAME != &quot;&quot;){
-			$(&quot;#retry&quot;).fadeOut();
-			$(&quot;#continue&quot;).fadeIn();
-		} else{
+		if(s.NAME == &quot;&quot;){
 			$(&quot;#retry&quot;).fadeIn();
+		} else{
+			$(&quot;#retry&quot;).fadeOut();
+			$(&quot;#nameButton&quot;).fadeOut();
+			$(&quot;#nameChosen&quot;).fadeIn();
+			$(&quot;#genderButton&quot;).fadeIn();
 		}
 	};
 	
@@ -213,30 +217,52 @@ asdf</tw-passagedata><tw-passagedata pid="9" name="And your party role shall be�
 		s.GENDER2 = prompt(&quot;Enter your Gender&quot;, &quot;Him, Her, Them, etc.&quot;); 
 		s.GENDER3 = prompt(&quot;Enter your Gender&quot;, &quot;His, Hers, Theirs, etc.&quot;); 
 		
-		if(s.GENDER1 != &quot;&quot; &amp;&amp; s.GENDER2 != &quot;&quot; &amp;&amp; s.GENDER3 != &quot;&quot;){
-			$(&quot;#retry2&quot;).fadeOut();
-			$(&quot;#continue2&quot;).fadeIn();
+		if(s.GENDER1 == &quot;&quot; || s.GENDER2 == &quot;&quot; || s.GENDER3 == &quot;&quot;){
+			$(&quot;#retry2&quot;).fadeIn();
 		}
 		else{
-			$(&quot;#retry2&quot;).fadeIn();
+			$(&quot;#retry2&quot;).fadeOut();
+			$(&quot;#genderButton&quot;).fadeOut();
+			$(&quot;#genderChosen&quot;).fadeIn();
+			$(&quot;#continue2&quot;).fadeIn();
 		}
 	};
 %&gt;
 
-&lt;div&gt;
+&lt;div id=&quot;nameButton&quot;&gt;
+	&lt;div&gt;
 	A minute passes, and the words hastily rearrange themselves on the page: “What be your *name*, novice?”
-&lt;/div&gt;
-&lt;div&gt;
+	&lt;/div&gt;
+	&lt;div&gt;
 	You pick up the quill and write your &lt;button onclick=&quot;Passage.getName()&quot;&gt;name&lt;/button&gt;.
+	&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id=&quot;continue&quot; hidden&gt;
+&lt;div id=&quot;nameChosen&quot; hidden&gt;
+	&lt;div&gt;
+	A minute passes, and the words hastily rearrange themselves on the page: “What be your *name*, novice?”
+	&lt;/div&gt;
+	&lt;div&gt;
+	You pick up the quill and write &lt;%=s.NAME%&gt;.
+	&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div id=&quot;genderButton&quot; hidden&gt;
 	“And your &lt;button onclick=&quot;Passage.getGender()&quot;&gt;gender&lt;/button&gt; be? Arrange like so, he, him, his, and so on and such forth.”
 &lt;/div&gt;
 
+&lt;div id=&quot;genderChosen&quot; hidden&gt;
+	“And your gender be? Arrange like so, he, him, his, and so on and such forth.”
+&lt;/div&gt;
+
 &lt;div id=&quot;continue2&quot; hidden&gt;
-	“Of what race born?”
+	&lt;div&gt;
+	“And of what race born?”
+	&lt;/div&gt;
+	&lt;div&gt;
 	You write: [[Human]], [[Elf]], [[Dwarf]], [[Orc]]
+	&lt;/div&gt;
 &lt;/div&gt;
 	
 &lt;div id=&quot;retry2&quot; hidden&gt;
@@ -246,4 +272,193 @@ asdf</tw-passagedata><tw-passagedata pid="9" name="And your party role shall be�
 &lt;div id=&quot;retry&quot; hidden&gt;
 	**Please enter a name.**
 &lt;/div&gt;
-</tw-passagedata></tw-storydata>
+</tw-passagedata><tw-passagedata pid="11" name="Start" tags="" position="25,25" size="100,100">&lt;div&gt;
+	You had dreamed of venturing to the mystical land of Eorundem ever since you were a child. Your [[father]] would tell you grand tales of its rivers teeming with lost treasures, of the magical creatures that roamed its verdant hills, of the fathomless caverns that shivered with beastly roars, and of the endless forests that bristled with magic and seemed to whisper at night. And who could forget the ancient foe that plagued the land every several years? The [[stories]] of [[Ye Olde Evil’s]] repeated vanquishing were among your favourites. Now that you have come of age, it is no surprise you’ve chosen to set off for Eorundem, your [[mother’s]] blessing still lingering on your cheek. [[It is time for an adventure.]] 
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="father" tags="" position="400,150" size="100,100">&lt;div&gt; A good man. As dedicated to the smithy as he is to his family. His breath smells like charred bread and his hands are caked in blackened callouses, but his broad face always bears a smile for you, and that is all that matters. [[Back-&gt;Start]] 
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="stories" tags="" position="400,25" size="100,100">&lt;div&gt;
+	Your father knew many stories. Ballad of Bhavulthrolo, wandering bard who serenaded a mountain until it moved out of his way, if only to escape his horrendous singing. Legend of Llyr Windeater, Prince of Kites, who wore a paper cape of many colours that granted him the gift of flight. Song of Seluria, intrepid adventurer who defeated Ye Olde Evil seven times singlehandedly. That is, Seluria only had one hand. [[Back-&gt;Start]] 
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="Ye Olde Evil’s" tags="" position="275,25" size="100,100">&lt;div&gt; Evil incarnate. The name rather gives it away, doesn’t it? It only resurrects every few years before it is defeated by whatever brave band of adventurers can reach it. Lucky you, it has recently risen to power once more, and you are certain you will be the one to defeat it. [[Back-&gt;Start]] 
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="mother’s" tags="" position="150,25" size="100,100">&lt;div&gt; A kind woman. Her hands have mended your childhood cuts and scrapes as deftly as they have sewn clothes back together. [[Back-&gt;Start]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="16" name="It is time for an adventure." tags="" position="25,150" size="100,100">&lt;div&gt; 
+	You join a caravan—a motley band of merchants and travelers—heading into Eorundem, claiming a seat among sacks of spices and crates of dried fruit. You spend your days with wide, awestruck eyes as the everchanging [[landscape]] rolls languidly by; at night you watch strange constellations chase each other across the sky. Your travels are briefly halted by a stampede of three-headed, fire-breathing buffalo, and two wagons losing their wheels to mischievous gremlins—and for three days straight a deluge of strange rain coats the rivers in fine silver. However, these slight mishaps only further whet your appetite for adventure, and [[your anticipation only grows.]]
+&lt;div&gt;
+
+</tw-passagedata><tw-passagedata pid="17" name="landscape" tags="" position="150,150" size="100,100">&lt;div&gt;
+	The sky seems boundless out here. It is as if the very world has opened itself up. The horizon has never seemed so far away before, and nothing—no village huts or crowding trees—breaks the great expanse of blue overhead. In the distance, you can see stone temples carved from the mountain range, glistening with ice. The lush meadows stretch in all directions from the dusty road, their grasses swelling and rolling in the wind, their slopes flecked with flowers. White stags with six pink eyes watch your procession from the safety of the forests, but they scatter when something roars from deep within the woods. [[Back-&gt;It is time for an adventure.]] 
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="18" name="small helping" tags="" position="150,275" size="100,100">&lt;div&gt;
+You know you should eat more, but your stomach is knotted with nerves [[Back-&gt;your anticipation only grows.]] 
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="19" name="young woman" tags="" position="275,275" size="100,100">&lt;div&gt;
+	She wears a modest blouse tucked into a long skirt, thick socks tucked into mud-splattered boots, a charm hanging from a simple string around her neck. Her flaxen hair is pulled back into a practical ponytail, and freckles dust her nose and cheeks.
+[[Back-&gt;your anticipation only grows.]] 
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="20" name="She smiles as you sit down." tags="" position="25,400" size="100,100">&lt;div&gt;
+	&lt;div&gt;
+	[“What brings you to Cysa?”], you ask.
+	&lt;/div&gt;
+	&lt;div&gt;
+	“My trade. I am a merchant,” she replies. “My village to the east makes a special butter from the gossamer worms that grow in the nearby caverns. It’s considered a delicacy in Cysa, often spread over stuffed bread.”
+	&lt;/div&gt;
+	&lt;div&gt;
+	[“That sounds…lovely.”] It does not, in fact, sound lovely at all.
+	&lt;/div&gt;
+	&lt;div&gt;
+	[You cannot help but make a face in disgust.]
+	&lt;/div&gt;
+	&lt;div&gt;
+	She laughs.
+	&lt;/div&gt;
+	&lt;div&gt;
+	“I know it hardly sounds appetizing, but truly, the creamy sweetness of gossamer worm against savory stuffed bread is a step and a half from heaven.” She giggles. “On special occasions, we make it with [[moon slugs as well.]]”
+	&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="21" name="your anticipation only grows." tags="" position="25,275" size="100,100">&lt;/div&gt;
+	After what seems like an eternity, the caravan leader announces that you are but a day away from Cysa, capital city of Eorundem, the Flower-by-the-Sea. You are not the only excited one; the air just about crackles with energy that night, and suppertime chatter is particularly loud and laughter-filled. Having slopped a [[small helping]] of meat stew on your platter, you take a seat near a [[young woman]] with kind eyes. You have seen her here and there throughout the past weeks. She always seemed rather friendly and helpful, but your paths never crossed until now. [[She smiles as you sit down.]] 
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="moon slugs as well." tags="" position="25,525" size="100,100">&lt;div&gt;
+	&lt;div&gt;
+	You gently set your platter down, food untouched and significantly less appetizing. The merchant hastily changes the subject.
+	&lt;/div&gt;
+	&lt;div&gt;
+	“Tell me, then, what brings you to Cysa?” she asks.
+	&lt;/div&gt;
+	&lt;div&gt;
+	“I want to be an adventurer,” you say confidently.
+	&lt;/div&gt;
+	&lt;div&gt;
+	“Oh?”
+	&lt;/div&gt;
+	&lt;div&gt;
+	“Yes. It’s all I ever dreamed of as a child. I would act out my father’s stories with my friends. We made quite the party, slaying all sorts of monsters every day. [[Imaginary ones, of course.]]”	
+	&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="23" name="Imaginary ones, of course." tags="" position="25,650" size="100,100">&lt;div&gt;
+	&lt;div&gt;
+	You lean back on the log behind you, stretching, watching the crescent moon slide free from the clouds. The campfire crackles softly at your feet. The calls of nighttime creatures echo across the meadows. For a moment, you feel more content than you have in ages. 
+	&lt;/div&gt;
+	&lt;div&gt;
+	[[“I always wanted to be a knight.”]]
+	&lt;/div&gt;
+	&lt;div&gt;
+	[[“I was always the mage.”]]
+	&lt;/div&gt;
+	&lt;div&gt;
+	[[“I always thought I would make a good rogue.”]]
+	&lt;/div&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="24" name="“I always wanted to be a knight.”" tags="" position="25,775" size="100,100">&lt;%
+	s.ROLE = &quot;knight&quot;;
+%&gt;
+
+
+&lt;div&gt;
+	&lt;div&gt;
+	“I felt most powerful when I was wielding a mighty axe or claymore, charging into the fray in scarlet-soaked armor. I know I will be the bravest knight the city has ever seen. Say, do you know of any guilds in need of a knight?”
+	&lt;/div&gt;
+	&lt;div&gt;
+	You turn back to her. [[She has an odd look in her eye.]]
+	&lt;/div&gt;
+&lt;/div&gt;
+	
+</tw-passagedata><tw-passagedata pid="25" name="“I was always the mage.”" tags="" position="150,775" size="100,100">&lt;%
+	s.ROLE = &quot;mage&quot;;
+%&gt;
+
+&lt;div&gt;
+	&lt;div&gt;
+	“I liked to fight from a distance, channeling devastating spells, calling down all sorts of debilitating effects on my foes. I know I will be the most powerful mage the city has ever seen. Say, do you know of any guilds in need of a mage?”
+	&lt;/div&gt;
+	&lt;div&gt;
+	You turn back to her. [[She has an odd look in her eye.]]
+	&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="26" name="“I always thought I would make a good rogue.”" tags="" position="275,775" size="100,100">&lt;%
+	s.ROLE = &quot;rogue&quot;;
+%&gt;
+
+&lt;div&gt;
+	&lt;div&gt;
+	“I always found it particularly satisfying to sneak behind the enemy and pick them off one by one. I let the other party roles distract my foes, and then I slip in to cripple the strongest and finish off the weakest. I know I will be the most cunning rogue the city has ever seen. Say, do you know of any guilds in need of a rogue?”
+	&lt;/div&gt;
+	&lt;div&gt;
+	You turn back to her. [[She has an odd look in her eye.]]
+	&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="27" name="She has an odd look in her eye." tags="" position="25,900" size="100,100">&lt;div&gt;
+	&lt;div&gt;
+	You cannot quite place her expression, but it wavers close to concern. You cannot fathom why. For a moment, she looks as if she’s about to say something, something important—but then she seems to change her mind, and her face relaxes into an [uneasy smile.]
+	&lt;/div&gt;
+	&lt;div&gt;
+	“A &lt;%= s.ROLE %&gt; is always in demand somewhere, I’m sure,” she says.
+	&lt;/div&gt;
+	&lt;div&gt;
+	You return her smile, albeit somewhat uncertainly.
+	&lt;/div&gt;
+	&lt;div&gt;
+	“Do you know where I can go to declare my party role?” you ask her.
+	&lt;/div&gt;
+	&lt;div&gt;
+	Her smile falters.
+	&lt;/div&gt;
+	&lt;div&gt;
+	“I believe that is all…[[sorted out at the Adventurers’ Guild,]]” she replies.
+	&lt;/div&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="28" name="sorted out at the Adventurers’ Guild," tags="" position="25,1025" size="100,100">&lt;div&gt;
+	&lt;div&gt;
+	“Ah, I see. I might as well do that as soon as I reach the city. No point in wasting time,” you say cheerily.
+	&lt;/div&gt;
+	&lt;div&gt;
+	She nods, and then rises, [brushing dust from her skirt.] 
+	&lt;/div&gt;
+	&lt;div&gt;
+	“It has grown late, and a busy day approaches. I think I’ll retire for the night,” she says. “It was a pleasure meeting you, friend. The name is Ana. Ana Ymra. Visit my vending stall in the marketplace if you ever fancy a taste of gourmet butter. Discount prices, just for you.”
+	&lt;/div&gt;
+	&lt;div&gt;
+	“I…um, sure. Maybe. Thank you, Ana Ymra. It was a pleasure meeting you as well.”
+	&lt;/div&gt;
+	&lt;div&gt;
+	She begins to walk away, only to [[suddenly pause.]]
+	&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="29" name="suddenly pause." tags="" position="25,1150" size="100,100">&lt;div&gt;
+	&lt;div&gt;
+	“And, should things…not go the way you thought they…well, if you ever need a friendly ear, I am free to talk over tea,” she adds.
+	&lt;/div&gt;
+	&lt;div&gt;
+	You nod and bid her farewell as she leaves. You linger by the fire for a little while longer, but when the other folk start to drift away, [you decide to return to your wagon.] As you nestle into your cot among the barrels of dried meat, your mind turns to Ana. Her odd change in demeanor confuses you. Did she have a particular dislike for &lt;chosen role&gt;? Perhaps you had been too boastful, too eager—perhaps she doubted your ability to succeed? And yet she seemed so nice…[[surely she wouldn’t…]]
+	&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="30" name="surely she wouldn’t…" tags="" position="25,1275" size="100,100">&lt;div&gt;
+	&lt;div&gt;
+	[…]
+	&lt;/div&gt;
+	&lt;div&gt;
+	You drift into a deep sleep, exhausted by the past weeks of travel, mind too tired to contemplate any more hypotheticals. [[A gentle snoring fills your wagon.]]
+	&lt;/div&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="31" name="A gentle snoring fills your wagon." tags="" position="25,1400" size="100,100">&lt;div&gt;
+	&lt;div&gt;
+	That night you dream you are running from something. You are not certain what, you do not turn to look—but you can hear it pursuing you. At times it seems to be growling, snarling after you in deep and grating tones. Other times its voice goes soft, like well-worn velvet. And then it goes quiet, and all you can hear are soft footsteps from the surrounding shadows. 
+	&lt;/div&gt;
+	&lt;div&gt;
+	You try to run faster, but you are carrying weapons upon weapons—swords, shields, staffs, tomes, daggers, bows—and your shoulders and legs are weighed down by mismatched armor. Just when you can nearly feel the hot breath of your pursuer on your neck and the cold bite of metal, you [[trip]]
+	&lt;/div&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="32" name="trip" tags="" position="25,1525" size="100,100">&lt;div&gt;
+	&lt;div&gt;
+	and fall
+	&lt;/div&gt;
+	&lt;div&gt;
+	and fall
+	&lt;/div&gt;
+	&lt;div&gt;
+	and fall
+	&lt;/div&gt;
+	&lt;div&gt;
+	and the stone itself opens up to swallow you whole
+	&lt;/div&gt;
+	&lt;div&gt;
+	trapping you, frozen, unchanging and unyielding, your arms clasped 
+around a [shield]
+	&lt;/div&gt;
+	&lt;div&gt;
+	the only thing you did not drop when you plummeted
+	&lt;/div&gt;
+	&lt;div&gt;
+	[[down]]
+	&lt;/div&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="33" name="down" tags="" position="25,1650" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
