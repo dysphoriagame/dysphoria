@@ -65,12 +65,15 @@ tooltip {
 
 
 
+
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">$(document).ready( () => {		      					       
 	$.getScript("https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js", () => {
 				toastr.options.timeOut = -1;
 				toastr.options.extendedTimeOut = -1;
 				toastr.options.positionClass = "toast-bottom-full-width";
 	});
+	$.getScript('file://C:/Users/ascii/Documents/Twine/Stories/combat.js');
 	$('<link/>', {
 		rel: 'stylesheet',
 		type: 'text/css',
@@ -80,9 +83,9 @@ tooltip {
 
 $('#passage').ready( () => {
 	$('#passage').wrap('<div id="desc" class="desc"></div>');
-	$('body').append('<div id="map" class="map">Map</div>');
-	$('body').append('<div id="inv" class="inv">Inventory</div>');
-	$('body').append('<div id="action" class="action">Action</div>');
+	$('body').append('<div id="map" class="map"></div>');
+	$('body').append('<div id="inv" class="inv"></div>');
+	$('body').append('<div id="action" class="action">Skills<br/><button disabled>Mend</button></div>');
 });
 
 
@@ -120,6 +123,8 @@ $(document).on('showpassage:after', () => {
 
 
 
+
+
 </script><tw-passagedata pid="1" name="You hurry forward" tags="Character-Selection" position="25,3775" size="100,100">&lt;% 	
 	s.loc = &#39;+&#39;;
 %&gt;
@@ -149,7 +154,7 @@ $(document).on('showpassage:after', () => {
 
 
 
-</tw-passagedata><tw-passagedata pid="3" name="Elf" tags="" position="150,4025" size="100,100">&lt;%
+</tw-passagedata><tw-passagedata pid="3" name="Elf" tags="" position="152,3993" size="100,100">&lt;%
 
 	s.RACE = &quot;Elf&quot;;
 
@@ -164,7 +169,7 @@ $(document).on('showpassage:after', () => {
 	At last, the parchment begins to cover itself in writing again: “[[And your party role shall be…]]”
 &lt;/div&gt;
 
-</tw-passagedata><tw-passagedata pid="4" name="Dwarf" tags="" position="275,4025" size="100,100">&lt;%
+</tw-passagedata><tw-passagedata pid="4" name="Dwarf" tags="" position="276,3997" size="100,100">&lt;%
 
 	s.RACE = &quot;Dwarf&quot;;
 
@@ -179,7 +184,7 @@ $(document).on('showpassage:after', () => {
 	At last, the parchment begins to cover itself in writing again: “[[And your party role shall be…]]”
 &lt;/div&gt;
 
-</tw-passagedata><tw-passagedata pid="5" name="Orc" tags="" position="400,4025" size="100,100">&lt;%
+</tw-passagedata><tw-passagedata pid="5" name="Orc" tags="" position="400,4003" size="100,100">&lt;%
 
 	s.RACE = &quot;Orc&quot;;
 
@@ -798,4 +803,28 @@ You’re furious. No, not quite furious; you’re too distraught to be simply fu
 	[[“About that…”]]
 	&lt;/div&gt;
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="83" name="“Looks that way, doesn’t it.”" tags="" position="25,7300" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="84" name="“About that…”" tags="" position="150,7300" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
+</tw-passagedata><tw-passagedata pid="83" name="“Looks that way, doesn’t it.”" tags="" position="25,7300" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="84" name="“About that…”" tags="" position="150,7300" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="85" name="Quest 1 Fight 1" tags="" position="900,99" size="100,100">&lt;%
+	
+	$(&#39;#action&#39;).append(&#39;&lt;button onclick=&quot;Passage.mend&quot; /&gt;&#39;);
+	$(&#39;#action&#39;).append(&#39;&lt;button onclick=&quot;Passage.blind&quot; /&gt;&#39;);
+	$(&#39;#action&#39;).append(&#39;&lt;button onclick=&quot;Passage.groupHeal&quot; /&gt;&#39;);
+	
+	let combat = false;
+	
+	Passage.runSim = () =&gt; {
+		console.log(&#39;Running sim&#39;);
+		if(!combat) {
+			combat = Combat();
+		} else {
+			combat($(&#39;#q1f1&#39;), () =&gt; {
+				$(&#39;#f1-done&#39;).fadeIn(1000);
+				$(&#39;#f1-button&#39;).fadeOut(1000);
+			});
+		}
+	};
+%&gt;
+
+&lt;div id=&quot;q1f1&quot;&gt;&lt;/div&gt;
+&lt;button id=&quot;f1-button&quot; onclick=&quot;Passage.runSim()&quot;&gt;Continue&lt;/button&gt;
+
+&lt;div id=&quot;f1-done&quot; hidden&gt;Leave&lt;/div&gt;</tw-passagedata></tw-storydata>
