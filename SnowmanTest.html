@@ -60,7 +60,6 @@ button {
 }
 
 tooltip {
-  display: inline-block;
   color: green;
 }
 
@@ -89,18 +88,33 @@ $('#passage').ready( () => {
 
 $(document).on('showpassage:after', () => {
 	console.log("Woosh");
+		console.log(window.story.passages);
 		let re = /(\[)[^\[\]]*(\])(?!\])/g;
 		let tooltips = $('#passage').html().match(re);
-		console.log(tooltips);
-	/*$('tooltip').hover( (e) => {
-		console.log(e);
-		toastr.clear();
-		toastr.info($(e.currentTarget).attr('text'));
-	}, (e) => {
-		//console.log(e);
-		toastr.clear();
-	});*/
-	$('.fade').fadeIn(2000);
+		if(tooltips) {
+			// Wrap keyword in tooltip element
+			let newContent = $('#passage').html();
+			tooltips.forEach( (e) => {
+				let keyword = e.substring(1, e.length - 1);
+				let descPassage = window.story.passage(keyword);
+				if(!descPassage) return;
+				console.log($('#passage').html());
+				newContent = newContent.replace(e, '<tooltip text="' + 
+																				descPassage.source.replace('"', '').replace(/(\[)(\[)[^\[\]]*(\])(\])(?!\])/g, '') + 
+																				'">'+keyword+'</tooltip>');
+			});
+			console.log(newContent);
+			$('#passage').html(newContent);
+		}
+		$('tooltip').hover( (e) => {
+			if(!toastr) return;
+			toastr.clear();
+			toastr.info($(e.currentTarget).attr('text'));
+		}, (e) => {
+			if(!toastr) return;
+			toastr.clear();
+		});
+		$('.fade').fadeIn(2000);
 
 });
 
@@ -305,7 +319,7 @@ You look back at the parchment. Now you will be placed into a party—a group of
 	**Please enter a name.**
 &lt;/div&gt;
 </tw-passagedata><tw-passagedata pid="11" name="Start" tags="" position="25,25" size="100,100">&lt;div&gt;
-	You had dreamed of venturing to the mystical land of Eorundem ever since you were a child. Your [father] would tell you grand tales of its rivers teeming with lost treasures, of the magical creatures that roamed its verdant hills, of the fathomless caverns that shivered with beastly roars, and of the endless forests that bristled with magic and seemed to whisper at night. And who could forget the ancient foe that plagued the land every several years? The [stories] of [[Ye Olde Evil’s]] repeated vanquishing were among your favourites. Now that you have come of age, it is no surprise you’ve chosen to set off for Eorundem, your [[mother’s]] blessing still lingering on your cheek. [[It is time for an adventure.]] 
+You had dreamed of venturing to the mystical land of Eorundem ever since you were a child. Your [father] would tell you grand tales of its rivers teeming with lost treasures, of the magical creatures that roamed its verdant hills, of the fathomless caverns that shivered with beastly roars, and of the endless forests that bristled with magic and seemed to whisper at night. And who could forget the ancient foe that plagued the land every several years? The [stories] of [Ye Olde Evil’s] repeated vanquishing were among your favourites. Now that you have come of age, it is no surprise you’ve chosen to set off for Eorundem, your [[mother’s]] blessing still lingering on your cheek. [[It is time for an adventure.]] 
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="father" tags="" position="150,25" size="100,100">&lt;div&gt; A good man. As dedicated to the smithy as he is to his family. His breath smells like charred bread and his hands are caked in blackened callouses, but his broad face always bears a smile for you, and that is all that matters. [[Back-&gt;Start]] 
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="stories" tags="" position="400,25" size="100,100">&lt;div&gt;
 	Your father knew many stories. Ballad of Bhavulthrolo, wandering bard who serenaded a mountain until it moved out of his way, if only to escape his horrendous singing. Legend of Llyr Windeater, Prince of Kites, who wore a paper cape of many colours that granted him the gift of flight. Song of Seluria, intrepid adventurer who defeated Ye Olde Evil seven times singlehandedly. That is, Seluria only had one hand. [[Back-&gt;Start]] 
