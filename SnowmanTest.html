@@ -72,13 +72,16 @@ tooltip {
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">$(document).ready( () => {		      					       
 	$.getScript("https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js", () => {
 				toastr.options.timeOut = -1;
 				toastr.options.extendedTimeOut = -1;
 				toastr.options.positionClass = "toast-bottom-full-width";
 	});
-	$.getScript('./combat.js');
+	$.getScript('./combat.js', () => {
+		console.log("Loaded combat script");
+	});
 	$('<link/>', {
 		rel: 'stylesheet',
 		type: 'text/css',
@@ -125,6 +128,7 @@ $(document).on('showpassage:after', () => {
 		$('.fade').fadeIn(2000);
 
 });
+
 
 
 
