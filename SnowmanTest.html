@@ -21,6 +21,7 @@ button {
   font-family: "Verdana";
   display: block;
   position: fixed;
+  background-image: url('./parchment.png');
   background-color: #1B1B1B;
   padding: 20px;
   z-index: -1;
@@ -70,13 +71,14 @@ tooltip {
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">$(document).ready( () => {		      					       
 	$.getScript("https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js", () => {
 				toastr.options.timeOut = -1;
 				toastr.options.extendedTimeOut = -1;
 				toastr.options.positionClass = "toast-bottom-full-width";
 	});
-	$.getScript('file://C:/Users/ascii/Documents/Twine/Stories/combat.js');
+	$.getScript('./combat.js');
 	$('<link/>', {
 		rel: 'stylesheet',
 		type: 'text/css',
@@ -123,6 +125,7 @@ $(document).on('showpassage:after', () => {
 		$('.fade').fadeIn(2000);
 
 });
+
 
 
 
@@ -1193,7 +1196,7 @@ You drag yourself into the [[guild hall,(Guardian)]] head hanging low.
 Ye Olde Evil may have won the battle, but you and your friends will always win the war...
 [[Retry-&gt;And you, a knight, grip your sword and kite shield.]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="117" name="And you, a mage, open your own tome and prepare a spell." tags="" position="850,150" size="100,100">&lt;%
+</tw-passagedata><tw-passagedata pid="105" name="And you, a mage, open your own tome and prepare a spell." tags="" position="850,150" size="100,100">&lt;%
 	s.CHOSENROLE = &quot;mage&quot;;
 	s.ROLEUPPER = &quot;Mage&quot;;
 %&gt;
@@ -1233,7 +1236,7 @@ Ye Olde Evil may have won the battle, but you and your friends will always win t
 Ye Olde Evil may have won the battle, but you and your friends will always win the war...
 [[Retry-&gt;And you, a knight, grip your sword and kite shield.]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="118" name="And you, a rogue, unsheathe your twin daggers." tags="" position="975,150" size="100,100">&lt;%
+</tw-passagedata><tw-passagedata pid="106" name="And you, a rogue, unsheathe your twin daggers." tags="" position="975,150" size="100,100">&lt;%
 	s.CHOSENROLE = &quot;rogue&quot;;
 	s.ROLEUPPER = &quot;Rogue&quot;;
 %&gt;
@@ -1273,7 +1276,7 @@ Ye Olde Evil may have won the battle, but you and your friends will always win t
 Ye Olde Evil may have won the battle, but you and your friends will always win the war...
 [[Retry-&gt;And you, a knight, grip your sword and kite shield.]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="119" name="Prelude Combat Victory" tags="" position="850,275" size="100,100">&lt;div&gt;
+</tw-passagedata><tw-passagedata pid="107" name="Prelude Combat Victory" tags="" position="850,275" size="100,100">&lt;div&gt;
 	&lt;div&gt;
 	“I have been defeated! How can this be?” Ye Olde Evil wails as it implodes.
 	&lt;/div&gt;
