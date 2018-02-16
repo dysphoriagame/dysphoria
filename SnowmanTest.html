@@ -67,6 +67,7 @@ tooltip {
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">$(document).ready( () => {		      					       
 	$.getScript("https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js", () => {
 				toastr.options.timeOut = -1;
@@ -120,6 +121,7 @@ $(document).on('showpassage:after', () => {
 		$('.fade').fadeIn(2000);
 
 });
+
 
 
 
@@ -1379,28 +1381,130 @@ He looks as if he’s about to continue, but Orante smoothly cuts him off.
 	[[And you, a rogue, unsheathe your twin daggers.]]
 	&lt;/div&gt;
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="116" name="And you, a knight, grip your sword and kite shield." tags="" position="725,150" size="100,100">&lt;%
+
+&lt;% 
+	//$(&#39;#map&#39;).fadeOut(1000);
+	//$(&#39;#inventory&#39;).fadeOut(1000);
+%&gt;</tw-passagedata><tw-passagedata pid="116" name="And you, a knight, grip your sword and kite shield." tags="" position="725,150" size="100,100">&lt;%
 	s.CHOSENROLE = &quot;knight&quot;;
 	s.ROLEUPPER = &quot;Knight&quot;;
 %&gt;
+&lt;%
+	let combat = false;
+	
+	let player = new Character(&quot;Player&quot;, Roles.KNIGHT, 1, true, true);
+	let ally1 = new Character(&quot;Ally Knight&quot;, Roles.KNIGHT, 1, false, true);
+	let ally2 = new Character(&quot;Ally Mage&quot;, Roles.MAGE, 1, false, true);
+	let ally3 = new Character(&quot;Ally Guardian&quot;, Roles.GUARDIAN, 1, false, true);
+	let enemy = new Character(&quot;Evil Rogue Head&quot;, Roles.ROGUE, 1, false, false);
+	let enemy1 = new Character(&quot;Evil Mage Head&quot;, Roles.MAGE, 1, false, false);
+	let enemy2 = new Character(&quot;Evil Knight Head&quot;, Roles.KNIGHT, 1, false, false);
 
-COMBAT
+	
+	Passage.runSim = () =&gt; {
+		if(!combat) {
+			combat = Combat([player, ally1, ally2, ally3], [enemy, enemy1, enemy2]);
+		} else {
+			combat($(&#39;#q1f1&#39;), (loss) =&gt; {
+				if(loss)
+					$(&#39;#f1-loss&#39;).fadeOut(1000);//todo fix this shit
+				else
+					$(&#39;#f1-done&#39;).fadeIn(1000);
+				$(&#39;#f1-button&#39;).fadeOut(1000);
+			});
+		}
+	};
+%&gt;
 
-[[Prelude Combat Victory]]</tw-passagedata><tw-passagedata pid="117" name="And you, a mage, open your own tome and prepare a spell." tags="" position="850,150" size="100,100">&lt;%
+&lt;div id=&quot;q1f1&quot;&gt;&lt;/div&gt;
+&lt;button id=&quot;f1-button&quot; onclick=&quot;Passage.runSim()&quot;&gt;Continue&lt;/button&gt;
+
+&lt;div id=&quot;f1-done&quot; hidden&gt;[[Prelude Combat Victory]]&lt;/div&gt;
+
+&lt;div id=&quot;f1-loss&quot; hidden&gt;
+Ye Olde Evil may have won the battle, but you and your friends will always win the war...
+[[Retry-&gt;And you, a knight, grip your sword and kite shield.]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="117" name="And you, a mage, open your own tome and prepare a spell." tags="" position="850,150" size="100,100">&lt;%
 	s.CHOSENROLE = &quot;mage&quot;;
 	s.ROLEUPPER = &quot;Mage&quot;;
 %&gt;
+&lt;%
+	let combat = false;
+	
+	let player = new Character(&quot;Player&quot;, Roles.MAGE, 1, true, true);
+	let ally1 = new Character(&quot;Ally Knight&quot;, Roles.KNIGHT, 1, false, true);
+	let ally2 = new Character(&quot;Ally Mage&quot;, Roles.MAGE, 1, false, true);
+	let ally3 = new Character(&quot;Ally Guardian&quot;, Roles.GUARDIAN, 1, false, true);
+	let enemy = new Character(&quot;Evil Rogue Head&quot;, Roles.ROGUE, 1, false, false);
+	let enemy1 = new Character(&quot;Evil Mage Head&quot;, Roles.MAGE, 1, false, false);
+	let enemy2 = new Character(&quot;Evil Knight Head&quot;, Roles.KNIGHT, 1, false, false);
 
-COMBAT
+	
+	Passage.runSim = () =&gt; {
+		if(!combat) {
+			combat = Combat([player, ally1, ally2, ally3], [enemy, enemy1, enemy2]);
+		} else {
+			combat($(&#39;#q1f1&#39;), (loss) =&gt; {
+				if(loss)
+					$(&#39;#f1-loss&#39;).fadeOut(1000);//todo fix this shit
+				else
+					$(&#39;#f1-done&#39;).fadeIn(1000);
+				$(&#39;#f1-button&#39;).fadeOut(1000);
+			});
+		}
+	};
+%&gt;
 
-[[Prelude Combat Victory]]</tw-passagedata><tw-passagedata pid="118" name="And you, a rogue, unsheathe your twin daggers." tags="" position="975,150" size="100,100">&lt;%
+&lt;div id=&quot;q1f1&quot;&gt;&lt;/div&gt;
+&lt;button id=&quot;f1-button&quot; onclick=&quot;Passage.runSim()&quot;&gt;Continue&lt;/button&gt;
+
+&lt;div id=&quot;f1-done&quot; hidden&gt;[[Prelude Combat Victory]]&lt;/div&gt;
+
+&lt;div id=&quot;f1-loss&quot; hidden&gt;
+Ye Olde Evil may have won the battle, but you and your friends will always win the war...
+[[Retry-&gt;And you, a knight, grip your sword and kite shield.]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="118" name="And you, a rogue, unsheathe your twin daggers." tags="" position="975,150" size="100,100">&lt;%
 	s.CHOSENROLE = &quot;rogue&quot;;
 	s.ROLEUPPER = &quot;Rogue&quot;;
 %&gt;
+&lt;%
+	let combat = false;
+	
+	let player = new Character(&quot;Player&quot;, Roles.ROGUE, 1, true, true);
+	let ally1 = new Character(&quot;Ally Knight&quot;, Roles.KNIGHT, 1, false, true);
+	let ally2 = new Character(&quot;Ally Mage&quot;, Roles.MAGE, 1, false, true);
+	let ally3 = new Character(&quot;Ally Guardian&quot;, Roles.GUARDIAN, 1, false, true);
+	let enemy = new Character(&quot;Evil Rogue Head&quot;, Roles.ROGUE, 1, false, false);
+	let enemy1 = new Character(&quot;Evil Mage Head&quot;, Roles.MAGE, 1, false, false);
+	let enemy2 = new Character(&quot;Evil Knight Head&quot;, Roles.KNIGHT, 1, false, false);
 
-COMBAT
+	
+	Passage.runSim = () =&gt; {
+		if(!combat) {
+			combat = Combat([player, ally1, ally2, ally3], [enemy, enemy1, enemy2]);
+		} else {
+			combat($(&#39;#q1f1&#39;), (loss) =&gt; {
+				if(loss)
+					$(&#39;#f1-loss&#39;).fadeOut(1000);//todo fix this shit
+				else
+					$(&#39;#f1-done&#39;).fadeIn(1000);
+				$(&#39;#f1-button&#39;).fadeOut(1000);
+			});
+		}
+	};
+%&gt;
 
-[[Prelude Combat Victory]]
+&lt;div id=&quot;q1f1&quot;&gt;&lt;/div&gt;
+&lt;button id=&quot;f1-button&quot; onclick=&quot;Passage.runSim()&quot;&gt;Continue&lt;/button&gt;
+
+&lt;div id=&quot;f1-done&quot; hidden&gt;[[Prelude Combat Victory]]&lt;/div&gt;
+
+&lt;div id=&quot;f1-loss&quot; hidden&gt;
+Ye Olde Evil may have won the battle, but you and your friends will always win the war...
+[[Retry-&gt;And you, a knight, grip your sword and kite shield.]]
+&lt;/div&gt;
 </tw-passagedata><tw-passagedata pid="119" name="Prelude Combat Victory" tags="" position="850,275" size="100,100">&lt;div&gt;
 	&lt;div&gt;
 	“I have been defeated! How can this be?” Ye Olde Evil wails as it implodes.

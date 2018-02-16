@@ -44,13 +44,14 @@ class Skill {
 	cast(caster, target) {
 		let dx = BASE_PWR * Math.random() * (MIN_PWR + (caster.level * 0.1)) + (MAX_PWR + (caster.level * 0.1));
 		if(!this.isGroup) {
-			dx *= (this.isHeal ? 1 : -1) - (target.defense);
+			dx *= (this.isHeal ? 1 : -1) - (this.isHeal ? target.defense : 0);
 			target[this.targetAttribute] += dx;
-			if( target[this.targetAttribute] < 0 ) target[this.targetAttribute]  = 0;
+			if( target[this.targetAttribute] < 0) target[this.targetAttribute]  = 0;
 		} else target.forEach( (t) => {
-			dx *= (this.isHeal ? 1 : -1) - (t.defense);
+			dx *= (this.isHeal ? 1 : -1) - (this.isHeal ? t.defense : 0);
+			dx *= ((this.isHeal && dx < 0) || (!this.isHeal && dx > 0)) ? 0 : 1;//todo comment this shit before you forget what it does
 			t[this.targetAttribute] += dx;
-			if( t[this.targetAttribute] < 0 ) t[this.targetAttribute]  = 0;
+			if( t[this.targetAttribute] < 0) t[this.targetAttribute]  = 0;
 		})
 		return caster.name + " used " + this.name + " on " + (target.name || this.stringifyTargetList(target)) + "\t" + (dx >= 0 ? '+' : '') + dx.toFixed(2) + this.targetAttribute;
 	}
@@ -77,7 +78,7 @@ const Skills = Object.freeze({"Guardian": [
 											new Skill('WindGust', '', 'defense', false, false)
 										],
 								"Rogue": [
-											new Skill('Dodge', '', 'defense', true, false),
+											new Skill('ShadowGuard', '', 'defense', true, false),// TODO Switch back to dodge
 											new Skill('Poison', '', 'hp', false, false),
 											new Skill('SmokePowder', '', 'defense', false, false)
 										]});
@@ -104,7 +105,16 @@ class Battle {
 				roundText += c.name + " is ded <br />";
 				return;
 			}
-			let skill = Skills[c.role][Math.floor(Math.random() * (c.level + 1))];
+			let skill;
+			if(c.isPlayer) {
+				Skills[c.role].forEach( (s) => {
+					if(s.name === Player_Selected_Skill) {
+						skill = s;
+					}
+				});
+			}
+			if(!skill)
+				skill = Skills[c.role][Math.floor(Math.random() * (c.level + 1))];
 			// console.log(c.name + "~" + c.isPlayerTeam +"~" + (skill.power <=0) + "===" + this.allies.length);
 			// console.log(JSON.stringify(skill));
 			let target = skill.isGroup ? ((c.isPlayerTeam && skill.isHeal) || (!c.isPlayerTeam && !skill.isHeal) ? this.allies : this.enemies) :
@@ -116,24 +126,70 @@ class Battle {
 	}
 }
 
-let Combat = () => {
+let Player_Selected_Skill;
 
-	let player = new Character("Player", Roles.GUARDIAN, 1, true, true);
-	let ally = new Character("Ally Knight", Roles.KNIGHT, 2, false, true);
-	let enemy = new Character("Enemy Rogue", Roles.ROGUE, 2, false, false);
-	let enemy1 = new Character("Enemy Mage", Roles.MAGE, 1, false, false);
+Passage.setSkill = (skillName) => {
+	Player_Selected_Skill = skillName;
+	toastr.info("You will use " + skillName + " on your next turn");
+};
 
-	let battle = new Battle([player, ally], [enemy, enemy1]);
+let Combat = (allies, enemies) => {
+
+	let player;
+
+	allies.forEach( (a) => {
+		if(a.isPlayer) {
+			player = a;
+		}
+	});
+
+	let newContent = '<h5>Skills</h5><div style="display: inline-block;">';
+	let skillCount = player.level + 1;
+
+	Skills[player.role].forEach( (skill) => {// TODO Only go up to player level
+		if(skillCount <= 0) {
+			return;
+		}
+		skillCount--;
+		newContent += '<button onclick="Passage.setSkill(\''+ skill.name +'\')">' + skill.name + "</button>";
+	});
+	newContent += "</div>"
+	$("#action").html(newContent);
+
+	let battle = new Battle(allies, enemies);
 
 	let round = (elem, done) => {
+		if(!Player_Selected_Skill) {
+			toastr.error('You neglected to choose a skill! But you can not stand idle in the heat of battle, you pick one at random.');
+		}
 		let text = '<br />' + battle.round();
 		battle.players.forEach( (p) => {
 			text+="<br />" + p.toString();
 		});
 		elem.html(text);
 
-		if(enemy1.isDead && enemy.isDead) {
-			done();
+		let allDead = true;
+
+		enemies.forEach( (e) => {
+			if(!e.isDead) {
+				// They ain't dead yet bud
+				allDead = false;
+			}
+		});
+		if(allDead) {
+			done(false);
+		}
+
+		allDead = true;
+
+		allies.forEach( (e) => {
+			if(!e.isDead) {
+				// We ain't dead yet bud
+				allDead = false;
+			}
+		});
+		if(allDead) {
+			done(true);// Loss
 		}
 	}
 
