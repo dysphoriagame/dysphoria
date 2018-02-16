@@ -66,27 +66,13 @@ tooltip {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">$(document).ready( () => {		      					       
 	$.getScript("https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js", () => {
 				toastr.options.timeOut = -1;
 				toastr.options.extendedTimeOut = -1;
 				toastr.options.positionClass = "toast-bottom-full-width";
 	});
-	$.getScript('file://C:/Users/ascii/Documents/Twine/Stories/combat.js');
+	$.getScript('./combat.js');
 	$('<link/>', {
 		rel: 'stylesheet',
 		type: 'text/css',
@@ -140,21 +126,6 @@ $(document).on('showpassage:after', () => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </script><tw-passagedata pid="1" name="you hurry forward" tags="Character-Selection" position="25,1150" size="100,100">&lt;div&gt;
 	You enter an empty booth—there aren’t many of them left—and sit down. A quill and a piece of parchment sit on the counter before you. You bend over the paper, peering down at the thin scrawl of writing marred by too many fancy flourishes.
 &lt;/div&gt;
@@ -182,6 +153,7 @@ $(document).on('showpassage:after', () => {
 
 
 </tw-passagedata><tw-passagedata pid="3" name="Elf" tags="" position="150,1550" size="100,100">&lt;%
+
 
 	s.RACE = &quot;Elf&quot;;
 
@@ -1274,7 +1246,6 @@ You’re furious. No, not quite furious; you’re too distraught to be simply fu
 &lt;div id=&quot;genderChosen&quot; hidden&gt;
 	“And your gender be? Arrange like so, he, him, his, and so on and such forth.”
 &lt;/div&gt;
-
 &lt;div id=&quot;continue2&quot; hidden&gt;
 	&lt;div&gt;
 	“And of what race born?”
