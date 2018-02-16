@@ -79,6 +79,7 @@ tooltip {
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">$(document).ready( () => {		      					       
 	$.getScript("https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js", () => {
 				toastr.options.timeOut = -1;
@@ -132,6 +133,7 @@ $(document).on('showpassage:after', () => {
 		$('.fade').fadeIn(2000);
 
 });
+
 
 
 
@@ -1213,7 +1215,19 @@ You’re furious. No, not quite furious; you’re too distraught to be simply fu
 	&lt;div&gt;
 	As you look towards Brutus for an answer, you swear his face goes slightly pale. Odd. Didn’t he say this would be easy? As you creep forward into the cave, you see a massive figure standing before you, its back facing towards you and covered in a dark yellow hair. As it turns, you see the hair covers its entire body, with squinting, brutish eyes peering out of a hair-covered face marked with two large tusks jutting out from its bottom lip. “There you are,” the bugbear growls, hoisting its spiked club onto its shoulder. “Gorn was just about to come [[find you.”]]
 	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="92" name="find you.”" tags="" position="1500,1650" size="100,100">[[FIGHT 3]]</tw-passagedata><tw-passagedata pid="93" name="FIGHT 3" tags="" position="1375,1775" size="100,100">&lt;div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="92" name="find you.”" tags="" position="1500,1650" size="100,100">[[FIGHT 3]]</tw-passagedata><tw-passagedata pid="93" name="FIGHT 3" tags="" position="1375,1775" size="100,100">&lt;%
+	s.GEAR = &quot;guardian&quot;;
+	
+	Passage.checkGear = () =&gt; {
+		if(s.GEAR == &quot;guardian&quot;){
+			story.show(&quot;heading back to Cysa.(Guardian)&quot;);
+		else {
+			story.show(&quot;heading back to Cysa.(Other)&quot;);
+		}
+	}
+%&gt;
+
+&lt;div&gt;
 	&lt;div&gt;
 	&lt;if win&gt; As Gorn falls to the ground, dead, Brutus lets out a loud cheer. 
 	&lt;/div&gt;
@@ -1221,7 +1235,7 @@ You’re furious. No, not quite furious; you’re too distraught to be simply fu
 	“We did it! We showed those ugly bastards! Now let’s get out of here.”  
 	&lt;/div&gt;
 	&lt;div&gt;
-	Orante puts her hand on your shoulder in a show of appreciation as your party walks out of the cave, on guard for any more goblins or bugbears.  When you reach the opening and can finally see the sky again, you all let out a collective sigh of relief and sit in the sand, taking a breather before heading back to Cysa.
+	Orante puts her hand on your shoulder in a show of appreciation as your party walks out of the cave, on guard for any more goblins or bugbears.  When you reach the opening and can finally see the sky again, you all let out a collective sigh of relief and sit in the sand, taking a breather before &lt;a onclick=&quot;Passage.checkGear()&quot;&gt;heading back to Cysa.&lt;/a&gt;
 	&lt;/div&gt;
 &lt;div&gt;</tw-passagedata><tw-passagedata pid="94" name="Lose" tags="" position="1250,1025" size="100,100">&lt;if fail at any point&gt;  As you fall unconscious, you wonder what went wrong.  Was it because you were not destined to be a guardian?  Was it because you tried to be something you’re not?  These thoughts race through your mind before darkness takes you. Moments later, you awake.
 
@@ -1495,4 +1509,218 @@ You’re furious. No, not quite furious; you’re too distraught to be simply fu
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="129" name="Is there anything more satisfying?" tags="" position="275,1025" size="100,100">&lt;div&gt;
 	The dwarf notices you watching, but rather than stop or turn away, he gives you a wink and a lopsided grin. Before you can wonder why, he suddenly turns and flings the dagger. It whistles through the air—and smashes a clay cup across the hall, startling the orc man just about to drink from it. The orc gives a roar and leaps to his feet, but the dwarvish rogue has already vanished, along with all of his gear. You turn around before the orc sees you, but you can hardly hide your giddy grin as [[you hurry forward]], more eager than ever to reach the Quest-Givers’ counter.
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="130" name="health potion" tags="" position="725,5425" size="100,100">Restores 10 hp in combat, single use.</tw-passagedata></tw-storydata>
+</tw-passagedata><tw-passagedata pid="130" name="health potion" tags="" position="725,5425" size="100,100">Restores 10 hp in combat, single use.</tw-passagedata><tw-passagedata pid="131" name="heading back to Cysa.(Guardian)" tags="" position="1375,1900" size="100,100">&lt;div&gt;
+	&lt;div&gt;
+	You return to Cysa, your packs spilling over with spoils, your armor spattered with sand and
+blood.
+	&lt;/div&gt;
+	&lt;div&gt;
+	You know you should feel triumphant, a veritable champion returning from a day of grueling
+combat and successful adventuring, and yet…the feelings are empty. Hollowed out by the heavy scepter
+you carry in your hand. Dampened by the buckler strapped, vise-like, to your arm. The quest was a
+success. You defeated the minions of Ye Olde Evil. So why does it feel as if you are the one who lost in
+the end?
+You drag yourself into the [[guild hall,(Guardian)]] head hanging low.
+	&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="132" name="guild hall,(Guardian)" tags="" position="1375,2025" size="100,100">&lt;div&gt;
+	&lt;div&gt;
+	After you all have cleaned your gear and organized your treasures, your party regroups in the barracks, where you shed your armor for more comfortable clothes.
+	&lt;/div&gt;
+	&lt;div&gt;
+	“Good work, all,” Brutus is saying when you emerge from the closet. “Ah, there you are, &lt;%= s.NAME %&gt;”
+	&lt;/div&gt;
+	&lt;div&gt;
+	You briefly consider retreating back into the closet and hiding under the nearest pile of clothes.
+	&lt;/div&gt;
+	&lt;div&gt;
+	“I apologize for my mistakes on the battlefield,” you mutter sheepishly. A small thought squirms in the back of your mind: “You wouldn’t be apologizing if you were &lt;%= s.CHOSENROLE %&gt;, now would you?” You grind your teeth in frustration. It is true. But then what would your party members say?
+	&lt;/div&gt;
+	&lt;div&gt;
+	“It was your first real adventure. Some recruits struggle a bit in the beginnin’,” Brutus says kindly.
+	&lt;/div&gt;
+	&lt;div&gt;
+	Some recruits. You have a feeling he [[was never one of them.]]
+	&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="133" name="heading back to Cysa.(Other)" tags="" position="1500,1900" size="100,100">&lt;%
+	Passage.checkChosenRole = () =&gt; {
+		if(s.CHOSENROLE == &quot;knight&quot;){
+			story.show(&quot;guild hall,(Knight)&quot;);
+		}
+		else if(s.CHOSENROLE == &quot;mage&quot;){
+			story.show(&quot;guild hall,(Mage)&quot;);
+		}
+		else if(s.CHOSENROLE == &quot;rogue&quot;){
+			story.show(&quot;guild hall,(Rogue)&quot;);
+		}
+	}
+%&gt;
+
+&lt;div&gt;
+	&lt;div&gt;
+	You return to Cysa, your packs spilling over with spoils, your armor spattered with sand and blood.
+	&lt;/div&gt;
+	&lt;div&gt;
+You feel exhilarated, your triumphs on the beach rekindling the embers of your once-fading eagerness. You walk with a bit of a spring in your step, shoulders back, head held high. As you stride into the &lt;a onclick=&quot;Passage.checkChosenRole()&quot;&gt;guild hall,&lt;/a&gt; you have half a mind to boast loudly to the nearest adventurer you can find. This is how you always imagined it would feel—to return, victorious and proud, after a hard day of fighting and adventuring.
+	&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="134" name="was never one of them." tags="" position="1375,2150" size="100,100">&lt;div&gt;
+	&lt;div&gt;
+	“You’ll do better on the next quest, right, younglin’?” Brutus asks. His face is smiling, but hiseyes—pinprick pupils against blistering green—are intense and unblinking. You can feel Orante’s coolgaze on you as well.
+	&lt;/div&gt;
+	&lt;div&gt;
+	In that moment, you feel as if you are standing just beyond a doorway, peering into a room Brutusand Orante so comfortably inhabit. You feel so tantalizingly close to being allowed within; all thatseparates you is the thinnest of flesh and a word you need only say.
+	&lt;/div&gt;
+	&lt;div&gt;
+	“Yes,” you answer.
+	&lt;/div&gt;
+	&lt;div&gt;
+	Brutus’s grin broadens.
+	&lt;/div&gt;
+	&lt;div&gt;
+	“Good, good. That’s what we want to hear, younglin’,” he says in his low, gravelly voice. He looks as if he’s about to continue, but Orante smoothly cuts him off. “Why don’t you go to the marketplace and spend your well-deserved gold?” she says gently. “Brutus and I have plans to discuss—and where is Incerta?” You hadn’t even noticed that [[the rogue had disappeared.]]
+	&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="135" name="the rogue had disappeared." tags="" position="1375,2275" size="100,100">&lt;div&gt;
+	&lt;div&gt;
+	“Sure. I’ll be back later,” you say.
+	&lt;/div&gt;
+	&lt;div&gt;
+	You glance over your shoulder as you leave, looking at Brutus and Orante huddled over the tablein the middle of the room. You gave them the answer they wanted, yet you still feel as if you’re just beyond the doorway.
+	&lt;/div&gt;
+	&lt;div&gt;
+	You brood over your thoughts as you head down to the [[marketplace.-&gt;marketplace after quest 1]]
+	&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="136" name="marketplace after quest 1" tags="" position="1375,2400" size="100,100">&lt;div&gt;
+	&lt;div&gt;
+	The marketplace is rather calm today. Citizens mill about, tearing at skewers of grilled meats, picking at loaves of fruit-encrusted bread with their bare hands, carrying pails of milk and water back to their homes. The air is filled with idle chatter and generous amounts of laughter. You can hear the gentle tumble and crush of the ocean. Overhead, seagulls wheel against the sun.
+	&lt;/div&gt;
+	&lt;div&gt;
+	Every shop is open today. The empty vials, bottles, and jars strung from the eaves of the [[apothecary shop-&gt;apothecary shop after quest 1]] clink together in the gentle wind. The [[smithy-&gt;smithy after quest 1]] belches black clouds of smoke. The [[mentor&#39;s shop-&gt;mentor’s shop after quest 1]] broods in the shadow of the neighboring building. The guild hall looms in the distance; you will return there eventually, but first you ought to spend your hard-earned gold.
+	&lt;/div&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="137" name="guild hall,(Knight)" tags="" position="1500,2025" size="100,100">&lt;div&gt;
+	&lt;div&gt;
+	You freeze in place, swallowing. You prepare yourself for the deluge of reprimands sure to come.
+	&lt;/div&gt;
+	&lt;div&gt;
+	“That was…you were…well, you certainly were not usin’ guardian skills, were you, younglin’,” Brutus grunts.
+	&lt;/div&gt;
+	&lt;div&gt;
+	“Um. No. No, I was not,” you say. “But I did well enough without them, didn’t I?”
+	&lt;/div&gt;
+	&lt;div&gt;
+	Brutus eyes your heap of treasure and gold, lips curling around his fangs.
+	&lt;/div&gt;
+	&lt;div&gt;
+	“This is true,” he mutters. &lt;if role is knight&gt; “But we do not need another knight. I am the party’s knight. You are meant to be the party’s guardian.”
+	&lt;/div&gt;
+	&lt;div&gt;
+	“Had I not been there to help you slash our way through the goblins—” you begin.
+	&lt;/div&gt;
+	&lt;div&gt;
+	[[Brutus’s nostrils flare.]]
+	&lt;/div&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="138" name="guild hall,(Mage)" tags="" position="1625,2025" size="100,100">&lt;div&gt;
+	&lt;div&gt;
+	You freeze in place, swallowing. You prepare yourself for the deluge of reprimands sure to come.
+	&lt;/div&gt;
+	&lt;div&gt;
+	“That was…you were…well, you certainly were not usin’ guardian skills, were you, younglin’,” Brutus grunts. 
+	&lt;/div&gt;
+	&lt;div&gt;
+	“Um. No. No, I was not,” you say. “But I did well enough without them, didn’t I?”
+	&lt;/div&gt;
+	&lt;div&gt;
+	Brutus eyes your heap of treasure and gold, lips curling around his fangs.
+	&lt;/div&gt;
+	&lt;div&gt;
+	“This is true,” he mutters.
+	&lt;/div&gt;
+	&lt;div&gt;
+	“Be that as it may, we are not in particular need of another mage,” [[Orante says softly.]] 
+	&lt;/div&gt;
+&lt;/div&gt;
+	
+</tw-passagedata><tw-passagedata pid="139" name="guild hall,(Rogue)" tags="" position="1750,2025" size="100,100">&lt;div&gt;
+	&lt;div&gt;
+	You freeze in place, swallowing. You prepare yourself for the deluge of reprimands sure to come.
+	&lt;/div&gt;
+	&lt;div&gt;
+	“That was…you were…well, you certainly were not usin’ guardian skills, were you, younglin’,” Brutus grunts. 
+	&lt;/div&gt;
+	&lt;div&gt;
+	“Um. No. No, I was not,” you say. “But I did well enough without them, didn’t I?”
+	&lt;/div&gt;
+	&lt;div&gt;
+	Brutus eyes your heap of treasure and gold, lips curling around his fangs.
+	&lt;/div&gt;
+	&lt;div&gt;
+	“This is true,” he mutters.
+	&lt;/div&gt;
+	&lt;div&gt;
+	 You look around, wondering if Incerta is particularly offended by the second rogue in the party. However, she is nowhere to be found. Curious. You never even saw her slip away.
+	 &lt;/div&gt;
+	&lt;div&gt;
+	“Incerta didn’t seem to mind the extra help,” you point out. “If anything, it almost seemed like she would rather [[I be the rogue—]]”
+	&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="140" name="Brutus’s nostrils flare." tags="" position="1500,2150" size="100,100">&lt;div&gt;	
+	&lt;div&gt;
+	*“I did not need help,”* he growls. He takes a breath, calming himself. “I was fine. We were fine.”
+	&lt;/div&gt;
+	&lt;div&gt;
+	“I meant no offense—” you say quickly.
+	&lt;/div&gt;
+	&lt;div&gt;
+	“None taken, recruit. But we need to work together as a party. I’m sure you were just confused when you bought the wrong gear, but I expect you’ll correct that mistake today, right?” He doesn’t wait for your response. “Good.”
+	&lt;/div&gt;
+	&lt;div&gt;
+	He looks as if he’s about to continue, but Orante smoothly cuts him off.
+	&lt;/div&gt;
+	&lt;div&gt;
+	“Why don’t you go to the marketplace and spend your well-deserved gold?” she says gently. “Brutus and I have plans to discuss—and where is Incerta?” You hadn’t even noticed that [[the rogue had disappeared.]]
+	&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="141" name="I be the rogue—" tags="" position="1750,2150" size="100,100">&lt;div&gt;
+	&lt;div&gt;
+	“Incerta is perfectly comfortable with her role,” Brutus interjects, “and you would be, too, if you had bought the proper gear. I’m sure you were just confused when you bought the wrong gear, but I expect you’ll correct that mistake today, right?” He doesn’t wait for your response. “Good.”
+	&lt;/div&gt;
+	&lt;div&gt;
+He looks as if he’s about to continue, but Orante smoothly cuts him off.
+“Why don’t you go to the marketplace and spend your well-deserved gold?” she says gently. “Brutus and I have plans to discuss—and [[where is Incerta?”-&gt;the rogue had disappeared.]]
+	&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="142" name="Orante says softly." tags="" position="1625,2150" size="100,100">&lt;div&gt;
+	&lt;div&gt;
+	“But I was helpful! Our fireballs kept the goblins off Brutus. Our freezes let Incerta pick off the goblins without consequence. You and I—we worked well together!” you protest.
+	&lt;/div&gt;
+	&lt;div&gt;
+	“I suppose…” Orante murmurs. Though her face is skeptical, you know she realizes the truth of your words. “Well, why don’t you go to the marketplace and spend your well-deserved gold. Brutus and I have plans to discuss—and where is Incerta?” You hadn’t even noticed that [[the rogue had disappeared.]]
+	&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="143" name="mentor’s shop after quest 1" tags="" position="1375,2525" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="144" name="apothecary shop after quest 1" tags="" position="1625,2525" size="100,100">&lt;div&gt;
+	&lt;div&gt;
+	The [apothecary] claps her hands together upon seeing you—and then quickly waves away the ensuing cloud of colourful powder that explodes from her chalked palms.
+	&lt;/div&gt;
+	&lt;div&gt;
+	“What do ye need, dearie?” she coughs.
+	&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="145" name="smithy after quest 1" tags="" position="1500,2525" size="100,100">&lt;div&gt;
+	&lt;div&gt;
+	You find Incerta in the lobby, to your great surprise. She is leaning against the counter, counting out gold coins and sliding them across to the blacksmith. He drops something into her outstretched palm. She thanks him, a rare smile flashing across her face, and the blacksmith moves deeper into the smithy to yell at an apprentice. Incerta turns—and crashes solidly into you.
+	&lt;/div&gt;
+	&lt;div&gt;
+	“Watch it!” she snaps. Whatever she had been holding spills free of her hand and scatters across the floor.
+	&lt;/div&gt;
+	&lt;div&gt;
+	“Sorry, I am terribly sorry,” you apologize. “Here, let me help you—”
+	&lt;/div&gt;
+	&lt;div&gt;
+	You bend down and grab one of the many small, black objects now littered about your shoes. You frown, peering closer. It’s an arrowhead.
+	&lt;/div&gt;
+	&lt;div&gt;
+	Incerta swiftly snatches it from you and gathers the rest. She leaves without a word, but the look on her face is absolutely murderous. You stare after her in confusion. Why would a rogue ever need an arrowhead? You shrug and approach the [[smithy counter.]]
+	&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="146" name="smithy counter." tags="" position="1500,2650" size="100,100">&lt;div&gt;
+	&lt;div&gt;
+	The [blacksmith] moves to the counter, shrewd eyes studying your face.
+	&lt;/div&gt;
+	&lt;div&gt;
+    “So? How was your first quest?” he asks.
+	&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata></tw-storydata>
