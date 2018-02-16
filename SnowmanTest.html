@@ -1,18 +1,19 @@
-<tw-storydata name="SnowmanTest" startnode="115" creator="Twine" creator-version="2.2.1" ifid="C88D7875-044B-4462-8441-28734691F905" zoom="1" format="Snowman" format-version="1.3.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/*CUSTOM CSS*/
+<tw-storydata name="SnowmanTest" startnode="103" creator="Twine" creator-version="2.2.1" ifid="C88D7875-044B-4462-8441-28734691F905" zoom="1" format="Snowman" format-version="1.3.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/*CUSTOM CSS*/
 body {
-  background-color: black;
-  color: white;
+  background-color: #050505;
+  color: #FFFFFF;
   font-family: "Verdana";
 }
 
 a {
- color: cyan; 
+  color: #7FB7BE; 
+  font-weight: bold;
 }
 
 button {
 	border: none;
   	border-radius: 5px;
-  	color: white;
+  	color: #FFFFFF;
   	background-color: #313131;
 }
 
@@ -20,7 +21,7 @@ button {
   font-family: "Verdana";
   display: block;
   position: fixed;
-  background-color: #424242;
+  background-color: #1B1B1B;
   padding: 20px;
   z-index: -1;
 }
@@ -55,13 +56,15 @@ button {
 }
 
 .toast-info, .toast {
- background-color: black;
+ background-color: #050505;
  opacity: 1;
 }
 
 tooltip {
-  color: green;
+  color: #D3F3EE;
+  text-decoration: underline;
 }
+
 
 
 
@@ -120,6 +123,7 @@ $(document).on('showpassage:after', () => {
 		$('.fade').fadeIn(2000);
 
 });
+
 
 
 
@@ -831,29 +835,7 @@ You’re furious. No, not quite furious; you’re too distraught to be simply fu
 	“Oh, thank you,” you say gratefully. Now that you are awake, you realize how very hungry you have become. You hop out of your bunk and take the food from the knight. Relieved of the platter, Brutus unrolls the scroll and [[waves it about.]]
 	&lt;/div&gt;
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="64" name="waves it about." tags="" position="1375,150" size="100,100">&lt;%
-	Passage.checkChosenRole = () =&gt; {
-		if(s.GEAR == &quot;other&quot;){
-			if(s.CHOSENROLE == &quot;knight&quot;){
-				story.show(&quot;piled in the corner.(Knight)&quot;);
-			}
-			else if(s.CHOSENROLE == &quot;mage&quot;){
-				story.show(&quot;piled in the corner.(Mage)&quot;);
-			}
-			else if(s.CHOSENROLE == &quot;rogue&quot;){
-				story.show(&quot;piled in the corner.(Rogue)&quot;);
-			}
-			else{
-				story.show(&quot;ERROR&quot;);
-			}
-		}
-		else {
-			story.show(&quot;piled in the corner.(Guardian)&quot;);
-		}
-	}
-%&gt;
-
-&lt;div&gt;
+</tw-passagedata><tw-passagedata pid="64" name="waves it about." tags="" position="1375,150" size="100,100">&lt;div&gt;
 	&lt;div&gt;
 	“I swung by the Quest-Givers this mornin’ and got ourselves a quest. It’s an easy one. A good introduction for our newest member,” he continues. “We’re to clear out a beach near Cysa. They’ve been infested with Ye Olde Evil’s baddies as of late.”
 	&lt;/div&gt;
@@ -861,35 +843,9 @@ You’re furious. No, not quite furious; you’re too distraught to be simply fu
 	“Sounds delightful,” Orante murmurs as she follows Brutus inside. Incerta nods silently from her own bed.
 	&lt;/div&gt;
 	&lt;div&gt;
-	“Perfect place to teach you how to use your skills and wield your weapons. Speaking of…” Brutus looks at your gear, &lt;a onclick=&quot;Passage.checkChosenRole()&quot;&gt;piled in the corner.&lt;/a&gt;
+	“Perfect place to teach you how to use your skills and wield your weapons. Speaking of…” Brutus looks at your gear, [[piled in the corner.(Guardian)]]
 	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="65" name="piled in the corner.(Knight)" tags="" position="1375,275" size="100,100">&lt;div&gt;
-	&lt;div&gt;
-	Brutus stares at the shield and sword, baffled. He slowly turns—not to you, but to Orante.
-	&lt;/div&gt;
-	&lt;div&gt;
-    “This is not the gear of a guardian,” he says, a slight question in his voice.
-	&lt;/div&gt;
-	&lt;div&gt;
-    You feel your heart skip a beat.
-	&lt;/div&gt;
-	&lt;div&gt;
-    “Ah…perhaps &lt;%= s.NAME %&gt; was confused. Bought the wrong armor, the wrong weapons. It is awfully loud in the smithy, you know. Easy to mishear an order. A mistake. No more than that,” Orante assures him.
-	&lt;/div&gt;
-	&lt;div&gt;
-    “Of course. Just a little mistake.” Brutus nods, satisfied with this answer. “We can sort this out when we return after our adventure.”
-	&lt;/div&gt;
-	&lt;div&gt;
-    You want to say, “No, we really cannot,” but you bite your tongue.
-	&lt;/div&gt;
-	&lt;div&gt;
-    “But how…the skills…how will &lt;%= s.NAME %&gt; use a guardian’s skills with the wrong weapons?” Orante asks.
-	&lt;/div&gt;
-	&lt;div&gt;
-    [[Brutus waves the question away.]]
-	&lt;/div&gt;
-&lt;/div&gt;
-	</tw-passagedata><tw-passagedata pid="66" name="look back at Brutus." tags="" position="1375,650" size="100,100">&lt;div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="65" name="look back at Brutus." tags="" position="1375,650" size="100,100">&lt;div&gt;
 	&lt;div&gt;
 	“Let me check.” Brutus says as he slings his pack off his shoulder, tossing it into the sand with a soft thud.  He digs around for a few moments before pulling out the same scroll you had seen before.  “According to this, there’s a cave just up the beach full of goblins. Minions of Ye Olde Evil, of course. Just have to eliminate the little buggers. Ought to be easy.”
 	&lt;/div&gt;
@@ -900,11 +856,11 @@ You’re furious. No, not quite furious; you’re too distraught to be simply fu
 	You all jog to catch up with Orante before settling into a formation, with Brutus in front, you just behind, and Orante and Incerta following closely behind. As you approach the entrance to the cave, the smell of rotting meat and unwashed bodies slams into you.  You nearly jump out of your skin as a soft voice spits out a single word with as much venom as it can muster. “Goblins.”  Incerta says, as if the word alone leaves a [[bad taste in her mouth.]]
 	&lt;/div&gt;
 &lt;div&gt;
-</tw-passagedata><tw-passagedata pid="67" name="bad taste in her mouth." tags="" position="1375,775" size="100,100">&lt;div&gt;
+</tw-passagedata><tw-passagedata pid="66" name="bad taste in her mouth." tags="" position="1375,775" size="100,100">&lt;div&gt;
 	&lt;div&gt;
 	Brutus draws his sword and prepares his shield, bouncing on the balls of his feet, eager for a battle. Orante opens her book and its pages begin flipping by themselves. Incerta quietly draws a dagger and pulls the hood up on her cloak, seeming to melt into the darkness. You hastily draw your own weapons, more than a little nervous about your [[first fight.]]
 	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="68" name="first fight." tags="" position="1375,900" size="100,100">&lt;div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="67" name="first fight." tags="" position="1375,900" size="100,100">&lt;div&gt;
 	&lt;div&gt;
 	You hear a cackling coming from up above you as four small shapes drop down from a ledge, each drawing curved swords with notches all along them. As they draw themselves to their full height of four feet, you realize they are goblins.
 	&lt;/div&gt;
@@ -912,14 +868,14 @@ You’re furious. No, not quite furious; you’re too distraught to be simply fu
 	The one closest to the the group sneers at you, exposing his yellow crooked teeth.  “Well, well, well. What do we have here? A little band of adventurers looking to stop us? Pathetic. That one looks like they’re gonna piss their britches.”  He says, pointing his sword towards you.  “Well then, shall we get this [[slaughter over with?”]]
 	&lt;/div&gt;
 &lt;div&gt;
-</tw-passagedata><tw-passagedata pid="69" name="VICTORY! (BATTLE 1)" tags="need-programming-help" position="1375,1150" size="100,100">&lt;div&gt;
+</tw-passagedata><tw-passagedata pid="68" name="VICTORY! (BATTLE 1)" tags="need-programming-help" position="1375,1150" size="100,100">&lt;div&gt;
 	&lt;div&gt;
 	&lt; If win.&gt;  As the last goblin falls to the ground, Brutus takes a cloth from his pocket and wipes his blade off, grimacing at the smears the black goblin blood leaves.  “Filthy creatures.  &lt;If did guardian skills&gt; “You tried your best, &lt;name&gt;. I am sure you will get the hang of it soon. Just takes a little practice.” His large hand claps you on the back, accompanied by a loud chuckle, [[silenced with a sharp shush from Orante.-&gt;move deeper]]
 	&lt;/div&gt;
 	&lt;div&gt;
 	&lt; If used other skills&gt; Brutus gives you an appraising look. “Not too shabby, &lt;name&gt;.  You seemed to handle yourself alright, even in spite of those...wrong weapons.  Still, it’ll be good to get you your proper gear and [[see what you really can do.”-&gt;move deeper]]
 	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="70" name="move deeper" tags="" position="1375,1275" size="100,100">&lt;div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="69" name="move deeper" tags="" position="1375,1275" size="100,100">&lt;div&gt;
 	&lt;div&gt;
 	As he congratulates you, your group moves deeper into the dank cave, the sound of the waves growing quieter behind you as you go further and further. Eventually, your eyes strain to make out more than the faintest of shapes. As you continue, your ears strain as small scrabbling sounds enter them. You chalk it up to rats, and nothing more. 
 	&lt;/div&gt;
@@ -932,7 +888,7 @@ You’re furious. No, not quite furious; you’re too distraught to be simply fu
 	&lt;div&gt;
 	As she raises her hand, a globe of light slowly twinkling into existence. As it casts its light over the dark recesses of the cave, it illuminates three goblins hiding in the shadows.  Both groups stare at each other for a few moments before the goblins charge with a [[horrifying shriek.]]
 	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="71" name="horrifying shriek." tags="" position="1500,1400" size="100,100">[[FIGHT 2]]</tw-passagedata><tw-passagedata pid="72" name="FIGHT 2" tags="" position="1375,1525" size="100,100">&lt;div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="70" name="horrifying shriek." tags="" position="1500,1400" size="100,100">[[FIGHT 2]]</tw-passagedata><tw-passagedata pid="71" name="FIGHT 2" tags="" position="1375,1525" size="100,100">&lt;div&gt;
 	&lt;div&gt;
 	&lt;if win&gt;  As you defeat the goblins, a fourth one darts out of the shadows and runs farther into the cave.  As your group races after him, you hear a bellowing voice come from deeper in the cave.
 	&lt;/div&gt;
@@ -942,17 +898,7 @@ You’re furious. No, not quite furious; you’re too distraught to be simply fu
 	&lt;div&gt;
 	As you look towards Brutus for an answer, you swear his face goes slightly pale. Odd. Didn’t he say this would be easy? As you creep forward into the cave, you see a massive figure standing before you, its back facing towards you and covered in a dark yellow hair. As it turns, you see the hair covers its entire body, with squinting, brutish eyes peering out of a hair-covered face marked with two large tusks jutting out from its bottom lip. “There you are,” the bugbear growls, hoisting its spiked club onto its shoulder. “Gorn was just about to come [[find you.”]]
 	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="73" name="find you.”" tags="" position="1500,1650" size="100,100">[[FIGHT 3]]</tw-passagedata><tw-passagedata pid="74" name="FIGHT 3" tags="" position="1375,1775" size="100,100">&lt;%
-	s.GEAR = &quot;guardian&quot;;
-	
-	Passage.checkGear = () =&gt; {
-		if(s.GEAR == &quot;guardian&quot;){
-			story.show(&quot;heading back to Cysa.(Guardian)&quot;);
-		else {
-			story.show(&quot;heading back to Cysa.(Other)&quot;);
-		}
-	}
-%&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="72" name="find you.”" tags="" position="1500,1650" size="100,100">[[FIGHT 3]]</tw-passagedata><tw-passagedata pid="73" name="FIGHT 3" tags="" position="1375,1775" size="100,100">
 
 &lt;div&gt;
 	&lt;div&gt;
@@ -962,11 +908,11 @@ You’re furious. No, not quite furious; you’re too distraught to be simply fu
 	“We did it! We showed those ugly bastards! Now let’s get out of here.”  
 	&lt;/div&gt;
 	&lt;div&gt;
-	Orante puts her hand on your shoulder in a show of appreciation as your party walks out of the cave, on guard for any more goblins or bugbears.  When you reach the opening and can finally see the sky again, you all let out a collective sigh of relief and sit in the sand, taking a breather before &lt;a onclick=&quot;Passage.checkGear()&quot;&gt;heading back to Cysa.&lt;/a&gt;
+	Orante puts her hand on your shoulder in a show of appreciation as your party walks out of the cave, on guard for any more goblins or bugbears.  When you reach the opening and can finally see the sky again, you all let out a collective sigh of relief and sit in the sand, taking a breather before [[heading back to Cysa.-&gt;heading back to Cysa.(Guardian)]]
 	&lt;/div&gt;
-&lt;div&gt;</tw-passagedata><tw-passagedata pid="75" name="Lose" tags="" position="1250,1025" size="100,100">&lt;if fail at any point&gt;  As you fall unconscious, you wonder what went wrong.  Was it because you were not destined to be a guardian?  Was it because you tried to be something you’re not?  These thoughts race through your mind before darkness takes you. Moments later, you awake.
+&lt;div&gt;</tw-passagedata><tw-passagedata pid="74" name="Lose" tags="" position="1250,1025" size="100,100">&lt;if fail at any point&gt;  As you fall unconscious, you wonder what went wrong.  Was it because you were not destined to be a guardian?  Was it because you tried to be something you’re not?  These thoughts race through your mind before darkness takes you. Moments later, you awake.
 
-[[RETRY-&gt;first adventure.]] </tw-passagedata><tw-passagedata pid="76" name="Choose Gender" tags="" position="25,1400" size="100,100">&lt;%
+[[RETRY-&gt;first adventure.]] </tw-passagedata><tw-passagedata pid="75" name="Choose Gender" tags="" position="25,1400" size="100,100">&lt;%
 	Passage.getGender = () =&gt; {
 	
 		s.GENDER1 = prompt(&quot;Enter your Gender&quot;, &quot;He, She, They, etc.&quot;); 
@@ -1012,18 +958,18 @@ You’re furious. No, not quite furious; you’re too distraught to be simply fu
 	
 &lt;div id=&quot;retry2&quot; hidden&gt;
 	**Please enter a pronoun for all three prompts.**
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="77" name="dry and calloused.(Knight)" tags="" position="150,4200" size="100,100">&lt;div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="76" name="dry and calloused.(Knight)" tags="" position="150,4200" size="100,100">&lt;div&gt;
 	“You must be our newest addition. &lt;%= s.NAME %&gt;, was it? Welcome,” he says. “My name is Brutus. Knight.” He casually flexes, as if his role was not apparent enough already. You cannot help but feel a little jealous. How pleasant it must be, to be so certain of one’s role. You wonder what it is like—to know, since birth, and to be completely [[comfortable with the knowledge.-&gt;apparent enough already.]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="78" name="apparent enough already.(Mage)" tags="" position="150,4325" size="100,100">&lt;div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="77" name="apparent enough already.(Mage)" tags="" position="150,4325" size="100,100">&lt;div&gt;
 	&lt;div&gt;
 	An elf woman slips past his broad frame and approaches you, head tilted, grey eyes curious. 
 	&lt;/div&gt;
 	&lt;div&gt;
 	“And I am Orante. Mage,” she says. Her voice is soft -- velvet-like, almost. You cannot help but feel a little jealous. How pleasant it must be, to be so certain of one’s role. You wonder what it is like—to know, since birth, and to be completely [[comfortable with the knowledge.-&gt;soft -- velvet-like, almost.]]
 	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="79" name="shadow goes before light.(Rogue)" tags="" position="150,4575" size="100,100">&lt;div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="78" name="shadow goes before light.(Rogue)" tags="" position="150,4575" size="100,100">&lt;div&gt;
 “That was Incerta. Rogue. A bit shy, that one, but she means no offense,” Brutus chuckles. You shift slightly, peering between Brutus and Orante, to watch the rogue slip on a cloak and pull its hood over her head. You cannot help but feel a little jealous. That could have been you in there, donning your cape and cowl, no one to doubt you, no papers or magics to stop you. How pleasant it must be, to be so certain of one’s role. You wonder what it is like—to know, since birth, and to be completely [[comfortable with the knowledge.-&gt;she means no offense,”]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="80" name="“I am… not hungry,” you say at last.(Knight)" tags="" position="150,5075" size="100,100">&lt;div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="79" name="“I am… not hungry,” you say at last.(Knight)" tags="" position="150,5075" size="100,100">&lt;div&gt;
 	&lt;div&gt;
 	Brutus winks.
 	&lt;/div&gt;
@@ -1031,7 +977,7 @@ You’re furious. No, not quite furious; you’re too distraught to be simply fu
 	“First day nerves, eh? We shall bring extra provisions, then. Nothing like a good day of explorin’ and fightin’ to stir up an appetite. And trust me, you’ll need plenty of food if you ever wish to look as I do.” He doesn’t flex this time, but he does roll his sleeves up, exposing the corded muscles running up the length of his forearms, the skin leathery beneath swathes of shiny scars. You know he is unaware of your desire to be a knight, but part of you still stings from this unintentional taunting. You want more than to simply look like him—you want to [[*be* like him.-&gt; need some new gear.&quot;]]
 	&lt;/div&gt;
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="81" name="first adventure." tags="" position="1375,525" size="100,100">&lt;div&gt;
+</tw-passagedata><tw-passagedata pid="80" name="first adventure." tags="" position="1375,525" size="100,100">&lt;div&gt;
 	&lt;div&gt;
 	You and your group walk for the better part of an hour, the sights and smells of Cysa flooding your senses once more as you head out on your first adventure.  As you leave the city, the forest begins to grow closer and closer, before giving way to a sandy path.  The trip itself is unremarkable, with Brutus filling the silence with bad jokes, Orante’s polite laughter, and Incerta’s silence.  You feel her eyes burning into the back of your head, yet whenever you turn around, she’s staring at the ground.
 	&lt;/div&gt;
@@ -1041,57 +987,7 @@ You’re furious. No, not quite furious; you’re too distraught to be simply fu
 	&lt;div&gt;
 	“So where did the Quest-Giver say we had to go?” She asks coolly, turning to [[look back at Brutus.]]
 	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="82" name="piled in the corner.(Mage)" tags="" position="1500,275" size="100,100">&lt;div&gt;
-	&lt;div&gt;
-	Brutus stares at the robe and staff, baffled. He slowly turns—not to you, but to Orante.
-	&lt;/div&gt;
-	&lt;div&gt;
-    “This is not the gear of a guardian,” he says, a slight question in his voice.
-	&lt;/div&gt;
-	&lt;div&gt;
-    You feel your heart skip a beat.
-	&lt;/div&gt;
-	&lt;div&gt;
-    “Ah…perhaps &lt;%= s.NAME %&gt; was confused. Bought the wrong armor, the wrong weapons. It is awfully loud in the smithy, you know. Easy to mishear an order. A mistake. No more than that,” Orante assures him.
-	&lt;/div&gt;
-	&lt;div&gt;
-    “Of course. Just a little mistake.” Brutus nods, satisfied with this answer. “We can sort this out when we return after our adventure.”
-	&lt;/div&gt;
-	&lt;div&gt;
-    You want to say, “No, we really cannot,” but you bite your tongue.
-	&lt;/div&gt;
-	&lt;div&gt;
-    “But how…the skills…how will &lt;%= s.NAME %&gt; use a guardian’s skills with the wrong weapons?” Orante asks.
-	&lt;/div&gt;
-	&lt;div&gt;
-    [[Brutus waves the question away.]]
-	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="83" name="piled in the corner.(Rogue)" tags="" position="1625,275" size="100,100">&lt;div&gt;
-	&lt;div&gt;
-	Brutus stares at the assortment of daggers, baffled. He slowly turns—not to you, but to Orante.
-	&lt;/div&gt;
-	&lt;div&gt;
-    “This is not the gear of a guardian,” he says, a slight question in his voice.
-	&lt;/div&gt;
-	&lt;div&gt;
-    You feel your heart skip a beat.
-	&lt;/div&gt;
-	&lt;div&gt;
-    “Ah…perhaps &lt;%= s.NAME %&gt; was confused. Bought the wrong armor, the wrong weapons. It is awfully loud in the smithy, you know. Easy to mishear an order. A mistake. No more than that,” Orante assures him.
-	&lt;/div&gt;
-	&lt;div&gt;
-    “Of course. Just a little mistake.” Brutus nods, satisfied with this answer. “We can sort this out when we return after our adventure.”
-	&lt;/div&gt;
-	&lt;div&gt;
-    You want to say, “No, we really cannot,” but you bite your tongue.
-	&lt;/div&gt;
-	&lt;div&gt;
-    “But how…the skills…how will &lt;%= s.NAME %&gt; use a guardian’s skills with the wrong weapons?” Orante asks.
-	&lt;/div&gt;
-	&lt;div&gt;
-    [[Brutus waves the question away.]]
-	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="84" name="piled in the corner.(Guardian)" tags="" position="1750,275" size="100,100">&lt;div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="81" name="piled in the corner.(Guardian)" tags="" position="1375,275" size="100,100">&lt;div&gt;
 	&lt;div&gt;
 	Brutus nods at the sight of the classic scepter and shield.
 	&lt;/div&gt;
@@ -1104,48 +1000,40 @@ You’re furious. No, not quite furious; you’re too distraught to be simply fu
 	&lt;div&gt;
     The bulky pauldrons and heavy cuirass of a guardian feel large and awkward on your body. The helm feels lopsided, and the metal greaves make every step a struggle against gravity. The scepter feels foreign in your gauntlets, the buckler straps too loose or too tight no matter how you try to adjust them. Part of you wonders if you will ever be able to wear the armor of [[a guardian comfortably.-&gt;first adventure.]]
 	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="85" name="Brutus waves the question away." tags="" position="1375,400" size="100,100">&lt;div&gt;
-	&lt;div&gt;
-	“It is just one day. It may be a bit difficult, but I am sure &lt;%= s.NAME %&gt; can work through it. Right, &lt;%= s.NAME %&gt;?”
-	&lt;/div&gt;
-	&lt;div&gt;
-    “Sure,” you say quickly. Anything to be allowed to use your desired weapons.
-	&lt;/div&gt;
-	&lt;div&gt;
-    After everyone has geared up and filled their bags with potions and rations, your party leaves the guild hall, and embarks on your [[first adventure.]]   </tw-passagedata><tw-passagedata pid="86" name="simple flyer" tags="" position="25,150" size="100,100">&lt;div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="82" name="simple flyer" tags="" position="25,150" size="100,100">&lt;div&gt;
 	*“Hear ye, hear ye! Ye Olde Evil has returned to the lands of Eorundem once more, unleashing hordes of wicked monsters upon the fair beaches, desecrating the gentle forests with magics most foul, and threatening the great city of Cysa, Flower-by-the-Sea! The Adventurers’ Guild of Cysa is in urgent need of capable youths that have come of age to help combat this threat! Journey to Cysa and join the Guild for adventure, fame, and [[fortune aplenty!”]]*
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="87" name="fortune aplenty!”" tags="" position="25,275" size="100,100">Now, a week of traveling later, you find yourself at last in Cysa, the seaside capital of Eorundem. You quickly learn why Cysa is known as the Flower-by-the-Sea; the city is designed to mimic a rose and its innumerable folds. Each district is a petal, each road following the intricate pattern of the flower’s irregular whorls. It is the very center of the rose—the close cluster of petals—that holds the heart of Cysa: the marketplace, and more importantly, the [[Adventurers’ Guild.]]
-</tw-passagedata><tw-passagedata pid="88" name="slip inside." tags="" position="25,525" size="100,100">The guild hall bristles with activity. To one side, adventurers are bustling up and down rows of long, wooden tables, setting out platters of food and fitting gear for the [new recruits] that sit surrounded by their party members. Adventurers not preoccupied with newcomers huddle together over maps stretched across the dining tables, discussing strategies and drawing out plans of attack. To the other side, rickety staircases spiral up to the barracks; adventurers lean against the banisters, drinking from steaming mugs, watching the commotion downstairs. At ground level, several open doors reveal training rooms, armories, granaries, spare storage rooms, and the stables. Your mind spins; the guild hall looks large enough from the outside, but the inside is somehow far more expansive. [[You suspect magic.]]  </tw-passagedata><tw-passagedata pid="89" name="New Recruits" tags="" position="150,525" size="100,100">You can tell they are new because they look just as dazed, awed, and entirely unequipped for adventuring as you do.</tw-passagedata><tw-passagedata pid="90" name="Quest-Giver" tags="" position="150,650" size="100,100">Wizened men and women who have seen sunrise and storm aplenty, and have survived them all. They have an arcane understanding of the world and a piercing insight into the minds and hearts of people. They, and only they, know what quests to give when, and to whom. At least, that is what you’ve been told. You figure the tales are probably true.</tw-passagedata><tw-passagedata pid="91" name="most important part." tags="" position="25,775" size="100,100">&lt;div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="83" name="fortune aplenty!”" tags="" position="25,275" size="100,100">Now, a week of traveling later, you find yourself at last in Cysa, the seaside capital of Eorundem. You quickly learn why Cysa is known as the Flower-by-the-Sea; the city is designed to mimic a rose and its innumerable folds. Each district is a petal, each road following the intricate pattern of the flower’s irregular whorls. It is the very center of the rose—the close cluster of petals—that holds the heart of Cysa: the marketplace, and more importantly, the [[Adventurers’ Guild.]]
+</tw-passagedata><tw-passagedata pid="84" name="slip inside." tags="" position="25,525" size="100,100">The guild hall bristles with activity. To one side, adventurers are bustling up and down rows of long, wooden tables, setting out platters of food and fitting gear for the [new recruits] that sit surrounded by their party members. Adventurers not preoccupied with newcomers huddle together over maps stretched across the dining tables, discussing strategies and drawing out plans of attack. To the other side, rickety staircases spiral up to the barracks; adventurers lean against the banisters, drinking from steaming mugs, watching the commotion downstairs. At ground level, several open doors reveal training rooms, armories, granaries, spare storage rooms, and the stables. Your mind spins; the guild hall looks large enough from the outside, but the inside is somehow far more expansive. [[You suspect magic.]]  </tw-passagedata><tw-passagedata pid="85" name="New Recruits" tags="" position="150,525" size="100,100">You can tell they are new because they look just as dazed, awed, and entirely unequipped for adventuring as you do.</tw-passagedata><tw-passagedata pid="86" name="Quest-Giver" tags="" position="150,650" size="100,100">Wizened men and women who have seen sunrise and storm aplenty, and have survived them all. They have an arcane understanding of the world and a piercing insight into the minds and hearts of people. They, and only they, know what quests to give when, and to whom. At least, that is what you’ve been told. You figure the tales are probably true.</tw-passagedata><tw-passagedata pid="87" name="most important part." tags="" position="25,775" size="100,100">&lt;div&gt;
 	As the line of recruits slowly lurches down the hall, you gaze at the adventurers who have gathered this morning. An elf ranger sits with her back against the wall, busily restringing her bow, rubbing the elegant weapon down with oil. You remember your childhood friend, who always took the role of ranger when you played together. She found the role fun, but you never took any interest in it. You spot a dwarf guardian cleaning his buckler, scepter resting beside him. Another role you never found particularly exciting. In fact, of all the roles, you like the guardian the least. Not that there is anything inherently wrong with guardians. It’s just, it isn’t… you. Ever since childhood, you have always felt that you were a [[&lt;%= s.CHOSENROLE%&gt;.]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="92" name="knight." tags="" position="25,900" size="100,100">You scan the hall for a knight, eyes at last alighting on an orc woman entertaining a small circle of adventurers—her party, no doubt. She is impossibly tall and radiates raw strength, her muscles flexing and rippling with every gesture. You eye the massive axe sitting at her side in awe. The curve of the blade almost seems to grin at you, and you wonder how many foul monsters have met their end at its edge. The orc woman catches you gazing at her weapon, and her face splits into a grin of its own, lips curling around her protruding fangs. You hurry away, heart hammering—not from fear, but from [[sheer giddiness.]]</tw-passagedata><tw-passagedata pid="93" name="mage." tags="" position="150,900" size="100,100">&lt;div&gt;
+</tw-passagedata><tw-passagedata pid="88" name="knight." tags="" position="25,900" size="100,100">You scan the hall for a knight, eyes at last alighting on an orc woman entertaining a small circle of adventurers—her party, no doubt. She is impossibly tall and radiates raw strength, her muscles flexing and rippling with every gesture. You eye the massive axe sitting at her side in awe. The curve of the blade almost seems to grin at you, and you wonder how many foul monsters have met their end at its edge. The orc woman catches you gazing at her weapon, and her face splits into a grin of its own, lips curling around her protruding fangs. You hurry away, heart hammering—not from fear, but from [[sheer giddiness.]]</tw-passagedata><tw-passagedata pid="89" name="mage." tags="" position="150,900" size="100,100">&lt;div&gt;
 	&lt;div&gt;
 	You scan the hall for a mage, and catch sight of an elvish man leafing through a thick tome as he paces before an empty bowl. He is slender and raven-haired, his narrow eyes squinting at whatever is scrawled across the delicate, yellowed paper. The book itself, bound in leather and falling apart, hardly looks impressive—but there is something arcane about it, something ancient and tantalizingly mysterious. It almost seems to whisper to you, to promise you that all that can be known of this world and the next lies just another page-turn away, if only you would read it. You feel as if your very soul yearns to plumb its pages for knowledge. After all, what is knowledge, if not power? 
 	&lt;/div&gt;
 	&lt;div&gt;
 	The elf suddenly raises a hand, contorting his fingers into curious gestures, his lips moving as he chants under his breath. Lightning gathers in his palm, a crackling ball of knotted energy, just on the verge of [[breaking free]].
 	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="94" name="rogue." tags="" position="275,900" size="100,100">&lt;div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="90" name="rogue." tags="" position="275,900" size="100,100">&lt;div&gt;
 	You scan the hall for a rogue until you notice a dwarvish man idling against a pillar, absentmindedly spinning his dagger in his hand. At his side he carries a wicked-looking rapier. Before him, stretched out on a bench, is a leather bandolier carrying an assortment of glass jars and vials; some hold a fine black powder, others carry sloshing liquids, and one even appears to contain a tiny ball of lightning that bounces angrily between the walls of its prison. You slow your stride, mesmerized by the intricate patterns the dwarf carves in the air as he twirls and tosses his dagger. You always knew rogues were the most versatile of the roles, but only now can you truly appreciate the lethal bouquet of gadgets and trickery they arm themselves with. You can almost see yourself dashing about the outskirts of a chaotic skirmish, tossing those glass grenades into the fray, unleashing sudden gouts of flame, blanketing your foes in unnatural darkness—and then sneaking in when they’re most distracted and introducing their heart to your blade. [[Is there anything more satisfying?]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="95" name="sheer giddiness." tags="" position="25,1025" size="100,100">&lt;div&gt;
+</tw-passagedata><tw-passagedata pid="91" name="sheer giddiness." tags="" position="25,1025" size="100,100">&lt;div&gt;
 	&lt;div&gt;
 	You always knew knights were armored titans of pure power, cleaving and smashing and beheading their foes, but you had never seen a real one before, never realized how palpable their strength was, how *awesome* they looked. Excitement overtakes you as you imagine wielding an axe of your own. How satisfying it will feel, to grip its leather hilt, to feel the sheer ferocity of that weapon. How will you look in a winged helmet—or perhaps you will look better with horns? No, horns are so typical. Should you hold a buckler or go for a full kite shield? And what about the armor? Nothing too ornamental, but you don’t want to look too *plain,* either. You entertain the idea of lions on the pauldrons. Or perhaps roses swirling down the breastplate—an homage to Cysa itself, this wonderful city?
 	&lt;/div&gt;
 	&lt;div&gt;
 	Mind spinning, [[you hurry forward]] as the line shifts, more eager than ever to reach the Quest-Givers’ counter.
 	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="96" name="breaking free" tags="" position="150,1025" size="100,100">&lt;div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="92" name="breaking free" tags="" position="150,1025" size="100,100">&lt;div&gt;
 	&lt;div&gt;
 	And it does—break free, that is. With a loud crack, a stray bolt flings itself from the mage’s palm and smashes into the bowl, sending fragments of wood flying. There are several irate shouts from nearby adventurers. The mage apologizes sheepishly, tucks the tome under his arm, and begins cleaning up his mess. A few people look annoyed; some are vaguely amused. You, however, are {utterly enthralled.} You always knew mages were mere fingertips away from accessing the primordial power of the elements themselves, but you never knew the true reach of their knowledge, the extent of their skill. Imagine! Commanding the might of storms! Taming the ravenous fire! What could be better than that? Your fingertips can already feel the dusty cover of your own grimoire, your hands already twitching out the ghosts of spells.
 	&lt;/div&gt;
 	&lt;div&gt;
     Mind spinning, [[you hurry forward]] as the line shifts, more eager than ever to reach the Quest-Givers’ counter.
 	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="97" name="Is there anything more satisfying?" tags="" position="275,1025" size="100,100">&lt;div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="93" name="Is there anything more satisfying?" tags="" position="275,1025" size="100,100">&lt;div&gt;
 	The dwarf notices you watching, but rather than stop or turn away, he gives you a wink and a lopsided grin. Before you can wonder why, he suddenly turns and flings the dagger. It whistles through the air—and smashes a clay cup across the hall, startling the orc man just about to drink from it. The orc gives a roar and leaps to his feet, but the dwarvish rogue has already vanished, along with all of his gear. You turn around before the orc sees you, but you can hardly hide your giddy grin as [[you hurry forward]], more eager than ever to reach the Quest-Givers’ counter.
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="98" name="health potion" tags="" position="650,5700" size="100,100">Restores 10 hp in combat, single use.</tw-passagedata><tw-passagedata pid="99" name="heading back to Cysa.(Guardian)" tags="" position="1375,1900" size="100,100">&lt;div&gt;
+</tw-passagedata><tw-passagedata pid="94" name="health potion" tags="" position="650,5700" size="100,100">Restores 10 hp in combat, single use.</tw-passagedata><tw-passagedata pid="95" name="heading back to Cysa.(Guardian)" tags="" position="1375,1900" size="100,100">&lt;div&gt;
 	&lt;div&gt;
 	You return to Cysa, your packs spilling over with spoils, your armor spattered with sand and
 blood.
@@ -1158,7 +1046,7 @@ success. You defeated the minions of Ye Olde Evil. So why does it feel as if you
 the end?
 You drag yourself into the [[guild hall,(Guardian)]] head hanging low.
 	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="100" name="guild hall,(Guardian)" tags="" position="1375,2025" size="100,100">&lt;div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="96" name="guild hall,(Guardian)" tags="" position="1375,2025" size="100,100">&lt;div&gt;
 	&lt;div&gt;
 	After you all have cleaned your gear and organized your treasures, your party regroups in the barracks, where you shed your armor for more comfortable clothes.
 	&lt;/div&gt;
@@ -1177,28 +1065,7 @@ You drag yourself into the [[guild hall,(Guardian)]] head hanging low.
 	&lt;div&gt;
 	Some recruits. You have a feeling he [[was never one of them.]]
 	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="101" name="heading back to Cysa.(Other)" tags="" position="1500,1900" size="100,100">&lt;%
-	Passage.checkChosenRole = () =&gt; {
-		if(s.CHOSENROLE == &quot;knight&quot;){
-			story.show(&quot;guild hall,(Knight)&quot;);
-		}
-		else if(s.CHOSENROLE == &quot;mage&quot;){
-			story.show(&quot;guild hall,(Mage)&quot;);
-		}
-		else if(s.CHOSENROLE == &quot;rogue&quot;){
-			story.show(&quot;guild hall,(Rogue)&quot;);
-		}
-	}
-%&gt;
-
-&lt;div&gt;
-	&lt;div&gt;
-	You return to Cysa, your packs spilling over with spoils, your armor spattered with sand and blood.
-	&lt;/div&gt;
-	&lt;div&gt;
-You feel exhilarated, your triumphs on the beach rekindling the embers of your once-fading eagerness. You walk with a bit of a spring in your step, shoulders back, head held high. As you stride into the &lt;a onclick=&quot;Passage.checkChosenRole()&quot;&gt;guild hall,&lt;/a&gt; you have half a mind to boast loudly to the nearest adventurer you can find. This is how you always imagined it would feel—to return, victorious and proud, after a hard day of fighting and adventuring.
-	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="102" name="was never one of them." tags="" position="1375,2150" size="100,100">&lt;div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="97" name="was never one of them." tags="" position="1375,2150" size="100,100">&lt;div&gt;
 	&lt;div&gt;
 	“You’ll do better on the next quest, right, younglin’?” Brutus asks. His face is smiling, but hiseyes—pinprick pupils against blistering green—are intense and unblinking. You can feel Orante’s coolgaze on you as well.
 	&lt;/div&gt;
@@ -1214,7 +1081,7 @@ You feel exhilarated, your triumphs on the beach rekindling the embers of your o
 	&lt;div&gt;
 	“Good, good. That’s what we want to hear, younglin’,” he says in his low, gravelly voice. He looks as if he’s about to continue, but Orante smoothly cuts him off. “Why don’t you go to the marketplace and spend your well-deserved gold?” she says gently. “Brutus and I have plans to discuss—and where is Incerta?” You hadn’t even noticed that [[the rogue had disappeared.]]
 	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="103" name="the rogue had disappeared." tags="" position="1375,2275" size="100,100">&lt;div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="98" name="the rogue had disappeared." tags="" position="1375,2275" size="100,100">&lt;div&gt;
 	&lt;div&gt;
 	“Sure. I’ll be back later,” you say.
 	&lt;/div&gt;
@@ -1222,121 +1089,24 @@ You feel exhilarated, your triumphs on the beach rekindling the embers of your o
 	You glance over your shoulder as you leave, looking at Brutus and Orante huddled over the tablein the middle of the room. You gave them the answer they wanted, yet you still feel as if you’re just beyond the doorway.
 	&lt;/div&gt;
 	&lt;div&gt;
-	You brood over your thoughts as you head down to the [[marketplace.-&gt;marketplace after quest 1]]
+	You brood over your thoughts as you head down to the [[marketplace.-&gt;END OF ALPHA]]
 	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="104" name="marketplace after quest 1" tags="" position="1375,2400" size="100,100">&lt;div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="99" name="marketplace after quest 1" tags="" position="1375,2400" size="100,100">&lt;div&gt;
 	&lt;div&gt;
 	The marketplace is rather calm today. Citizens mill about, tearing at skewers of grilled meats, picking at loaves of fruit-encrusted bread with their bare hands, carrying pails of milk and water back to their homes. The air is filled with idle chatter and generous amounts of laughter. You can hear the gentle tumble and crush of the ocean. Overhead, seagulls wheel against the sun.
 	&lt;/div&gt;
 	&lt;div&gt;
-	Every shop is open today. The empty vials, bottles, and jars strung from the eaves of the [[apothecary shop-&gt;apothecary shop after quest 1]] clink together in the gentle wind. The [[smithy-&gt;smithy after quest 1]] belches black clouds of smoke. The [[mentor&#39;s shop-&gt;mentor’s shop after quest 1]] broods in the shadow of the neighboring building. The guild hall looms in the distance; you will return there eventually, but first you ought to spend your hard-earned gold.
+	Every shop is open today. The empty vials, bottles, and jars strung from the eaves of the [[apothecary shop-&gt;apothecary shop after quest 1]] clink together in the gentle wind. The [[smithy-&gt;smithy after quest 1]] belches black clouds of smoke. The guild hall looms in the distance; you will return there eventually, but first you ought to spend your hard-earned gold.
 	&lt;/div&gt;
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="105" name="guild hall,(Knight)" tags="" position="1500,2025" size="100,100">&lt;div&gt;
-	&lt;div&gt;
-	You freeze in place, swallowing. You prepare yourself for the deluge of reprimands sure to come.
-	&lt;/div&gt;
-	&lt;div&gt;
-	“That was…you were…well, you certainly were not usin’ guardian skills, were you, younglin’,” Brutus grunts.
-	&lt;/div&gt;
-	&lt;div&gt;
-	“Um. No. No, I was not,” you say. “But I did well enough without them, didn’t I?”
-	&lt;/div&gt;
-	&lt;div&gt;
-	Brutus eyes your heap of treasure and gold, lips curling around his fangs.
-	&lt;/div&gt;
-	&lt;div&gt;
-	“This is true,” he mutters. &lt;if role is knight&gt; “But we do not need another knight. I am the party’s knight. You are meant to be the party’s guardian.”
-	&lt;/div&gt;
-	&lt;div&gt;
-	“Had I not been there to help you slash our way through the goblins—” you begin.
-	&lt;/div&gt;
-	&lt;div&gt;
-	[[Brutus’s nostrils flare.]]
-	&lt;/div&gt;
-&lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="106" name="guild hall,(Mage)" tags="" position="1625,2025" size="100,100">&lt;div&gt;
-	&lt;div&gt;
-	You freeze in place, swallowing. You prepare yourself for the deluge of reprimands sure to come.
-	&lt;/div&gt;
-	&lt;div&gt;
-	“That was…you were…well, you certainly were not usin’ guardian skills, were you, younglin’,” Brutus grunts. 
-	&lt;/div&gt;
-	&lt;div&gt;
-	“Um. No. No, I was not,” you say. “But I did well enough without them, didn’t I?”
-	&lt;/div&gt;
-	&lt;div&gt;
-	Brutus eyes your heap of treasure and gold, lips curling around his fangs.
-	&lt;/div&gt;
-	&lt;div&gt;
-	“This is true,” he mutters.
-	&lt;/div&gt;
-	&lt;div&gt;
-	“Be that as it may, we are not in particular need of another mage,” [[Orante says softly.]] 
-	&lt;/div&gt;
-&lt;/div&gt;
-	
-</tw-passagedata><tw-passagedata pid="107" name="guild hall,(Rogue)" tags="" position="1750,2025" size="100,100">&lt;div&gt;
-	&lt;div&gt;
-	You freeze in place, swallowing. You prepare yourself for the deluge of reprimands sure to come.
-	&lt;/div&gt;
-	&lt;div&gt;
-	“That was…you were…well, you certainly were not usin’ guardian skills, were you, younglin’,” Brutus grunts. 
-	&lt;/div&gt;
-	&lt;div&gt;
-	“Um. No. No, I was not,” you say. “But I did well enough without them, didn’t I?”
-	&lt;/div&gt;
-	&lt;div&gt;
-	Brutus eyes your heap of treasure and gold, lips curling around his fangs.
-	&lt;/div&gt;
-	&lt;div&gt;
-	“This is true,” he mutters.
-	&lt;/div&gt;
-	&lt;div&gt;
-	 You look around, wondering if Incerta is particularly offended by the second rogue in the party. However, she is nowhere to be found. Curious. You never even saw her slip away.
-	 &lt;/div&gt;
-	&lt;div&gt;
-	“Incerta didn’t seem to mind the extra help,” you point out. “If anything, it almost seemed like she would rather [[I be the rogue—]]”
-	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="108" name="Brutus’s nostrils flare." tags="" position="1500,2150" size="100,100">&lt;div&gt;	
-	&lt;div&gt;
-	*“I did not need help,”* he growls. He takes a breath, calming himself. “I was fine. We were fine.”
-	&lt;/div&gt;
-	&lt;div&gt;
-	“I meant no offense—” you say quickly.
-	&lt;/div&gt;
-	&lt;div&gt;
-	“None taken, recruit. But we need to work together as a party. I’m sure you were just confused when you bought the wrong gear, but I expect you’ll correct that mistake today, right?” He doesn’t wait for your response. “Good.”
-	&lt;/div&gt;
-	&lt;div&gt;
-	He looks as if he’s about to continue, but Orante smoothly cuts him off.
-	&lt;/div&gt;
-	&lt;div&gt;
-	“Why don’t you go to the marketplace and spend your well-deserved gold?” she says gently. “Brutus and I have plans to discuss—and where is Incerta?” You hadn’t even noticed that [[the rogue had disappeared.]]
-	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="109" name="I be the rogue—" tags="" position="1750,2150" size="100,100">&lt;div&gt;
-	&lt;div&gt;
-	“Incerta is perfectly comfortable with her role,” Brutus interjects, “and you would be, too, if you had bought the proper gear. I’m sure you were just confused when you bought the wrong gear, but I expect you’ll correct that mistake today, right?” He doesn’t wait for your response. “Good.”
-	&lt;/div&gt;
-	&lt;div&gt;
-He looks as if he’s about to continue, but Orante smoothly cuts him off.
-“Why don’t you go to the marketplace and spend your well-deserved gold?” she says gently. “Brutus and I have plans to discuss—and [[where is Incerta?”-&gt;the rogue had disappeared.]]
-	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="110" name="Orante says softly." tags="" position="1625,2150" size="100,100">&lt;div&gt;
-	&lt;div&gt;
-	“But I was helpful! Our fireballs kept the goblins off Brutus. Our freezes let Incerta pick off the goblins without consequence. You and I—we worked well together!” you protest.
-	&lt;/div&gt;
-	&lt;div&gt;
-	“I suppose…” Orante murmurs. Though her face is skeptical, you know she realizes the truth of your words. “Well, why don’t you go to the marketplace and spend your well-deserved gold. Brutus and I have plans to discuss—and where is Incerta?” You hadn’t even noticed that [[the rogue had disappeared.]]
-	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="111" name="mentor’s shop after quest 1" tags="" position="1375,2525" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="112" name="apothecary shop after quest 1" tags="" position="1625,2525" size="100,100">&lt;div&gt;
+</tw-passagedata><tw-passagedata pid="100" name="apothecary shop after quest 1" tags="" position="1500,2525" size="100,100">&lt;div&gt;
 	&lt;div&gt;
 	The [apothecary] claps her hands together upon seeing you—and then quickly waves away the ensuing cloud of colourful powder that explodes from her chalked palms.
 	&lt;/div&gt;
 	&lt;div&gt;
 	“What do ye need, dearie?” she coughs.
 	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="113" name="smithy after quest 1" tags="" position="1500,2525" size="100,100">&lt;div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="101" name="smithy after quest 1" tags="" position="1375,2525" size="100,100">&lt;div&gt;
 	&lt;div&gt;
 	You find Incerta in the lobby, to your great surprise. She is leaning against the counter, counting out gold coins and sliding them across to the blacksmith. He drops something into her outstretched palm. She thanks him, a rare smile flashing across her face, and the blacksmith moves deeper into the smithy to yell at an apprentice. Incerta turns—and crashes solidly into you.
 	&lt;/div&gt;
@@ -1352,14 +1122,14 @@ He looks as if he’s about to continue, but Orante smoothly cuts him off.
 	&lt;div&gt;
 	Incerta swiftly snatches it from you and gathers the rest. She leaves without a word, but the look on her face is absolutely murderous. You stare after her in confusion. Why would a rogue ever need an arrowhead? You shrug and approach the [[smithy counter.]]
 	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="114" name="smithy counter." tags="" position="1500,2650" size="100,100">&lt;div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="102" name="smithy counter." tags="" position="1375,2650" size="100,100">&lt;div&gt;
 	&lt;div&gt;
 	The [blacksmith] moves to the counter, shrewd eyes studying your face.
 	&lt;/div&gt;
 	&lt;div&gt;
     “So? How was your first quest?” he asks.
 	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="115" name="AS A YOUNGUN" tags="" position="850,25" size="100,100">&lt;div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="103" name="AS A YOUNGUN" tags="" position="850,25" size="100,100">&lt;div&gt;
 	&lt;div&gt;
 	Ye Olde Evil towers over you and your party members, a dark pillar of pure malevolence. 
 	&lt;/div&gt;
@@ -1379,21 +1149,21 @@ He looks as if he’s about to continue, but Orante smoothly cuts him off.
 	[[And you, a rogue, unsheathe your twin daggers.]]
 	&lt;/div&gt;
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="116" name="And you, a knight, grip your sword and kite shield." tags="" position="725,150" size="100,100">&lt;%
+</tw-passagedata><tw-passagedata pid="104" name="And you, a knight, grip your sword and kite shield." tags="" position="725,150" size="100,100">&lt;%
 	s.CHOSENROLE = &quot;knight&quot;;
 	s.ROLEUPPER = &quot;Knight&quot;;
 %&gt;
 
 COMBAT
 
-[[Prelude Combat Victory]]</tw-passagedata><tw-passagedata pid="117" name="And you, a mage, open your own tome and prepare a spell." tags="" position="850,150" size="100,100">&lt;%
+[[Prelude Combat Victory]]</tw-passagedata><tw-passagedata pid="105" name="And you, a mage, open your own tome and prepare a spell." tags="" position="850,150" size="100,100">&lt;%
 	s.CHOSENROLE = &quot;mage&quot;;
 	s.ROLEUPPER = &quot;Mage&quot;;
 %&gt;
 
 COMBAT
 
-[[Prelude Combat Victory]]</tw-passagedata><tw-passagedata pid="118" name="And you, a rogue, unsheathe your twin daggers." tags="" position="975,150" size="100,100">&lt;%
+[[Prelude Combat Victory]]</tw-passagedata><tw-passagedata pid="106" name="And you, a rogue, unsheathe your twin daggers." tags="" position="975,150" size="100,100">&lt;%
 	s.CHOSENROLE = &quot;rogue&quot;;
 	s.ROLEUPPER = &quot;Rogue&quot;;
 %&gt;
@@ -1401,7 +1171,7 @@ COMBAT
 COMBAT
 
 [[Prelude Combat Victory]]
-</tw-passagedata><tw-passagedata pid="119" name="Prelude Combat Victory" tags="" position="850,275" size="100,100">&lt;div&gt;
+</tw-passagedata><tw-passagedata pid="107" name="Prelude Combat Victory" tags="" position="850,275" size="100,100">&lt;div&gt;
 	&lt;div&gt;
 	“I have been defeated! How can this be?” Ye Olde Evil wails as it implodes.
 	&lt;/div&gt;
@@ -1409,7 +1179,7 @@ COMBAT
 	You and your childhood friends cheer, tossing down your branches and bricks in triumph as the imaginary foe is vanquished. This is a game you play often, a game you play through the years even as you mature and come of age—for even as you leave your childhood behind, you never [[outgrow your greatest aspiration.-&gt;Start]] 
 	&lt;/div&gt;
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="120" name="woman." tags="" position="25,5825" size="100,100">&lt;div&gt;
+</tw-passagedata><tw-passagedata pid="108" name="woman." tags="" position="25,5825" size="100,100">&lt;div&gt;
 	&lt;div&gt;
 	“I am a bit lost,” you admit. “I was looking to buy some gear and some potions…”
 	&lt;/div&gt;
@@ -1429,10 +1199,10 @@ COMBAT
     You don’t bother dwelling on her strange reaction or rather brusque response; you have shops to find and items to buy. You look around. Nearly every shop is open today. The empty vials, bottles, and jars strung from the eaves of the [[apothecary shop]] clink together in the gentle wind. The [[smithy]] belches black clouds of smoke. The mentor’s shop is closed.
 	&lt;/div&gt;
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="121" name="you write." tags="" position="25,1825" size="100,100">&lt;div&gt;
+</tw-passagedata><tw-passagedata pid="109" name="you write." tags="" position="25,1825" size="100,100">&lt;div&gt;
 	You finish the last letter and drop the quill with a {heavy exhale.} {There.} You’ve done it. You’ve joined the Adventurers’ Guild. You can almost taste the adventures you’re about to have—can smell the exotic lands you’ll be exploring, can hear the clang and clash of combat—and you already know you will be the best &lt;%= s.CHOSENROLE%&gt; the guild has {ever seen.}
 You look back at the parchment. Now you will be placed into a party—a group of fiercely loyal comrades who will fight, dine, live, and [[die alongside you.]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="122" name="you hurry after Incerta," tags="" position="25,5450" size="100,100">&lt;div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="110" name="you hurry after Incerta," tags="" position="25,5450" size="100,100">&lt;div&gt;
 	&lt;div&gt;
 	The rogue moves with incredible speed. This is hardly surprising, but you do wish she would at least pause every [once in a while.] She finally comes to a full stop at the edge of the marketplace, half-turning towards you as you stumble down the last steps.
 	&lt;/div&gt;
@@ -1446,7 +1216,7 @@ You look back at the parchment. Now you will be placed into a party—a group of
     You look around, surrounded by people and yet utterly alone. After taking a second to gather your thoughts, you steel yourself and venture into the [[marketplace.]]
 	&lt;/div&gt;
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="123" name="Brutus continues." tags="" position="25,5325" size="100,100">&lt;%
+</tw-passagedata><tw-passagedata pid="111" name="Brutus continues." tags="" position="25,5325" size="100,100">&lt;%
 
 	Passage.checkChosenRole = () =&gt; {
 		if(s.CHOSENROLE == &quot;rogue&quot;){
@@ -1467,7 +1237,7 @@ You look back at the parchment. Now you will be placed into a party—a group of
 	&lt;div&gt;
 	Incerta mumbles something; a moment later, she slinks out of the room, a pack slung over one shoulder. She heads down the hallway without a glance at you. You look around for guidance, but Brutus has disappeared into the room and Orante is nowhere to be seen. After a second of hesitation, &lt;a onclick=&quot;Passage.checkChosenRole()&quot;&gt;you hurry after Incerta,&lt;/a&gt; clutching your own satchel.
 	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="124" name="you hurry after Incerta,(Rogue)" tags="" position="150,5450" size="100,100">&lt;div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="112" name="you hurry after Incerta,(Rogue)" tags="" position="150,5450" size="100,100">&lt;div&gt;
 	&lt;div&gt;
 	The rogue moves with incredible speed. This is hardly surprising, but you do wish she would at least pause every [once in a while.] She finally comes to a full stop at the edge of the marketplace, half-turning towards you as you stumble down the last steps.
 	&lt;/div&gt;
@@ -1481,9 +1251,9 @@ You look back at the parchment. Now you will be placed into a party—a group of
     You look around, surrounded by people and yet utterly alone. After taking a second to gather your thoughts, you steel yourself and venture into the [[marketplace.]]
 	&lt;/div&gt;
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="125" name="someone says." tags="" position="25,5575" size="100,100">&lt;div&gt;
+</tw-passagedata><tw-passagedata pid="113" name="someone says." tags="" position="25,5575" size="100,100">&lt;div&gt;
     You take a moment to appraise the hooded person before you. At first glance, the person comes off as rather manly; their frame is stocky and well-muscled, their voice low and a bit gravelly. However, after a closer glance at the softness of their face beneath the cowl—and the shape of their body beneath the robe—you realize that you are, in fact, speaking to a [[woman.]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="126" name="his thick eyebrows." tags="" position="275,5825" size="100,100">&lt;div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="114" name="his thick eyebrows." tags="" position="275,5825" size="100,100">&lt;div&gt;
 	&lt;div&gt;
 	He examines the scepter, turning it over in his hands. He then peers up at you from beneath his thick eyebrows.
 	&lt;/div&gt;
@@ -1503,7 +1273,7 @@ You look back at the parchment. Now you will be placed into a party—a group of
 	You leave the smithy, entering the [[marketplace-&gt;marketplace after blacksmith]] once more.
 	&lt;/div&gt;
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="127" name="his thick eyebrows.2" tags="" position="775,5950" size="100,100">&lt;div&gt;
+</tw-passagedata><tw-passagedata pid="115" name="his thick eyebrows.2" tags="" position="775,5950" size="100,100">&lt;div&gt;
 	&lt;div&gt;
 	He examines the scepter, turning it over in his hands. He then peers up at you from beneath his thick eyebrows.
 	&lt;/div&gt;
@@ -1522,4 +1292,4 @@ You look back at the parchment. Now you will be placed into a party—a group of
 	&lt;div&gt;
 	You leave the smithy, entering the [[marketplace-&gt;marketplace after both]] once more.
 	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata></tw-storydata>
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="116" name="END OF ALPHA" tags="" position="1500,2350" size="100,100">That&#39;s the end of the alpha! Thank you for testing!</tw-passagedata></tw-storydata>
