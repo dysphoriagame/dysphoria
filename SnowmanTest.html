@@ -66,13 +66,14 @@ tooltip {
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">$(document).ready( () => {		      					       
 	$.getScript("https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js", () => {
 				toastr.options.timeOut = -1;
 				toastr.options.extendedTimeOut = -1;
 				toastr.options.positionClass = "toast-bottom-full-width";
 	});
-	$.getScript('./combat.js');
+	$.getScript('file://C:/Users/ascii/Documents/Twine/Stories/combat.js');
 	$('<link/>', {
 		rel: 'stylesheet',
 		type: 'text/css',
@@ -119,6 +120,7 @@ $(document).on('showpassage:after', () => {
 		$('.fade').fadeIn(2000);
 
 });
+
 
 
 
@@ -536,7 +538,7 @@ You’re furious. No, not quite furious; you’re too distraught to be simply fu
 	[[“About that…”]]
 	&lt;/div&gt;
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="47" name="slaughter over with?”" tags="" position="1500,1025" size="100,100">&lt;%
+</tw-passagedata><tw-passagedata pid="47" name="slaughter over with?”" tags="" position="1495,1025" size="100,100">&lt;%
 	
 	$(&#39;#action&#39;).append(&#39;&lt;button onclick=&quot;Passage.mend&quot; /&gt;&#39;);
 	$(&#39;#action&#39;).append(&#39;&lt;button onclick=&quot;Passage.blind&quot; /&gt;&#39;);
