@@ -2,6 +2,7 @@
 body {
   background-color: #050505;
   color: #FFFFFF;
+  text-shadow: 2px 2px #000000;
   font-family: "Verdana";
 }
 
@@ -17,20 +18,17 @@ button {
   	background-color: #313131;
 }
 
-.desc, .map, .inv, .action {
+.desc {
   font-family: "Verdana";
   display: block;
   position: fixed;
-  background-image: url('./parchment.png');
+  background-image: url('./bg.png');
+  background-size: 100% 100%;
   background-color: #1B1B1B;
-  padding: 20px;
+  padding: 50px;
   z-index: -1;
-}
-
-.desc {
   text-indent: 35px;
-  top: 2vh;
-  left: 2vw;
+  margin: auto;
   width: 92vw;
   height: 80vh;
 }
@@ -64,7 +62,9 @@ button {
 tooltip {
   color: #D3F3EE;
   text-decoration: underline;
+  font-weight: bold;
 }
+
 
 
 
@@ -128,6 +128,7 @@ $(document).on('showpassage:after', () => {
 		$('.fade').fadeIn(2000);
 
 });
+
 
 
 
@@ -682,7 +683,7 @@ The goblin shaman gives one last squeak and keels over, overcome by the poison.
 	“Congratulations on finishin’ your first adventure in one piece!” he laughs. 
 &lt;/div&gt;
 &lt;div&gt;
-	You try to smile, try to laugh and celebrate with the other adventurers as you all return to the city, but the victory feels empty. [[You feel hollow.-&gt;return to the city.]]
+	You try to smile, try to laugh and celebrate with the other adventurers as you all return to the city, but the victory feels empty. [[You feel hollow.]]
 &lt;/div&gt;
 </tw-passagedata><tw-passagedata pid="36" name="club forgotten." tags="" position="275,3150" size="100,100">&lt;div&gt;
 	Brutus and Incerta stare, utterly bewildered by your sudden behavioral shift. However, it does not take them long to recognize the opening you have just given them, and they hastily surge forward to aid you. As the troll reels with pain, Brutus charges it from the front, and Incerta circles around to its rear. While the knight lays blow after blow upon its tough hide, the rogue runs up the misshapen monster’s back, nimble and noiseless. Before the troll can even realize there is an unwanted guest standing on its shoulders, Incerta slices its throat.
@@ -702,7 +703,9 @@ The goblin shaman gives one last squeak and keels over, overcome by the poison.
 	You give him a broad smile of your own, and fall in line with the other laughing and celebrating adventurers as you all [[return to the city.]] 
 &lt;/div&gt;
 
-</tw-passagedata><tw-passagedata pid="38" name="return to the city." tags="" position="625,25" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="39" name="have our victory.”" tags="" position="25,2525" size="100,100">&lt;div&gt;
+</tw-passagedata><tw-passagedata pid="38" name="return to the city." tags="" position="625,25" size="100,100">You return to Cysa, your packs spilling over with spoils, your armor spattered with sand and blood.
+You feel exhilarated, your triumphs on the beach rekindling the embers of your once-fading eagerness. You walk with a bit of a spring in your step, shoulders back, head held high. As you stride into the guild hall, you have half a mind to boast loudly to the nearest adventurer you can find. This is how you always imagined it would feel—to return, victorious and proud, after a hard day of fighting and adventuring.
+</tw-passagedata><tw-passagedata pid="39" name="have our victory.”" tags="" position="25,2525" size="100,100">&lt;div&gt;
 	Incerta makes a soft noise. You start; you have never heard her make any sort of noise, much less speak.
 &lt;/div&gt;
 &lt;div&gt;
@@ -711,4 +714,7 @@ The goblin shaman gives one last squeak and keels over, overcome by the poison.
 &lt;div&gt;
 	And that is when you feel the ground shake beneath you, the air trembling with a deep roar. [[You slowly turn.]]
 &lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="40" name="You feel hollow." tags="" position="764,29" size="100,100">You return to Cysa, your packs spilling over with spoils, your armor spattered with sand and blood.
+	You know you should feel triumphant, a veritable champion returning from a day of grueling combat and successful adventuring, and yet…the feelings are empty. Hollowed out by the heavy scepter you carry in your hand. Dampened by the buckler strapped to your arm. The quest was a success. You defeated the minions of Ye Olde Evil and successfully defended the city. So why does it feel as if you are the one who lost in the end?
+	You drag yourself into the guild hall, head hanging low.
 </tw-passagedata></tw-storydata>
