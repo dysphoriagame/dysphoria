@@ -31,8 +31,8 @@ button {
   text-indent: 35px;
   top: 2vh;
   left: 2vw;
-  width: 64vw;
-  height: 65vh;
+  width: 92vw;
+  height: 80vh;
 }
 
 .action {
@@ -80,7 +80,7 @@ tooltip {
 				toastr.options.extendedTimeOut = -1;
 				toastr.options.positionClass = "toast-bottom-full-width";
 	});
-	$.getScript('https://matticoli.github.io/dysphoria/alpha/combat.js');
+	//$.getScript('https://matticoli.github.io/dysphoria/alpha/combat.js');
 	$('<link/>', {
 		rel: 'stylesheet',
 		type: 'text/css',
@@ -90,9 +90,9 @@ tooltip {
 
 $('#passage').ready( () => {
 	$('#passage').wrap('<div id="desc" class="desc"></div>');
-	$('body').append('<div id="map" class="map"></div>');
-	$('body').append('<div id="inv" class="inv"></div>');
-	$('body').append('<div id="action" class="action"></div>');
+	//$('body').append('<div id="map" class="map"></div>');
+	//$('body').append('<div id="inv" class="inv"></div>');
+	//$('body').append('<div id="action" class="action"></div>');
 });
 
 
