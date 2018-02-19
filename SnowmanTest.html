@@ -74,6 +74,7 @@ tooltip {
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">$(document).ready( () => {		      					       
 	$.getScript("https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js", () => {
 				toastr.options.timeOut = -1;
@@ -127,6 +128,7 @@ $(document).on('showpassage:after', () => {
 		$('.fade').fadeIn(2000);
 
 });
+
 
 
 
@@ -384,8 +386,10 @@ You hurry after your party as they [[charge.]]
 
 &lt;%
     $(&#39;#passage&#39;).ready( () =&gt; {
-        $(&#39;.&#39; + s.ROLE.toLowerCase()).fadeIn(10);
-    },500);
+        setTimeout( () =&gt; {
+            $(&#39;.&#39; + s.ROLE.toLowerCase()).fadeIn(0);
+        }, 0);
+    });
 %&gt;
 </tw-passagedata><tw-passagedata pid="16" name="You use Blind." tags="" position="150,1525" size="100,100">&lt;%
     $(&#39;.&#39; + s.ROLE.toLowerCase()).fadeIn(100);
@@ -409,8 +413,10 @@ You hurry after your party as they [[charge.]]
 
 &lt;%
     $(&#39;#passage&#39;).ready( () =&gt; {
-        $(&#39;.&#39; + s.ROLE.toLowerCase()).fadeIn(0);
-    },500);
+        setTimeout( () =&gt; {
+            $(&#39;.&#39; + s.ROLE.toLowerCase()).fadeIn(0);
+        }, 0);
+    });
 %&gt;</tw-passagedata><tw-passagedata pid="17" name="just as swiftly." tags="" position="25,1400" size="100,100">&lt;div&gt;
 	You realize it is now your turn to act, but you can only stare, transfixed by the sudden action.
 &lt;/div&gt;
@@ -431,12 +437,18 @@ You hurry after your party as they [[charge.]]
 &lt;/div&gt;
 &lt;div&gt;
 	Incerta moves so swiftly, she almost seems to teleport to the frozen goblin, her daggers sliding between its ribs before the creature even has time to react. She steps away as Orante’s Freeze swallows up the rest of its body, leaving an ice statue stained by two [[blooms of crimson.]] 
-	&lt;div hidden&gt;
+&lt;div hidden class=&quot;rogue&quot;&gt;
 	You watch Incerta enviously, wishing you too could dance with shadows and silence, relying on cunning and dexterity rather than brute strength or finnicky magics. 
 	&lt;div&gt;
 &lt;/div&gt;
 
-</tw-passagedata><tw-passagedata pid="21" name="blooms of crimson." tags="" position="25,1775" size="100,100">&lt;div&gt;	
+&lt;%
+    $(&#39;#passage&#39;).ready( () =&gt; {
+        setTimeout( () =&gt; {
+            $(&#39;.&#39; + s.ROLE.toLowerCase()).fadeIn(0);
+        }, 0);
+    });
+%&gt;</tw-passagedata><tw-passagedata pid="21" name="blooms of crimson." tags="" position="25,1775" size="100,100">&lt;div&gt;	
 	Brutus shakes remnants of goblin off his sword and shield, grinning broadly. His chartreuse eyes almost seem to glow with bloodlust.
 &lt;/div&gt;
 &lt;div&gt;
@@ -444,6 +456,9 @@ You hurry after your party as they [[charge.]]
 &lt;/div&gt;
 &lt;div&gt;
 	A poorly built raft crashes onto the beach nearby, throwing four goblins—two warriors, an archer, and a shaman—free of the thrashing waves. Brutus gives a rumbling bellow and [[rushes towards them.]] 
+&lt;/div&gt;
+&lt;div&gt;
+You watch Incerta enviously, wishing you too could dance with shadows and silence, relying on cunning and dexterity rather than brute strength or finnicky magics.   
 &lt;/div&gt;
 
 </tw-passagedata><tw-passagedata pid="22" name="rushes towards them." tags="" position="25,1900" size="100,100">
@@ -509,7 +524,6 @@ You hurry after your party as they [[charge.]]
 &lt;div&gt;
 	Brutus hefts his shield, spitting on the frozen goblin warrior before advancing [[on the second.]]
 &lt;/div&gt;
-&lt;div&gt;
 </tw-passagedata><tw-passagedata pid="26" name="on the second." tags="" position="25,2275" size="100,100">&lt;div&gt;	
 	The second goblin warrior’s taunts are cut short after it takes a mouthful of Brutus’s shield.
 The goblin shaman gives one last squeak and keels over, overcome by the poison. 
@@ -536,18 +550,10 @@ The goblin shaman gives one last squeak and keels over, overcome by the poison.
 	With a final grunt of effort, he lops the goblin’s head off, the creature’s face trapped in a permanent sneer as it rolls down the beach. Brutus turns to the rest of the party, his jovial smile returning. 
 &lt;/div&gt;
 &lt;div&gt;
-	“Now,” he says triumphantly, “we have our victory.”
+	“Now,” he says triumphantly, “we [[have our victory.”]]
 &lt;/div&gt;
-&lt;div&gt;
-	Incerta makes a soft noise. You start; you have never heard her make any sort of noise, much less speak.
-&lt;/div&gt;
-&lt;div&gt;
-	“Almost,” she mutters, pointing past you.
-&lt;/div&gt;
-&lt;div&gt;	
-	And that is when you feel the ground shake beneath you, the air trembling with a deep roar. [[You slowly turn.]]
-&lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="28" name="You slowly turn." tags="" position="25,2525" size="100,100">&lt;div&gt;
+
+</tw-passagedata><tw-passagedata pid="28" name="You slowly turn." tags="" position="25,2650" size="100,100">&lt;div&gt;
 	“Ah. A troll,” Orante observes. “Must have escaped the fight at the gates.”
 &lt;/div&gt;
 &lt;div&gt;
@@ -555,10 +561,12 @@ The goblin shaman gives one last squeak and keels over, overcome by the poison.
 &lt;/div&gt;
 &lt;div&gt;
 	“Finally! A challenge!” Brutus says.
+&lt;/div&gt;
+&lt;div&gt;
 	Your party moves towards the troll as it flattens another adventuring party. You hurry along behind them, clutching your robes so you [[do not trip.]]
 &lt;/div&gt;
 
-</tw-passagedata><tw-passagedata pid="29" name="do not trip." tags="" position="25,2650" size="100,100">&lt;div&gt;	
+</tw-passagedata><tw-passagedata pid="29" name="do not trip." tags="" position="25,2775" size="100,100">&lt;div&gt;	
 	Brutus reaches the troll first, slashing at the thick folds of flesh pillowing around its legs. His sword apparently slices something vital, for the troll stumbles and falls on one knee with a startled cry—but not before smashing its club into Brutus and sending the orc knight flying. 
 &lt;/div&gt;
 &lt;div&gt;
@@ -570,7 +578,7 @@ The goblin shaman gives one last squeak and keels over, overcome by the poison.
 &lt;div&gt;
 	[[It is your turn to act.]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="30" name="It is your turn to act." tags="" position="25,2775" size="100,100">&lt;div&gt;
+</tw-passagedata><tw-passagedata pid="30" name="It is your turn to act." tags="" position="25,2900" size="100,100">&lt;div&gt;
 	You glance around wildly, considering your options, trying to think above the hammering of your heart.
 &lt;/div&gt;
 &lt;div&gt;
@@ -583,7 +591,7 @@ The goblin shaman gives one last squeak and keels over, overcome by the poison.
 	[[Or you could cease this masquerade.]] You did not join the Adventurers’ Guild to do poorly as a guardian. You came here to be the best &lt;%= s.ROLE %&gt; the land has ever seen.
 &lt;/div&gt;
 
-</tw-passagedata><tw-passagedata pid="31" name="You could use Mend." tags="" position="25,2900" size="100,100">&lt;div&gt;	
+</tw-passagedata><tw-passagedata pid="31" name="You could use Mend." tags="" position="25,3025" size="100,100">&lt;div&gt;	
 	You try to summon what concentration you have left, doing your best to stifle the doubting clamor at the back of your mind. You direct your scepter towards Brutus, channeling Mend. He gives a violent cough and manages to struggle back onto his feet, sword and shield in hand. 
 &lt;/div&gt;
 &lt;div&gt;
@@ -596,7 +604,7 @@ The goblin shaman gives one last squeak and keels over, overcome by the poison.
 	“Yes! Of course, younglin’!” he shouts back, but the way he gingerly touches his ribs [[suggests otherwise.]]
 &lt;/div&gt;
 
-</tw-passagedata><tw-passagedata pid="32" name="You could use Blind." tags="" position="150,2900" size="100,100">&lt;div&gt;
+</tw-passagedata><tw-passagedata pid="32" name="You could use Blind." tags="" position="150,3025" size="100,100">&lt;div&gt;
 	You try to summon what concentration you have left, doing your best to stifle the doubting clamor at the back of your mind. You direct your scepter towards the troll, channeling Blind. A dull glow emanates from the end of your scepter. The troll stares dumbly at it, hardly blinded, but certainly mesmerized by the little flickering light.
 &lt;/div&gt;
 &lt;div&gt;
@@ -608,20 +616,56 @@ The goblin shaman gives one last squeak and keels over, overcome by the poison.
 &lt;div&gt;
 	His yelling snaps the troll out of its hypnosis. With an incensed roar, it charges at your party [[once more.-&gt;suggests otherwise.]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="33" name="Or you could cease this masquerade." tags="" position="275,2900" size="100,100">&lt;if knight&gt; You charge the troll, raising your buckler as if it is a kite shield, brandishing your scepter as if it is a sword. Brutus gives a startled yell.
+</tw-passagedata><tw-passagedata pid="33" name="Or you could cease this masquerade." tags="" position="275,3025" size="100,100">&lt;div hidden class=&quot;knight&quot;&gt;
+&lt;div&gt;
+	You charge the troll, raising your buckler as if it is a kite shield, brandishing your scepter as if it is a sword. Brutus gives a startled yell.
+&lt;/div&gt;
+&lt;div&gt;
 	“What are you doin’, recruit?!” 
+&lt;/div&gt;
+&lt;div&gt;
 	You ignore him and continue running forward. The troll gives a heaving roar and swings its club at you. You stumble out of the way just in time, sand spraying around you as the club smashes into the ground. Seeing your opening in the troll’s sluggish reflexes and slow recovery, you smash the knobbed end of your scepter against its fingers. There is a crack, a deafening grunt of pain—and then the troll reels backwards, nursing its broken hand, [[club forgotten.]]
+&lt;/div&gt;
+&lt;/div&gt;
 
-	&lt;if mage&gt; You drop your scepter and buckler, instead picking Orante’s tome up from where it fell in the sand. Brutus gives a startled yell.
+&lt;div hidden class=&quot;mage&quot;&gt;
+&lt;div&gt;
+	You drop your scepter and buckler, instead picking Orante’s tome up from where it fell in the sand. Brutus gives a startled yell.
+&lt;/div&gt;
+&lt;div&gt;
 	“What are you doin’, recruit?!”
+&lt;/div&gt;
+&lt;div&gt;
 	You ignore him and flip to a dogeared page, hands already moving through the air in complex patterns, lips already moving in the shapes of incantations. You slip into the role of mage with utmost ease—and, for the first time since you embarked on this adventure, you feel completely comfortable and entirely capable.
+&lt;/div&gt;
+&lt;div&gt;
 	A thick shell of ice winds up the troll’s legs, fixing it to the ground. It gives an incensed roar, struggling against its sudden bonds, but [[it cannot move.-&gt;club forgotten.]]
+	&lt;/div&gt;
+&lt;/div&gt;
 
-	&lt;if rogue&gt; You run as swiftly as you can towards the troll, praying you do not trip over your robes. Brutus gives a startled yell.
+&lt;div hidden class=&quot;rogue&quot;&gt;
+&lt;div&gt;
+	You run as swiftly as you can towards the troll, praying you do not trip over your robes. Brutus gives a startled yell.
+&lt;/div&gt;
+&lt;div&gt;
 	“What are you doin’, recruit?!”
+&lt;/div&gt;
+&lt;div&gt;
    	You ignore him and hurl your buckler at the troll. The round, wooden shield smashes into its nose with a soft crunch; the troll lurches backwards, clutching at its face in pain. Taking advantage of this distraction, you run behind the troll and begin clambering up its back, using the tufts of hair sprouting from its hardened skin as handholds until your feet are planted on its shoulders. You take your scepter and plunge its sharper end into the troll’s eye.
+&lt;/div&gt;
+&lt;div&gt;
 	The massive creature gives a wail of pain and shudders to its knees, pitching you off its shoulders and [[into the sand.-&gt;club forgotten.]] 
-</tw-passagedata><tw-passagedata pid="34" name="suggests otherwise." tags="" position="25,3025" size="100,100">&lt;div	
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;%
+    $(&#39;#passage&#39;).ready( () =&gt; {
+        setTimeout( () =&gt; {
+            $(&#39;.&#39; + s.ROLE.toLowerCase()).fadeIn(0);
+        }, 0);
+    });
+%&gt;
+</tw-passagedata><tw-passagedata pid="34" name="suggests otherwise." tags="" position="25,3150" size="100,100">&lt;div	
 	Brutus charges towards the troll once more as Incerta circles behind the massive creature. As the knight distracts the troll with his glancing sword blows and clanging shield, the rogue runs up the misshapen monster’s back, nimble and noiseless. Before the troll can even realize there is an unwanted guest standing on its shoulders, Incerta slices its throat.
 &lt;/div&gt;
 &lt;div&gt;
@@ -631,7 +675,7 @@ The goblin shaman gives one last squeak and keels over, overcome by the poison.
 	You feel shame burn hotly on your cheeks, turning away as the rest of the adventurers on the beach [[cheer.]]
 &lt;/div&gt;
 
-</tw-passagedata><tw-passagedata pid="35" name="cheer." tags="" position="25,3150" size="100,100">&lt;div&gt;
+</tw-passagedata><tw-passagedata pid="35" name="cheer." tags="" position="25,3275" size="100,100">&lt;div&gt;
 	Incerta helps Orante up. The elf woman holds her head, looking a little dazed. Brutus strides over to you, grinning triumphantly. He slaps you on the shoulder.
 &lt;/div&gt;
 &lt;div&gt;
@@ -640,8 +684,7 @@ The goblin shaman gives one last squeak and keels over, overcome by the poison.
 &lt;div&gt;
 	You try to smile, try to laugh and celebrate with the other adventurers as you all return to the city, but the victory feels empty. [[You feel hollow.-&gt;return to the city.]]
 &lt;/div&gt;
-&lt;div&gt;
-</tw-passagedata><tw-passagedata pid="36" name="club forgotten." tags="" position="275,3025" size="100,100">&lt;div&gt;
+</tw-passagedata><tw-passagedata pid="36" name="club forgotten." tags="" position="275,3150" size="100,100">&lt;div&gt;
 	Brutus and Incerta stare, utterly bewildered by your sudden behavioral shift. However, it does not take them long to recognize the opening you have just given them, and they hastily surge forward to aid you. As the troll reels with pain, Brutus charges it from the front, and Incerta circles around to its rear. While the knight lays blow after blow upon its tough hide, the rogue runs up the misshapen monster’s back, nimble and noiseless. Before the troll can even realize there is an unwanted guest standing on its shoulders, Incerta slices its throat.
 &lt;/div&gt;
 &lt;div&gt;
@@ -649,9 +692,7 @@ The goblin shaman gives one last squeak and keels over, overcome by the poison.
 &lt;/div&gt;
 &lt;div&gt;
 	You gave your party members the advantage they needed to slay the troll. You feel a surge of triumph fill you as the rest of the adventurers on the beach [[cheer.-&gt;cheer2]]
-&lt;/div&gt;
-&lt;div&gt;
-</tw-passagedata><tw-passagedata pid="37" name="cheer2" tags="" position="275,3150" size="100,100">&lt;div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="37" name="cheer2" tags="" position="275,3275" size="100,100">&lt;div&gt;
 	Incerta helps Orante up. The elf woman holds her head, looking a little dazed. Brutus approaches you, his grin at once victorious and vaguely bemused. He grips your shoulder.
 &lt;/div&gt;
 &lt;div&gt;
@@ -661,4 +702,13 @@ The goblin shaman gives one last squeak and keels over, overcome by the poison.
 	You give him a broad smile of your own, and fall in line with the other laughing and celebrating adventurers as you all [[return to the city.]] 
 &lt;/div&gt;
 
-</tw-passagedata><tw-passagedata pid="38" name="return to the city." tags="" position="625,25" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
+</tw-passagedata><tw-passagedata pid="38" name="return to the city." tags="" position="625,25" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="39" name="have our victory.”" tags="" position="25,2525" size="100,100">&lt;div&gt;
+	Incerta makes a soft noise. You start; you have never heard her make any sort of noise, much less speak.
+&lt;/div&gt;
+&lt;div&gt;
+	“Almost,” she mutters, pointing past you.
+&lt;/div&gt;
+&lt;div&gt;
+	And that is when you feel the ground shake beneath you, the air trembling with a deep roar. [[You slowly turn.]]
+&lt;/div&gt;
+</tw-passagedata></tw-storydata>
