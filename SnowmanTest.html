@@ -75,6 +75,8 @@ tooltip {
 
 
 
+
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">$(document).ready( () => {		      					       
 	$.getScript("https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js", () => {
 				toastr.options.timeOut = -1;
@@ -142,6 +144,8 @@ $(document).on('showpassage:after', () => {
 
 
 
+
+
 </script><tw-passagedata pid="1" name="fortune aplenty!”" tags="" position="25,150" size="100,100">&lt;div&gt;
 	Like so many other aspiring adventurers, you find yourself newly-arrived in the Adventurers’ Guild hall, nearly lost in the sea of recruits spilling in through the doors. The guild hall bristles with activity, the air taut with urgency. Guildmates bustle wild-eyed newcomers into whatever gear is on hand, veteran adventurers shouting over the din— “Our party needs another ranger, find us a ranger why don’t you!” 
 	&lt;/div&gt;
@@ -168,16 +172,13 @@ $(document).on('showpassage:after', () => {
 			story.show(&quot;Name chosen&quot;);
 		}
 	};
-%&gt;
-
-&lt;div&gt;
-	&lt;div&gt;
+%&gt;&lt;div&gt;
 	He opens up a scroll and brandishes a quill.
-	&lt;/div&gt;
-	&lt;div&gt;
-	“Hmm. You’ll do,” he huffs, voice nasal. “What be your &lt;button onclick=&quot;Passage.getName()&quot;&gt;name&lt;/button&gt;, recruit?”
-	&lt;/div&gt;
 &lt;/div&gt;
+&lt;div&gt;
+	“Hmm. You’ll do,” he huffs, voice nasal. “What be your &lt;a onclick=&quot;Passage.getName()&quot;&gt;name&lt;/a&gt;, recruit?”
+&lt;/div&gt;
+
 
 &lt;div id=&quot;retry&quot; hidden&gt;
 	**Please enter a name.**
@@ -392,11 +393,7 @@ You hurry after your party as they [[charge.]]
         }, 0);
     });
 %&gt;
-</tw-passagedata><tw-passagedata pid="16" name="You use Blind." tags="" position="150,1525" size="100,100">&lt;%
-    $(&#39;.&#39; + s.ROLE.toLowerCase()).fadeIn(100);
-%&gt;
-
-&lt;div&gt;	
+</tw-passagedata><tw-passagedata pid="16" name="You use Blind." tags="" position="150,1525" size="100,100">&lt;div&gt;	
 	You point your scepter at the goblins, trying to channel a blinding light through it. Your scepter feels heavy and useless in your hands. After a considerable amount of concentration and effort, you think the scepter lights up a little. Brutus glances back at you, frowning. You give him a half-hearted shrug and a weak smile in reply. He grunts and charges back into the thick of battle.
 &lt;/div&gt;
 &lt;div&gt;
@@ -425,10 +422,10 @@ You hurry after your party as they [[charge.]]
 	“Use [Mend] or [Blind], &lt;s%= s.NAME %&gt;,” Orante urges, already channeling another spell. “Brutus needs your help!”
 &lt;/div&gt;
 &lt;div&gt;
-	[[You use Mend.]]
+	[[You use Mend.]] This will heal Brutus&#39; wounds.
 &lt;/div&gt;
 &lt;div&gt;
-	[[You use Blind.]]
+	[[You use Blind.]] This would give your party members enough time to recover and attack once more.
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="18" name="Mend" tags="" position="150,1400" size="100,100">If successful, this will restore the health of a party member in need.
 </tw-passagedata><tw-passagedata pid="19" name="Blind" tags="" position="275,1400" size="100,100">If successful, this will daze enemies with a ray of blinding light</tw-passagedata><tw-passagedata pid="20" name="you mumble." tags="" position="25,1650" size="100,100">&lt;div&gt;
 	Brutus uses Shield Bash, violently slamming his kite shield forward. It connects with a goblin’s face, sending the creature flying, dazed, bone and cartilage collapsed by this brutish assault. The last goblin standing shrieks in alarm and begins to scramble away.
@@ -458,9 +455,7 @@ You hurry after your party as they [[charge.]]
 &lt;div&gt;
 	A poorly built raft crashes onto the beach nearby, throwing four goblins—two warriors, an archer, and a shaman—free of the thrashing waves. Brutus gives a rumbling bellow and [[rushes towards them.]] 
 &lt;/div&gt;
-&lt;div&gt;
-You watch Incerta enviously, wishing you too could dance with shadows and silence, relying on cunning and dexterity rather than brute strength or finnicky magics.   
-&lt;/div&gt;
+
 
 </tw-passagedata><tw-passagedata pid="22" name="rushes towards them." tags="" position="25,1900" size="100,100">
 &lt;div&gt;
@@ -583,10 +578,10 @@ The goblin shaman gives one last squeak and keels over, overcome by the poison.
 	You glance around wildly, considering your options, trying to think above the hammering of your heart.
 &lt;/div&gt;
 &lt;div&gt;
-	[[You could use Mend.]] Brutus is groaning in the sand, clutching his ribs; he looks like he might need the heal. Orante seems to be out cold; you doubt you can heal her, much less restore her consciousness.
+	[[You could use Mend.]] 
 &lt;/div&gt;
 &lt;div&gt;
-	[[You could use Blind.]] This would give your party members enough time to recover and attack once more.
+	[[You could use Blind.]]
 &lt;/div&gt;
 &lt;div&gt;
 	[[Or you could cease this masquerade.]] You did not join the Adventurers’ Guild to do poorly as a guardian. You came here to be the best &lt;%= s.ROLE %&gt; the land has ever seen.
@@ -703,8 +698,13 @@ The goblin shaman gives one last squeak and keels over, overcome by the poison.
 	You give him a broad smile of your own, and fall in line with the other laughing and celebrating adventurers as you all [[return to the city.]] 
 &lt;/div&gt;
 
-</tw-passagedata><tw-passagedata pid="38" name="return to the city." tags="" position="625,25" size="100,100">You return to Cysa, your packs spilling over with spoils, your armor spattered with sand and blood.
-You feel exhilarated, your triumphs on the beach rekindling the embers of your once-fading eagerness. You walk with a bit of a spring in your step, shoulders back, head held high. As you stride into the guild hall, you have half a mind to boast loudly to the nearest adventurer you can find. This is how you always imagined it would feel—to return, victorious and proud, after a hard day of fighting and adventuring.
+</tw-passagedata><tw-passagedata pid="38" name="return to the city." tags="" position="775,25" size="100,100">&lt;div&gt;	
+	You return to Cysa, your packs spilling over with spoils, your armor spattered with sand and blood.
+&lt;/div&gt;
+&lt;div&gt;
+	You feel exhilarated, your triumphs on the beach rekindling the embers of your once-fading eagerness. You walk with a bit of a spring in your step, shoulders back, head held high. As you stride into the guild hall, you have half a mind to boast loudly to the nearest adventurer you can find. This is how you always imagined it would feel—to return, victorious and proud, after a hard day of fighting and adventuring.
+&lt;/div&gt;
+
 </tw-passagedata><tw-passagedata pid="39" name="have our victory.”" tags="" position="25,2525" size="100,100">&lt;div&gt;
 	Incerta makes a soft noise. You start; you have never heard her make any sort of noise, much less speak.
 &lt;/div&gt;
@@ -714,7 +714,14 @@ You feel exhilarated, your triumphs on the beach rekindling the embers of your o
 &lt;div&gt;
 	And that is when you feel the ground shake beneath you, the air trembling with a deep roar. [[You slowly turn.]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="40" name="You feel hollow." tags="" position="764,29" size="100,100">You return to Cysa, your packs spilling over with spoils, your armor spattered with sand and blood.
+</tw-passagedata><tw-passagedata pid="40" name="You feel hollow." tags="" position="650,25" size="100,100">&lt;div&gt;	
+	You return to Cysa, your packs spilling over with spoils, your armor spattered with sand and blood.
+&lt;/div&gt;
+&lt;div&gt;
 	You know you should feel triumphant, a veritable champion returning from a day of grueling combat and successful adventuring, and yet…the feelings are empty. Hollowed out by the heavy scepter you carry in your hand. Dampened by the buckler strapped to your arm. The quest was a success. You defeated the minions of Ye Olde Evil and successfully defended the city. So why does it feel as if you are the one who lost in the end?
+&lt;/div&gt;
+&lt;div&gt;
 	You drag yourself into the guild hall, head hanging low.
+&lt;/div&gt;
+
 </tw-passagedata></tw-storydata>
