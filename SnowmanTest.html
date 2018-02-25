@@ -77,6 +77,8 @@ tooltip {
 
 
 
+
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">$(document).ready( () => {		      					       
 	$.getScript("https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js", () => {
 				toastr.options.timeOut = -1;
@@ -146,6 +148,8 @@ $(document).on('showpassage:after', () => {
 
 
 
+
+
 </script><tw-passagedata pid="1" name="fortune aplenty!”" tags="" position="25,150" size="100,100">&lt;div&gt;
 	Like so many other aspiring adventurers, you find yourself newly-arrived in the Adventurers’ Guild hall, nearly lost in the sea of recruits spilling in through the doors. The guild hall bristles with activity, the air taut with urgency. Guildmates bustle wild-eyed newcomers into whatever gear is on hand, veteran adventurers shouting over the din— “Our party needs another ranger, find us a ranger why don’t you!” 
 	&lt;/div&gt;
@@ -167,7 +171,7 @@ $(document).on('showpassage:after', () => {
 		s.NAME = prompt(&quot;Enter your name&quot;); 
 			
 		if(s.NAME == &quot;&quot; || s.NAME == null){
-			$(&quot;#retry&quot;).fadeIn();
+			$(&quot;#retry&quot;).fadeIn(0);
 		} else{
 			story.show(&quot;Name chosen&quot;);
 		}
@@ -283,7 +287,7 @@ $(document).on('showpassage:after', () => {
 	“Splendid. You can take this one off my hands, then,” the guild master sniffs. He scrawls something on the scroll and gives it to you.
 	&lt;/div&gt;
 	&lt;div&gt;
-	“&lt;%= s.NAME %&gt;,” it says. “Guardian.”
+	*“&lt;%= s.NAME %&gt;,”* it says. *“Guardian.”*
 	&lt;/div&gt;
 	&lt;div&gt;
 	No.
@@ -317,10 +321,10 @@ $(document).on('showpassage:after', () => {
 	“Greetings,” Orante says in a voice like velvet.
 	&lt;/div&gt;
 	&lt;div&gt;
-	“And the sulkin’ one is Incerta, our rogue,” Brutus continues. 
+	“And the sulkin’ one is Incertus, our rogue,” Brutus continues. 
 	&lt;/div&gt;
 	&lt;div&gt;
-	Incerta says nothing, her dark, hooded eyes fixated on the ground.
+	Incertus says nothing, his dark, hooded eyes fixated on the ground.
 	&lt;/div&gt;
 	&lt;div&gt;
 	“So, this is our new guardian?” Orante asks, studying you with grey eyes, head tilted in curiosity.
@@ -367,7 +371,8 @@ You hurry after your party as they [[charge.]]
 	Orante casts Fireball and hurls the resultant orb of flame at another goblin. The creature shrieks as its cloth armor catches fire, and it flees towards the water. 
 &lt;/div&gt;
 &lt;div&gt;
-	Incerta slips around the enemies, unnoticed, and plunges her daggers into a goblin archer in the back. She hurriedly disengages. You think you see her briefly bend down near the fallen foe’s quiver and bow, but she straightens [[just as swiftly.]] 
+&lt;/div&gt;
+
 &lt;/div&gt;
 
 </tw-passagedata><tw-passagedata pid="15" name="You use Mend." tags="" position="25,1525" size="100,100">&lt;div&gt;	
@@ -434,9 +439,9 @@ You hurry after your party as they [[charge.]]
 	Orante whispers an incantation and twists her fingers above her tome. Ice settles over the fleeing goblin, freezing it in place.
 &lt;/div&gt;
 &lt;div&gt;
-	Incerta moves so swiftly, she almost seems to teleport to the frozen goblin, her daggers sliding between its ribs before the creature even has time to react. She steps away as Orante’s Freeze swallows up the rest of its body, leaving an ice statue stained by two [[blooms of crimson.]] 
+	Incertus moves so swiftly, she almost seems to teleport to the frozen goblin, her daggers sliding between its ribs before the creature even has time to react. She steps away as Orante’s Freeze swallows up the rest of its body, leaving an ice statue stained by two [[blooms of crimson.]] 
 &lt;div hidden class=&quot;rogue&quot;&gt;
-	You watch Incerta enviously, wishing you too could dance with shadows and silence, relying on cunning and dexterity rather than brute strength or finnicky magics. 
+	You watch Incertus enviously, wishing you too could dance with shadows and silence, relying on cunning and dexterity rather than brute strength or finnicky magics. 
 	&lt;div&gt;
 &lt;/div&gt;
 
@@ -471,7 +476,7 @@ You hurry after your party as they [[charge.]]
 	Orante hastily spins another Freeze out of thin air, encasing the offending foe in ice. 
 &lt;/div&gt;
 &lt;div&gt;
-	Incerta flings a vial from her bandolier at the goblins’ feet. The glass shatters against a rock, and noxious gases rise in a green cloud, poisoning the foes. They cough and gasp, clutching their throats, scurrying away from the fumes.
+	Incertus flings a vial from her bandolier at the goblins’ feet. The glass shatters against a rock, and noxious gases rise in a green cloud, poisoning the foes. They cough and gasp, clutching their throats, scurrying away from the fumes.
 &lt;/div&gt;
 &lt;div&gt;
 	It is your turn. You could heal a party member in need, or you could daze the enemy with brilliant light.
@@ -525,7 +530,7 @@ You hurry after your party as they [[charge.]]
 The goblin shaman gives one last squeak and keels over, overcome by the poison. 
 &lt;/div&gt;
 &lt;div&gt;
-	Orante conjures up a swirling sphere of fire and hurls it at the goblin archer. The nimble archer dances backwards to avoid it—and dodges right into Incerta’s waiting blades. After the body drops, she hastily bends over not the body, but the weapon it once carried. You frown. You look around, but no one else seems to have noticed the rogue’s antics.
+	Orante conjures up a swirling sphere of fire and hurls it at the goblin archer. The nimble archer dances backwards to avoid it—and dodges right into Incertus’s waiting blades. After the body drops, she hastily bends over not the body, but the weapon it once carried. You frown. You look around, but no one else seems to have noticed the rogue’s antics.
 &lt;/div&gt;
 &lt;div&gt;
 	“Another victory,” Orante hums happily. 
@@ -569,7 +574,7 @@ The goblin shaman gives one last squeak and keels over, overcome by the poison.
 	Orante casts Fireball. The orb of flame splashes across the troll’s flattened face, lighting the sparse hairs on its scalp on fire. 
 &lt;/div&gt;
 &lt;div&gt;
-	The troll paws at the new pain on its head in confusion, absentmindedly swinging its club, the crude weapon’s blunt end nearly hitting Incerta and Orante. The rogue hastily uses Dodge; she almost seems to recede into her own shadow, shrinking back and avoiding all harm. Orante, on the other hand, does not avoid any harm at all—rather, she is flung several feet backwards, her tome tumbling from her grasp.
+	The troll paws at the new pain on its head in confusion, absentmindedly swinging its club, the crude weapon’s blunt end nearly hitting Incertus and Orante. The rogue hastily uses Dodge; she almost seems to recede into her own shadow, shrinking back and avoiding all harm. Orante, on the other hand, does not avoid any harm at all—rather, she is flung several feet backwards, her tome tumbling from her grasp.
 &lt;/div&gt;
 &lt;div&gt;
 	[[It is your turn to act.]]
@@ -662,17 +667,17 @@ The goblin shaman gives one last squeak and keels over, overcome by the poison.
     });
 %&gt;
 </tw-passagedata><tw-passagedata pid="34" name="suggests otherwise." tags="" position="25,3150" size="100,100">&lt;div	
-	Brutus charges towards the troll once more as Incerta circles behind the massive creature. As the knight distracts the troll with his glancing sword blows and clanging shield, the rogue runs up the misshapen monster’s back, nimble and noiseless. Before the troll can even realize there is an unwanted guest standing on its shoulders, Incerta slices its throat.
+	Brutus charges towards the troll once more as Incertus circles behind the massive creature. As the knight distracts the troll with his glancing sword blows and clanging shield, the rogue runs up the misshapen monster’s back, nimble and noiseless. Before the troll can even realize there is an unwanted guest standing on its shoulders, Incertus slices its throat.
 &lt;/div&gt;
 &lt;div&gt;
-	It stands there for a moment, swaying, too dumb to register its own demise. It gives one last groan, and then finally collapses in a spray of sand, Incerta gracefully leaping clear. The final foe on the beach has been felled by a stunning display of teamwork and skill—and you? You could only watch uselessly.
+	It stands there for a moment, swaying, too dumb to register its own demise. It gives one last groan, and then finally collapses in a spray of sand, Incertus gracefully leaping clear. The final foe on the beach has been felled by a stunning display of teamwork and skill—and you? You could only watch uselessly.
 &lt;/div&gt;
 &lt;div&gt;
 	You feel shame burn hotly on your cheeks, turning away as the rest of the adventurers on the beach [[cheer.]]
 &lt;/div&gt;
 
 </tw-passagedata><tw-passagedata pid="35" name="cheer." tags="" position="25,3275" size="100,100">&lt;div&gt;
-	Incerta helps Orante up. The elf woman holds her head, looking a little dazed. Brutus strides over to you, grinning triumphantly. He slaps you on the shoulder.
+	Incertus helps Orante up. The elf woman holds her head, looking a little dazed. Brutus strides over to you, grinning triumphantly. He slaps you on the shoulder.
 &lt;/div&gt;
 &lt;div&gt;
 	“Congratulations on finishin’ your first adventure in one piece!” he laughs. 
@@ -681,15 +686,15 @@ The goblin shaman gives one last squeak and keels over, overcome by the poison.
 	You try to smile, try to laugh and celebrate with the other adventurers as you all return to the city, but the victory feels empty. [[You feel hollow.]]
 &lt;/div&gt;
 </tw-passagedata><tw-passagedata pid="36" name="club forgotten." tags="" position="275,3150" size="100,100">&lt;div&gt;
-	Brutus and Incerta stare, utterly bewildered by your sudden behavioral shift. However, it does not take them long to recognize the opening you have just given them, and they hastily surge forward to aid you. As the troll reels with pain, Brutus charges it from the front, and Incerta circles around to its rear. While the knight lays blow after blow upon its tough hide, the rogue runs up the misshapen monster’s back, nimble and noiseless. Before the troll can even realize there is an unwanted guest standing on its shoulders, Incerta slices its throat.
+	Brutus and Incertus stare, utterly bewildered by your sudden behavioral shift. However, it does not take them long to recognize the opening you have just given them, and they hastily surge forward to aid you. As the troll reels with pain, Brutus charges it from the front, and Incertus circles around to its rear. While the knight lays blow after blow upon its tough hide, the rogue runs up the misshapen monster’s back, nimble and noiseless. Before the troll can even realize there is an unwanted guest standing on its shoulders, Incertus slices its throat.
 &lt;/div&gt;
 &lt;div&gt;
-	It stands there for a moment, swaying, too dumb to register its own demise. It gives one last groan, and then finally collapses in a spray of sand, Incerta gracefully leaping clear. The final foe on the beach has been felled by a stunning display of teamwork and skill—and you? You helped.
+	It stands there for a moment, swaying, too dumb to register its own demise. It gives one last groan, and then finally collapses in a spray of sand, Incertus gracefully leaping clear. The final foe on the beach has been felled by a stunning display of teamwork and skill—and you? You helped.
 &lt;/div&gt;
 &lt;div&gt;
 	You gave your party members the advantage they needed to slay the troll. You feel a surge of triumph fill you as the rest of the adventurers on the beach [[cheer.-&gt;cheer2]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="37" name="cheer2" tags="" position="275,3275" size="100,100">&lt;div&gt;
-	Incerta helps Orante up. The elf woman holds her head, looking a little dazed. Brutus approaches you, his grin at once victorious and vaguely bemused. He grips your shoulder.
+	Incertus helps Orante up. The elf woman holds her head, looking a little dazed. Brutus approaches you, his grin at once victorious and vaguely bemused. He grips your shoulder.
 &lt;/div&gt;
 &lt;div&gt;
 	“That was…quite somethin’, younglin’. I have never quite seen anythin’ like it, but…” He pauses, his look of confusion only growing. “But good on you for your quick thinkin’. And congratulations on finishin’ your first adventure in one piece.” 
@@ -698,7 +703,7 @@ The goblin shaman gives one last squeak and keels over, overcome by the poison.
 	You give him a broad smile of your own, and fall in line with the other laughing and celebrating adventurers as you all [[return to the city.]] 
 &lt;/div&gt;
 
-</tw-passagedata><tw-passagedata pid="38" name="return to the city." tags="" position="775,25" size="100,100">&lt;div&gt;	
+</tw-passagedata><tw-passagedata pid="38" name="return to the city." tags="" position="900,25" size="100,100">&lt;div&gt;	
 	You return to Cysa, your packs spilling over with spoils, your armor spattered with sand and blood.
 &lt;/div&gt;
 &lt;div&gt;
@@ -706,7 +711,7 @@ The goblin shaman gives one last squeak and keels over, overcome by the poison.
 &lt;/div&gt;
 
 </tw-passagedata><tw-passagedata pid="39" name="have our victory.”" tags="" position="25,2525" size="100,100">&lt;div&gt;
-	Incerta makes a soft noise. You start; you have never heard her make any sort of noise, much less speak.
+	Incertus makes a soft noise. You start; you have never heard her make any sort of noise, much less speak.
 &lt;/div&gt;
 &lt;div&gt;
 	“Almost,” she mutters, pointing past you.
@@ -721,7 +726,75 @@ The goblin shaman gives one last squeak and keels over, overcome by the poison.
 	You know you should feel triumphant, a veritable champion returning from a day of grueling combat and successful adventuring, and yet…the feelings are empty. Hollowed out by the heavy scepter you carry in your hand. Dampened by the buckler strapped to your arm. The quest was a success. You defeated the minions of Ye Olde Evil and successfully defended the city. So why does it feel as if you are the one who lost in the end?
 &lt;/div&gt;
 &lt;div&gt;
-	You drag yourself into the guild hall, head hanging low.
+	You drag yourself into the guild hall, [[head hanging low.]]
 &lt;/div&gt;
 
-</tw-passagedata></tw-storydata>
+</tw-passagedata><tw-passagedata pid="41" name="head hanging low." tags="" position="650,150" size="100,100">&lt;div&gt;
+	After you all have cleaned your gear and organized your treasures, your party regroups in the barracks, where you shed your armor for more comfortable clothes. 
+&lt;/div&gt;
+&lt;div&gt;
+	“Good work, all,” Brutus is saying when you emerge from the closet. “Ah, there you are, &lt;%= s.NAME %&gt;.”
+&lt;/div&gt;
+&lt;div&gt;
+	You briefly consider retreating back into the closet and hiding under the nearest pile of clothes.
+&lt;/div&gt;
+&lt;div&gt;
+	“My apologies. My Mends and Blinds did not work very well, did they,” you mutter sheepishly. A small thought squirms in the back of your mind: “You wouldn’t be apologizing if you were a &lt;%= s.ROLE %&gt;, now would you?” You grind your teeth in [[frustration.]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="42" name="frustration." tags="" position="650,275" size="100,100">&lt;div&gt;	
+	“It was your first real adventure. Some recruits struggle a bit in the beginnin’,” Brutus says kindly.
+&lt;/div&gt;	
+&lt;div&gt;
+	“You’ll do better on the next quest, right, younglin’?” Brutus asks. His face is smiling, but his eyes—pinprick pupils against blistering green—are intense and unblinking. You can feel Orante’s cool gaze on you as well. The room suddenly feels too hot and small, the air itself stifled by the pressure.
+&lt;/div&gt;	
+&lt;div&gt;
+	[[“I will try,” you answer.]]
+&lt;/div&gt;	
+&lt;div&gt;
+	[[“As long as I’m not a guardian next quest,” you answer.]]
+&lt;/div&gt;	
+
+</tw-passagedata><tw-passagedata pid="43" name="“I will try,” you answer." tags="" position="650,400" size="100,100">&lt;div&gt;	
+	Brutus’s grin broadens. 
+&lt;/div&gt;
+&lt;div&gt;
+	“Good, good. That’s what we want to hear, younglin’,” he rumbles. “We need a dependable guardian to support us if we ever want to defeat Ye Olde Evil. And you do want to help us defeat Ye Olde Evil, yes? Of course you do.”
+&lt;/div&gt;
+&lt;div&gt;
+	He looks as if he’s about to continue, but Orante smoothly cuts him off.
+&lt;/div&gt;
+&lt;div&gt;
+	“&lt;Name&gt;, why don’t you go to the marketplace and spend your well-deserved gold?” she says gently. “Brutus and I have plans to discuss—and where is Incertus?” You hadn’t even noticed that the rogue had disappeared.
+&lt;/div&gt;
+&lt;div&gt;
+	“Sure. I’ll be back later,” you say.
+&lt;/div&gt;
+&lt;div&gt;
+	You glance over your shoulder as you leave. Brutus and Orante are huddled over the table in the middle of the room, their backs to you. You feel oddly alone in that moment, excluded from whatever world they are allowed to participate in. 
+&lt;/div&gt;
+&lt;div&gt;
+	You brood over your thoughts as you head down to the [marketplace.]]
+&lt;/div&gt;
+
+</tw-passagedata><tw-passagedata pid="44" name="“As long as I’m not a guardian next quest,” you answer." tags="" position="775,400" size="100,100">&lt;div&gt;	
+	Brutus’s brow furrows—but he quickly recovers.
+&lt;/div&gt;
+&lt;div&gt;
+	“Ah, ha, a hilarious jest,” he guffaws. It sounds painfully forced. “Never mind that. I have full faith in you, younglin’. We do need a guardian—you know that, yes? We’ll only reach Ye Olde Evil if we have a sturdy, dependable guardian to support us—and you do want to be the party that defeats Ye Olde Evil, yes?”
+&lt;/div&gt;
+&lt;div&gt;
+	“Of course I do, but—” you begin.
+&lt;/div&gt;
+&lt;div&gt;
+	Brutus grips your shoulder and grins broadly.
+&lt;/div&gt;
+&lt;div&gt;
+	“As do I, younglin’.” He looks as if he’s about to continue, but Orante smoothly cuts him off.
+&lt;/div&gt;
+&lt;div&gt;
+	“&lt;%= s.NAME %&gt;, why don’t you go to the marketplace and spend your well-deserved gold?” she says gently. “Brutus and I have plans to discuss—and where is Incertus?” You hadn’t even noticed that the rogue had disappeared.
+&lt;/div&gt;
+&lt;div&gt;
+	“Sure. I’ll be back later,” you say, hurrying away before Brutus can say anything else, heading down to the [[marketplace.]]
+&lt;/div&gt;
+
+</tw-passagedata><tw-passagedata pid="45" name="marketplace." tags="" position="775,550" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
