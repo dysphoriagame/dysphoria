@@ -1,13 +1,21 @@
-<tw-storydata name="SnowmanTest" startnode="2" creator="Twine" creator-version="2.2.1" ifid="C88D7875-044B-4462-8441-28734691F905" zoom="1" format="Snowman" format-version="1.3.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/*CUSTOM CSS*/
+<tw-storydata name="SnowmanTest" startnode="88" creator="Twine" creator-version="2.2.1" ifid="C88D7875-044B-4462-8441-28734691F905" zoom="1" format="Snowman" format-version="1.3.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/*CUSTOM CSS*/
 body {
+  display: block;
+  height: 95vh;
+  width: 95vw;
+  margin: auto;
   background-color: #050505;
   color: #FFFFFF;
   text-shadow: 2px 2px #000000;
   font-family: "Verdana";
+  font-size: 1.2em;
+  line-height: 2em;
+  text-indent: 35px;
+  padding: 10px;
 }
 
 a {
-  color: #7FB7BE; 
+  color: #7FB7BE;
   font-weight: bold;
 }
 
@@ -18,45 +26,39 @@ button {
   	background-color: #313131;
 }
 
-.desc {
-  font-family: "Verdana";
+#passage {
   display: block;
-  position: fixed;
-  background-image: url('./bg.png');
+  position: absolute;
+  //top: 50%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+#passage-container {
+  display: block;
+  width: 960px;
+  height: 600px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url('https://dysphoriagame.github.io/assets/title.png');
   background-size: 100% 100%;
+  background-repeat: no-repeat;
   background-color: #1B1B1B;
-  padding: 50px;
-  z-index: -1;
-  text-indent: 35px;
-  margin: auto;
-  width: 92vw;
-  height: 80vh;
+  padding: 10px;
 }
 
-.action {
-  bottom: 2vh;
-  left: 2vw;
-  width: 64vw;
-  height: 15vh;
-}
-
-.map {
-  top: 2vh;
-  right: 2vw;
-  width: 22vw;
-  height: 20vh;
-}
-
-.inv {
-  bottom: 2vh;
-  right: 2vw;
-  width: 22vw;
-  height: 60vh;
+.mainmenu {
+  margin-left: -400px;
+  color: !important black;
 }
 
 .toast-info, .toast {
  background-color: #050505;
  opacity: 1;
+ font-size: 1em;
+ line-height: 1.1em;
 }
 
 tooltip {
@@ -79,10 +81,14 @@ tooltip {
 
 
 
+
+
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">$(document).ready( () => {		      					       
 	$.getScript("https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js", () => {
 				toastr.options.timeOut = -1;
 				toastr.options.extendedTimeOut = -1;
+				toastr.options.fadeOut = 0;
 				toastr.options.positionClass = "toast-bottom-full-width";
 	});
 	//$.getScript('https://matticoli.github.io/dysphoria/alpha/combat.js');
@@ -94,15 +100,36 @@ tooltip {
 });
 
 $('#passage').ready( () => {
-	$('#passage').wrap('<div id="desc" class="desc"></div>');
-	//$('body').append('<div id="map" class="map"></div>');
-	//$('body').append('<div id="inv" class="inv"></div>');
-	//$('body').append('<div id="action" class="action"></div>');
+	$('#passage').wrap('<div id="passage-container"></div>');
 });
 
+$(document).on('hidepassage', () => {
+	$("#passage-container").fadeOut(0);
+	$("#passage").fadeOut(0);
+});
 
 $(document).on('showpassage:after', () => {
-	console.log("Woosh");
+	{
+		setTimeout( () => {
+					$("#passage-container").fadeIn(300);
+					$("#passage").fadeIn(700);
+		}, 100);
+		let re = /(\{)[^\{\}]*(\})(?!\})/g;
+		let links = $('#passage').html().match(re);
+		if(links) {
+			// Set bg and remove links
+			let newContent = $('#passage').html();
+			links.forEach( (e) => {
+				console.log("LINK: "+e);
+				let link = e.substring(1, e.length - 1);
+				$('#passage-container').css('background-image', 'url(' + 'https://dysphoriagame.github.io/assets/' + link + ')');
+				console.log('url(' + 'https://dysphoriagame.github.io/assets/' + link + ')');
+				newContent = newContent.replace(e, '');
+			});
+			$('#passage').html(newContent);
+		}	
+	}
+	{
 		console.log(window.story.passages);
 		let re = /(\[)[^\[\]]*(\])(?!\])/g;
 		let tooltips = $('#passage').html().match(re);
@@ -124,21 +151,17 @@ $(document).on('showpassage:after', () => {
 		$('tooltip').hover( (e) => {
 			if(!toastr) return;
 			toastr.clear();
-			toastr.info($(e.currentTarget).attr('text'));
+			setTimeout( () => {
+				toastr.info($(e.currentTarget).attr('text'));
+			}, 100);
 		}, (e) => {
 			if(!toastr) return;
 			toastr.clear();
 		});
 		$('.fade').fadeIn(2000);
-
+	}
+	
 });
-
-
-
-
-
-
-
 
 
 
@@ -163,7 +186,8 @@ $(document).on('showpassage:after', () => {
 	“Register for the guild and join an adventuring party here!” a narrow-faced guild master calls, standing on a table and waving a handful of scrolls. Pulled along by the jostling chaos, you end up at the front of the line. The guild member [[peers down at you.]]
 	&lt;/div&gt;
 
-</tw-passagedata><tw-passagedata pid="2" name="Start" tags="" position="25,25" size="100,100">&lt;div&gt;
+</tw-passagedata><tw-passagedata pid="2" name="Begin Your Journey" tags="" position="25,25" size="100,100">{parchment.png}
+&lt;div&gt;
 	*“Hear ye, hear ye! The most ancient and vilest of foes, Ye Olde Evil, has returned to the mystical lands of Eorundem once more, unleashing hordes of wicked monsters upon the fair beaches, desecrating the gentle forests with magics most foul, and threatening the great city of Cysa! The Adventurers’ Guild of Cysa is in urgent need of capable youths to help combat this threat! Journey to Cysa and join the Guild for adventure, fame, and [[fortune aplenty!”]]*
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="3" name="peers down at you." tags="" position="25,275" size="100,100">&lt;%
 	Passage.getName = () =&gt; {
@@ -1317,4 +1341,18 @@ She finds what she was looking for, pulling out a scroll of parchment wrapped in
 &lt;/div&gt;
 &lt;div&gt;
 	[[Prepare for the trip to the Dark Forest.]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="87" name="set out for the Dark Forest." tags="" position="650,2775" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="87" name="set out for the Dark Forest." tags="" position="650,2775" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="88" name="MainMenu" tags="" position="213,25.5" size="100,100">&lt;div class=&quot;mainmenu&quot;&gt;
+&lt;br&gt;
+[[Begin Your Journey]]
+&lt;br&gt;&lt;br&gt;
+[About]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="89" name="About" tags="" position="345,31.5" size="100,100">&lt;div&gt;
+Brought to you by the Dysphoria Guild:
+&lt;ul&gt;
+&lt;li&gt;Alex - Programming&lt;/li&gt;
+&lt;li&gt;Issa - Concept/Writing&lt;/li&gt;
+&lt;li&gt;Mikel - Programming&lt;/li&gt;
+&lt;li&gt;Regina - Art&lt;/li&gt;
+&lt;li&gt;Tyler - Writing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</tw-passagedata></tw-storydata>
