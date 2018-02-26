@@ -653,7 +653,7 @@ The goblin shaman gives one last squeak and keels over, overcome by the poison.
 &lt;div&gt;
 	His yelling snaps the troll out of its hypnosis. With an incensed roar, it charges at your party [[once more.-&gt;suggests otherwise.]]
 &lt;/div&gt;
-{guardianbg.png}</tw-passagedata><tw-passagedata pid="31" name="Or you could cease this masquerade." tags="" position="280,2770" size="100,100">&lt;div hidden class=&quot;knight&quot;&gt;
+{guardianbg.png}</tw-passagedata><tw-passagedata pid="31" name="Or you could cease this masquerade." tags="" position="286,2764" size="100,100">&lt;div hidden class=&quot;knight&quot;&gt;
 &lt;div&gt;
 	You charge the troll, raising your buckler as if it is a kite shield, brandishing your scepter as if it is a sword. Brutus gives a startled yell.
 &lt;/div&gt;
@@ -1235,7 +1235,7 @@ Incertus looks up at your involuntary exclamation—and you both [[freeze.]]
 &lt;div&gt;
 	She purses her lips, giving you a highly skeptical look. 
 Brutus hefts his shield, spitting on the frozen goblin warrior before advancing [[on the second.]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="73" name="troll" tags="" position="159,2402" size="100,100">A hulking, ugly mass of stupid fury. It has only two desires in life, two thoughts bouncing around in its misshapen head— “eat” and “kill.”</tw-passagedata><tw-passagedata pid="74" name="wakes you from your slumber" tags="" position="650,1775" size="100,100">&lt;div&gt;	As the pounding continues, you crawl down from your bunk, the feelings from your dream still clinging to you like a spider web.  As you go to the door, wiping the sleep from your eyes, you have to look down as an [unfamiliar face] looks up at you before [[crossing her arms]].
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="73" name="troll" tags="" position="163,2402" size="100,100">A hulking, ugly mass of stupid fury. It has only two desires in life, two thoughts bouncing around in its misshapen head— “eat” and “kill.”</tw-passagedata><tw-passagedata pid="74" name="wakes you from your slumber" tags="" position="650,1775" size="100,100">&lt;div&gt;	As the pounding continues, you crawl down from your bunk, the feelings from your dream still clinging to you like a spider web.  As you go to the door, wiping the sleep from your eyes, you have to look down as an [unfamiliar face] looks up at you before [[crossing her arms]].
 &lt;/div&gt;
 {townbg.png}</tw-passagedata><tw-passagedata pid="75" name="crossing her arms" tags="" position="650,1900" size="100,100">&lt;div&gt;	She looks up at you expectantly.  Awkward silence fills the air for a moment before you finally break it.
 &lt;/div&gt;
@@ -1285,7 +1285,7 @@ She finds what she was looking for, pulling out a scroll of parchment wrapped in
 &lt;%
 	$(&#39;#passage&#39;).ready( () =&gt; {
         setTimeout( () =&gt; {
-        	if(s.ROLE == &quot;Knight){
+        	if(s.ROLE == &quot;Knight&quot;){
 				$(&quot;#Knight&quot;).fadeIn(0);
 			}
 			else{
@@ -1538,4 +1538,36 @@ You oblige, quickly grabbing the sack and going into your tent, gingerly setting
 	if(s.audio &amp;&amp; s.audio.pause) s.audio.pause();
 	s.audio = new Audio(&quot;https://opengameart.org/sites/default/files/%D0%BC%D0%B8%D1%81%D1%82%D0%B8%D1%87%D0%BD%D0%B0%D1%8F%20%D1%82%D0%B5%D0%BC%D0%B0.mp3&quot;);
 	s.audio.play();
-%&gt;</tw-passagedata><tw-passagedata pid="113" name="mostly empty foyer" tags="" position="1495,608" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="114" name="stone courtyard" tags="" position="1643,472" size="100,100">The courtyard isn’t much, with just a few stone walkways around an area of dead grass, with a dry fountain in the center, choked by weeds, and empty of water for who-knows-how-long.</tw-passagedata><tw-passagedata pid="115" name="large castle" tags="" position="1778,466" size="100,100">A rather intimidating castle made out of dark grey stone with vines creeping up it’s side. Its front side is dominated by a pair of wooden doors, at least twice as tall as Brutus, but the wood is cracked and splintered, with two rusty iron door knockers.</tw-passagedata></tw-storydata>
+%&gt;</tw-passagedata><tw-passagedata pid="113" name="mostly empty foyer" tags="" position="1495,608" size="100,100">&lt;div&gt;As you enter the foyer, Orante creates a small globe of light in her hand that bathes everything in a pale white light. You can see the filthiness of the floor as you continue walking towards the stairs on the other end. Your gaze drifts along the floor until, at the base of the stairs, you see a faint shape that appears to be moving. As you see it, Orante’s light washes over it and you can now clearly see that it is four adventurers, bound and gagged. Brutus is the first to begin running over to them, with the rest of your party, including you, quickly following suit. As you approach them, you can see they’re clad in similar gear to your party: a knight, a mage, a rogue, and a guardian. Once you get to them, Brutus quickly removes his sword from his sheath and gently cuts the ropes binding them, while the rest of you remove their [[gags.]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="114" name="stone courtyard" tags="" position="1643,472" size="100,100">The courtyard isn’t much, with just a few stone walkways around an area of dead grass, with a dry fountain in the center, choked by weeds, and empty of water for who-knows-how-long.</tw-passagedata><tw-passagedata pid="115" name="large castle" tags="" position="1778,466" size="100,100">A rather intimidating castle made out of dark grey stone with vines creeping up it’s side. Its front side is dominated by a pair of wooden doors, at least twice as tall as Brutus, but the wood is cracked and splintered, with two rusty iron door knockers.</tw-passagedata><tw-passagedata pid="116" name="gags." tags="" position="1495,758" size="100,100">&lt;div&gt;“Fear not, we are here to rescue you,” Orante says quietly. “The guild sent us.”&lt;/div&gt;
+&lt;div&gt;
+After they are freed and give thanks, Brutus speaks up. “Alright, it’s not that far to get out of here. Just follow the path and you’ll be able to get out. Good luck.” With that, Brutus pats the knight on the shoulder and they begin running out of the castle. Orante turns to Brutus, a [[curious expression on her face.]]&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="117" name="curious expression on her face." tags="" position="1495,908" size="100,100">&lt;div&gt;
+“What did you do that for, Brutus? Our quest is to return them to Cysa,” she protests, crossing her arms.
+&lt;/div&gt;&lt;div&gt;
+	Brutus looks at her, something between pleading and hunger on his face.
+&lt;/div&gt;&lt;div&gt;
+“Orante, this is our chance! We could defeat Ye Olde Evil! Ourselves! Can you imagine? We’d be famous heroes!” 
+&lt;/div&gt;&lt;div&gt;
+	“No, Brutus. We had our quest. We cannot abandon it and pander to your ridiculous insecurities! We are in no way prepared to fight Ye Olde Evil—especially with &lt;%=s.NAME %&gt;—”
+&lt;/div&gt;&lt;div&gt;
+As soon as those words leave her mouth, the doors slam shut, the braziers along the walls suddenly bursting into flame. Despite the newfound light, the center of the room still has a circular shadow as dark as night. A voice suddenly speaks, sending chills down your spine.
+&lt;/div&gt;&lt;div&gt;
+	“Well, hello, young adventurers. Is someone trying to be a hero? A paltry quest doomed to fail, I’m afraid.” 
+The pool of shadow begins to build, swirling slowly in a [[circle.]]
+&lt;/div&gt;&lt;div&gt;
+
+</tw-passagedata><tw-passagedata pid="118" name="circle." tags="" position="1495,1057" size="100,100">&lt;div&gt;“You are all weak. I can smell it, your weakness, on each and every one of you.”&lt;/div&gt;&lt;div&gt;
+	A nasty vein pulses at Brutus’s temple. The shadows laugh.
+“I shall take great pleasure in destroying you and your foolish pride.” 
+The shadow begins swirling faster, growing larger and larger, forming itself into the shape of a man.&lt;/div&gt;&lt;div&gt;
+“And you, little knight—I shall savour your defeat most of all.”
+With a roar, Brutus charges ahead, [[ready for a fight.]]&lt;/div&gt;
+
+{yoebg.png}
+&lt;%	
+	if(s.audio &amp;&amp; s.audio.pause) s.audio.pause();
+	s.audio = new Audio(&quot;https://opengameart.org/sites/default/files/Dream%20Raid%20Full%20Version%20%28Mock%20Up%29.mp3&quot;);
+	s.audio.play();
+%&gt;</tw-passagedata><tw-passagedata pid="119" name="ready for a fight." tags="" position="1495,1208" size="100,100">The smoke laughs, a dark, throaty sound as it continues to grow, until it stands about twice Brutus’s height. Orante uses her Wind Gust to try and blow the figure away, but this merely removes the smoke, leaving [Ye Olde Evil] standing in its place.
+	His voice, a rumbling sound now, fills the [[hall.]]
+</tw-passagedata><tw-passagedata pid="120" name="hall." tags="" position="1495,1358" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="121" name="Ye Olde Evil" tags="" position="1617,1213" size="100,100">A towering figure made of pure shadow. With clawed hands and feet, a mouth full of sharp teeth, and eyes like bonfires, this being is not to be trifled with.</tw-passagedata></tw-storydata>
