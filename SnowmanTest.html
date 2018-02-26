@@ -1,4 +1,4 @@
-<tw-storydata name="SnowmanTest" startnode="88" creator="Twine" creator-version="2.2.1" ifid="C88D7875-044B-4462-8441-28734691F905" zoom="1" format="Snowman" format-version="1.3.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/*CUSTOM CSS*/
+<tw-storydata name="SnowmanTest" startnode="86" creator="Twine" creator-version="2.2.1" ifid="C88D7875-044B-4462-8441-28734691F905" zoom="1" format="Snowman" format-version="1.3.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/*CUSTOM CSS*/
 body {
   display: block;
   height: 95vh;
@@ -85,6 +85,7 @@ tooltip {
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">$(document).ready( () => {		      					       
 	$.getScript("https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js", () => {
 				toastr.options.timeOut = -1;
@@ -102,6 +103,10 @@ tooltip {
 
 $('#passage').ready( () => {
 	$('#passage').wrap('<div id="passage-container"></div>');
+	let level = 2;
+	Passage.levelUp = () => {
+		toastr.success("LEVEL UP!<br>You are now level " + (level++));	
+	};
 });
 
 $(document).on('hidepassage', () => {
@@ -163,9 +168,6 @@ $(document).on('showpassage:after', () => {
 	}
 	
 });
-
-
-
 
 
 
@@ -716,7 +718,9 @@ The goblin shaman gives one last squeak and keels over, overcome by the poison.
 &lt;/div&gt;
 &lt;div&gt;
 	“My apologies. My Mends and Blinds did not work very well, did they,” you mutter sheepishly. A small thought squirms in the back of your mind: “You wouldn’t be apologizing if you were a &lt;%= s.ROLE %&gt;, now would you?” You grind your teeth in [[frustration.]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="39" name="frustration." tags="" position="650,275" size="100,100">&lt;div&gt; “It was your first real adventure. Some recruits struggle a bit in the beginnin’,” Brutus says kindly.
+&lt;/div&gt;
+&lt;% Passage.levelUp(); %&gt;
+</tw-passagedata><tw-passagedata pid="39" name="frustration." tags="" position="650,275" size="100,100">&lt;div&gt; “It was your first real adventure. Some recruits struggle a bit in the beginnin’,” Brutus says kindly.
 &lt;/div&gt;
 &lt;div&gt;
 	“You’ll do better on the next quest, right, younglin’?” Brutus asks. His face is smiling, but his eyes—pinprick pupils against blistering green—are intense and unblinking. You can feel Orante’s cool gaze on you as well. The room suddenly feels too hot and small, the air itself stifled by the pressure.
@@ -825,7 +829,9 @@ The goblin shaman gives one last squeak and keels over, overcome by the poison.
             $(&#39;.&#39; + s.ROLE.toLowerCase()).fadeIn(0);
         }, 0);
     });
-%&gt;</tw-passagedata><tw-passagedata pid="44" name="fangs." tags="" position="900,275" size="100,100">&lt;div&gt;	
+%&gt;
+&lt;% Passage.levelUp(); %&gt;
+</tw-passagedata><tw-passagedata pid="44" name="fangs." tags="" position="900,275" size="100,100">&lt;div&gt;	
 	“This is true,” he mutters. “But we do not need another knight. I am the party’s knight. You are meant to be the party’s guardian.”
 &lt;/div&gt;
 &lt;div&gt;
@@ -1309,7 +1315,7 @@ She finds what she was looking for, pulling out a scroll of parchment wrapped in
 &lt;/div&gt;
 &lt;div&gt;
 	[[Prepare for the trip to the Dark Forest.]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="88" name="MainMenu" tags="" position="213,26.5" size="100,100">{title.png}
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="86" name="MainMenu" tags="" position="213,26" size="100,100">{title.png}
 &lt;div class=&quot;mainmenu&quot;&gt;
 &lt;br&gt;
 [[Begin Your Journey]]
@@ -1319,7 +1325,7 @@ She finds what she was looking for, pulling out a scroll of parchment wrapped in
 [About]
 &lt;br&gt;&lt;br&gt;
 [Help]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="89" name="About" tags="" position="345,31.5" size="100,100">&lt;div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="87" name="About" tags="" position="345,31" size="100,100">&lt;div&gt;
 Brought to you by the Dysphoria Guild:
 &lt;ul&gt;
 &lt;li&gt;Alex - Programming&lt;/li&gt;
@@ -1328,7 +1334,7 @@ Brought to you by the Dysphoria Guild:
 &lt;li&gt;Regina - Art&lt;/li&gt;
 &lt;li&gt;Tyler - Writing&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="90" name="You realize it is now your turn to act" tags="" position="30,1388" size="100,100">You realize it is now your turn to act, but you can only stare, transfixed by the sudden action.
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="88" name="You realize it is now your turn to act" tags="" position="30,1388" size="100,100">You realize it is now your turn to act, but you can only stare, transfixed by the sudden action.
 &lt;/div&gt;
 &lt;div&gt;
 	“Use [Mend], [Blind], or [Bolster Defenses], &lt;Name&gt;,” Orante urges, already channeling another spell. “Brutus needs your help!”
@@ -1342,7 +1348,7 @@ Brought to you by the Dysphoria Guild:
 &lt;div&gt;
 	[[You use Bolster Defenses.]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="91" name="rolls down the beach." tags="" position="29,2525" size="100,100">&lt;div&gt;
+</tw-passagedata><tw-passagedata pid="89" name="rolls down the beach." tags="" position="29,2525" size="100,100">&lt;div&gt;
 Brutus turns to the rest of the party, ignoring your startled looks. 
 &lt;/div&gt;
 &lt;div&gt;
@@ -1357,124 +1363,11 @@ Brutus turns to the rest of the party, ignoring your startled looks.
 &lt;div&gt;
 	And that is when you feel the ground shake beneath you, the air trembling with a deep roar. [[You slowly turn.]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="92" name="slices its throat." tags="" position="400,3266" size="100,100">&lt;div&gt;
+</tw-passagedata><tw-passagedata pid="90" name="slices its throat." tags="" position="400,3266" size="100,100">&lt;div&gt;
 	It stands there for a moment, swaying, too dumb to register its own demise. It gives one last groan, and then finally collapses in a spray of sand, Incertus gracefully leaping clear. The final foe on the beach has been felled by a stunning display of teamwork and skill—and you? You helped.
 &lt;/div&gt;
 &lt;div&gt;
 	You gave your party members the advantage they needed to slay the troll. You feel a surge of triumph fill you as the rest of the adventurers on the beach [[cheer.-&gt;cheer2]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="93" name="Help" tags="" position="345,149" size="100,100">If your screen appears too small or too large, you can zoom in/out safely.
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="91" name="Help" tags="" position="345,149" size="100,100">If your screen appears too small or too large, you can zoom in/out safely.
 &lt;br&gt;
 (On most web browsers this can be done with Ctrl+ and Ctrl-)</tw-passagedata></tw-storydata>
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="86" name="set out for the Dark Forest." tags="" position="650,2775" size="100,100">&lt;div&gt;	The journey to the Dark Forest is a fairly uneventful one, with Brutus and Orante taking the lead, and you and Incertus bringing up the rear. As the day wears on, what do you do?
-&lt;/div&gt;
-&lt;div hidden id=&quot;first&quot;&gt;
-	[[Try talking to Incertus.-&gt;Try talking to Incertus again.
-&lt;div hidden id=&quot;again&quot;&gt;
-	[[Try talking to Incertus again.]]
-&lt;/div&gt;
-&lt;div&gt;
-	[[Continue to walk in silence.]]
-&lt;/div&gt;
-
-&lt;%
-    $(&#39;#passage&#39;).ready( () =&gt; {
-        setTimeout( () =&gt; {
- 			if(s.SpokeToInc){
-				$(&quot;#again&quot;).fadeIn(0);
-			}
-			else{
-				$(&quot;#first&quot;).fadeIn(0);
-			}
-        }, 0);
-    });
-%&gt;</tw-passagedata><tw-passagedata pid="87" name="Try talking to Incertus again." tags="" position="775,2900" size="100,100">&lt;div&gt;
-	You deliberately slow down while Brutus and Orante obliviously stride on ahead. Incertus matches your pace, until you two are out of earshot.
-&lt;/div&gt;
-&lt;div&gt;
-    “Listen,” you begin quickly, whispering, “I don’t mean to offend you, but I...I’m just a little confused. About the whole...you know...gender...”
-&lt;/div&gt;
-&lt;div&gt;
-    Incertus lets out a soft sigh of exasperation. He turns to look at you. He seems more tired than angered, as if this is something he has had to explain before. 
-&lt;/div&gt;
-&lt;div&gt;
-	“How odd. I thought you, of all people, would understand,” he murmurs. 
-&lt;/div&gt;
-&lt;div&gt;
-	He turns back to face forward and picks up the pace, moving ahead of you. You hurry to catch up with the party, mulling over your thoughts as you [[walk in silence-&gt;Continue to walk in silence.]].
-&lt;/div&gt;
-
-</tw-passagedata><tw-passagedata pid="88" name="Continue to walk in silence." tags="" position="650,2900" size="100,100">&lt;div&gt;	As the shadows begin to lengthen, you see a cluster of trees not too far away. As the sun sets, the forest only grows more terrifying. Your party decides to push on, determined to get as far in as you can before nightfall. As the shadows continue to grow, you hear faint noises of panting and leaves crackling under weight. As Brutus brings up his shield, three white wolves jump out from the woods on either side of the path, growling menacingly.
-&lt;/div&gt;
-&lt;div&gt;
-	“Let’s show these mutts who the true alphas are,” Brutus growls as he prepares to launch himself into battle. “&lt;%= s.NAME %&gt;, I could use some extra damage, help cut these things down to size.” 
-What do you do?
-&lt;/div&gt;
-&lt;div&gt;
-	[[You use Blind.-&gt;You use Blind.3]]
-&lt;/div&gt;
-&lt;div&gt;
-	[[You use Bolster Defenses-&gt;You use Bolster Defenses.3]]
-&lt;/div&gt;
-&lt;div&gt;
-	[[You use Bolster Damage-&gt;You use Bolster Damage.3]]
-&lt;/div&gt;
-&lt;div&gt;
-	[[“I’m not sure if I’m good enough to—”]]
-&lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="89" name="You use Blind.3" tags="" position="650,3025" size="100,100">&lt;div&gt;	You decide to use a skill you’ve done before. You level your scepter at the white wolves and try your hardest to channel Blind. Your staff begins glowing, brighter than before, stopping the wolves momentarily before it flickers out again. You look at Brutus sheepishly, catching a look of disapproval on his face before he lets out a roar and [[charges at the wolves.]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="90" name="You use Bolster Defenses.3" tags="" position="775,3025" size="100,100">&lt;div&gt;	You decide to try and give Brutus some extra defense in case he gets hurt. You clasp your scepter in both hands, and try with all your might. You feel some level of power flow through you, and you think you actually [[did it]] for once.
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="91" name="You use Bolster Damage.3" tags="" position="900,3025" size="100,100">&lt;div&gt;	You grasp your staff tightly, hoping that this new skill will come to you easier than the others before it. You try your hardest to channel the energy into bolstering Brutus’s attack power, but it doesn’t seem like [[much happens]].
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="92" name="“I’m not sure if I’m good enough to—”" tags="" position="1025,3025" size="100,100">&lt;div&gt;	You barely even begin to speak before you are interrupted.
-&lt;/div&gt;
-&lt;div&gt;
-	“No time for words, guardian!” Brutus spits out before he roars and [[charges at the wolves.]]
-&lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="93" name="charges at the wolves." tags="" position="650,3275" size="100,100">&lt;div&gt;	Brutus runs toward the wolves, still roaring. You notice Incertus has disappeared again and Orante is flipping through her spellbook, muttering to herself about a new spell. Brutus uses his Shield Bash, slamming his kite shield into the first wolf, sending it flying backwards a foot or two. Incertus appears to materialize out of thin air just behind it, using his Bleed to open a pulsing vein at its throat, staining its white fur with dark crimson. It quickly bleeds out.
-&lt;/div&gt;
-&lt;div&gt;
-	Orante finishes muttering, her hands moving in twisting ways, before unleashing a powerful bolt of blue lightning that strikes the second wolf in the head before bouncing off and colliding with the third wolf. The smell of burnt fur and flesh fills the air as they both fall over, [[dead.]]
-&lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="94" name="did it" tags="" position="775,3150" size="100,100">&lt;div&gt;	“Well, good to know that I can take a hit. Not that I intend to,” you hear Incertus mutter quietly next to you. You look at Brutus sheepishly, catching a look of disapproval on his face before he lets out a roar and [[charges at the wolves.]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="95" name="much happens" tags="" position="900,3150" size="100,100">&lt;div&gt;	“Many thanks younglin’!” Brutus calls as he flexes and grasps his sword more tightly. “I can feel the power already!” He does not sound very convincing.
-&lt;/div&gt;
-&lt;div&gt;
-	You manage to catch a glance he makes in your direction, and can swear you see a look of disappointment on his face before he lets out a roar and [[charges at the wolves.]]
-&lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="96" name="dead." tags="" position="650,3400" size="100,100">&lt;div&gt;	Brutus bangs his chest and lets out a roar of triumph over the bodies of the wolves. He turns to you, baring his fangs in a grin. 
-&lt;/div&gt;
-&lt;div&gt;
-	“Taught those mutts a lesson, eh? Since it’s gettin’ dark, we’ll make camp here.” Brutus begins hauling the carcasses of the wolves away so they won’t attract any more animals. “Everyone, get your tents set up. I’ll be back with firewood.”
-&lt;/div&gt;
-&lt;div&gt;
-	The rest of you begin busying yourselves with setting up your small, one-person tents, while Orante begins unpacking provisions for dinner. After the fire is made and dinner is prepared and eaten, the issue of shifts comes up. It’s decided that Brutus will take the first shift, followed by Incertus, Orante, and you, before Brutus takes the final watch, by his own insistence. As the fire burns down to embers, Brutus takes his place on a stump and begins sharpening his sword. As you climb into your tent and lay down, you begin [[dozing off]] to the sound of a whetstone against metal.
-&lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="97" name="dozing off" tags="" position="650,3525" size="100,100">&lt;div&gt;	It feels like not even a minute has passed before you feel a hand on your shoulder gently shaking you awake. You turn and see Orante, her hair almost looking like liquid silver in the moonlight.
-&lt;/div&gt;
-&lt;div&gt;
-    “It is time for your watch, &lt;%= s.NAME %&gt;.” she says quietly before exiting your tent, presumably to go to her own. 
-&lt;/div&gt;
-&lt;div&gt;
-	As you rub the sleep from your eyes, you grab your guardian gear and move to the stump Brutus had been sitting on, the light from the dying embers almost insubstantial in this darkness. You don’t know how long you have been watching for before you hear someone clear their throat, close to you. You instantly jump to your feet grasping your scepter tightly, ready to awaken the others before you feel a hand on your [[shoulder.]]
-&lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="98" name="shoulder." tags="" position="650,3650" size="100,100">&lt;div&gt;	“Relax, it’s just me,” Incertus’s familiarly raspy voice whispers. He slinks out of the shadows and sits on the ground next to the stump. Staring into the fire, a sack by his side. After what feels like years of silence, he speaks again. 
-&lt;/div&gt;
-&lt;div&gt;
-	“I am sorry for avoiding your questions all this time. I know you are merely curious.” You turn to look at him, but he is still staring into the fire.
-&lt;/div&gt;
-&lt;div&gt;
-	“I know how you feel. To look into the mirror and see a stranger, to walk through this world wondering if you will ever feel truly comfortable...it is a tiring thing indeed. And the thought that you may live the rest of your life plagued by these feelings—that thought alone can be unbearable at times.”
-&lt;/div&gt;
-&lt;div&gt;	
-	You strain to see Incertus’s expression in what little light the embers provide, but his face is nigh unreadable. 
-&lt;/div&gt;
-&lt;div&gt;
-	“It takes a certain sort of strength to be honest, not only to yourself but to others. It may not always feel like courage or strength. In fact, at times it may feel like weakness. Trust me when I say it is not. Never feel shame. Never feel the way… the way…”
-&lt;/div&gt;
-&lt;div&gt;
-	He suddenly breaks off there and [[looks away.]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="99" name="looks away." tags="" position="650,3775" size="100,100">&lt;div&gt;	“In any case, I brought you something. Stole it, to be honest. As rogues do.” He chuckles softly. “I suppose I ought to avoid the smithy for a time.”
-&lt;/div&gt;
-&lt;div&gt;
-	With that, Incertus goes silent. When you turn to look at him, he is gone, an oddly lumpy sack slumped where he once sat. Curious, you [[peek inside the sack]].
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="100" name="peek inside the sack" tags="" position="650,3900" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
->>>>>>> origin/revisions-and-quest-two
