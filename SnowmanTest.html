@@ -86,6 +86,7 @@ tooltip {
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">$(document).ready( () => {		      					       
 	$.getScript("https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js", () => {
 				toastr.options.timeOut = -1;
@@ -93,6 +94,31 @@ tooltip {
 				toastr.options.fadeOut = 0;
 				toastr.options.positionClass = "toast-bottom-full-width";
 	});
+	
+	let a = new Audio();
+		
+	window.playTrack = (track) => {
+		if(a) {
+				a.pause();
+				switch(track) {
+					case "INTRO":
+						a.src = "https://opengameart.org/sites/default/files/prologue.mp3";
+						break;
+					case "BATTLE":
+						a.src = "https://opengameart.org/sites/default/files/Gran%20Batalla.mp3";
+						break;
+					case "TENSE":
+						a.src = "https://opengameart.org/sites/default/files/TheLoomingBattle_0.OGG";
+					case "TOWN":
+						a.src = "https://opengameart.org/sites/default/files/magical_theme.flac";
+						break;
+					default:
+						a.src = undefined;
+						break;
+				}
+				if(a.src) a.play();
+		}
+	};
 	//$.getScript('https://matticoli.github.io/dysphoria/alpha/combat.js');
 	$('<link/>', {
 		rel: 'stylesheet',
@@ -176,6 +202,7 @@ $(document).on('showpassage:after', () => {
 
 
 
+
 </script><tw-passagedata pid="1" name="fortune aplenty!”" tags="" position="25,150" size="100,100">{guildbg.png}
 &lt;div&gt;	Like so many other aspiring adventurers, you find yourself newly-arrived in the Adventurers’ Guild hall, nearly lost in the sea of recruits spilling in through the doors. The guild hall bristles with activity, the air taut with urgency. Guildmates bustle wild-eyed newcomers into whatever gear is on hand, veteran adventurers shouting over the din— “Our party needs another ranger, find us a ranger why don’t you!” 
 	&lt;/div&gt;
@@ -192,7 +219,12 @@ $(document).on('showpassage:after', () => {
 </tw-passagedata><tw-passagedata pid="2" name="Begin Your Journey" tags="" position="25,25" size="100,100">{parchment.png}
 &lt;div&gt;
 	*“Hear ye, hear ye! The most ancient and vilest of foes, Ye Olde Evil, has returned to the mystical lands of Eorundem once more, unleashing hordes of wicked monsters upon the fair beaches, desecrating the gentle forests with magics most foul, and threatening the great city of Cysa! The Adventurers’ Guild of Cysa is in urgent need of capable youths to help combat this threat! Journey to Cysa and join the Guild for adventure, fame, and [[fortune aplenty!”]]*
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="3" name="peers down at you." tags="" position="25,275" size="100,100">&lt;%
+&lt;/div&gt;
+&lt;%	
+	if(s.audio &amp;&amp; s.audio.pause) s.audio.pause();
+	s.audio = new Audio(&quot;https://opengameart.org/sites/default/files/magical_theme.flac&quot;);
+	s.audio.play();
+%&gt;</tw-passagedata><tw-passagedata pid="3" name="peers down at you." tags="" position="25,275" size="100,100">&lt;%
 	Passage.getName = () =&gt; {
 	
 		s.NAME = prompt(&quot;Enter your name&quot;); 
@@ -366,7 +398,12 @@ $(document).on('showpassage:after', () => {
 	“There!” Brutus shouts, pointing at a nearby cluster of goblins. The creatures bare their fangs and hiss. “A little somethin’ to warm us up!” 
 You hurry after your party as they [[charge.]]
 &lt;/div&gt;
-{goblinbg.png}</tw-passagedata><tw-passagedata pid="13" name="charge." tags="" position="25,1275" size="100,100">&lt;div&gt;
+{goblinbg.png}
+&lt;%	
+	if(s.audio &amp;&amp; s.audio.pause) s.audio.pause();
+	s.audio = new Audio(&quot;https://opengameart.org/sites/default/files/Gran%20Batalla.mp3&quot;);
+	s.audio.play();
+%&gt;</tw-passagedata><tw-passagedata pid="13" name="charge." tags="" position="25,1275" size="100,100">&lt;div&gt;
 	Brutus is first into the fray, using his Slash to cleave through the nearest goblin, blood spraying in the wake of his sword. The orc knight gives a triumphant roar, wading further into combat. &lt;if knight&gt; You watch him enviously, imagining what it would be like, to be able to charge into danger so boldly, to be able to wield the brutal power of a sword—to wield anything other than your stupid scepter. 
 &lt;/div&gt;
 &lt;div&gt;
@@ -703,7 +740,12 @@ The goblin shaman gives one last squeak and keels over, overcome by the poison.
 	You feel exhilarated, your triumphs on the beach rekindling the embers of your once-fading eagerness. You walk with a bit of a spring in your step, shoulders back, head held high. As you stride into the guild hall, you have half a mind to boast loudly to the nearest adventurer you can find. This is how you always imagined it would feel—to return, victorious and proud, after a hard day of [[fighting and adventuring.]]
 &lt;/div&gt;
 
-{guildbg.png}</tw-passagedata><tw-passagedata pid="37" name="You feel hollow." tags="" position="650,25" size="100,100">&lt;div&gt;	You return to Cysa, your packs spilling over with spoils, your armor spattered with sand and blood.
+{guildbg.png}
+&lt;%	
+	if(s.audio &amp;&amp; s.audio.pause) s.audio.pause();
+	s.audio = new Audio(&quot;https://opengameart.org/sites/default/files/magical_theme.flac&quot;);
+	s.audio.play();
+%&gt;</tw-passagedata><tw-passagedata pid="37" name="You feel hollow." tags="" position="650,25" size="100,100">&lt;div&gt;	You return to Cysa, your packs spilling over with spoils, your armor spattered with sand and blood.
 &lt;/div&gt;
 &lt;div&gt;
 	You know you should feel triumphant, a veritable champion returning from a day of grueling combat and successful adventuring, and yet…the feelings are empty. Hollowed out by the heavy scepter you carry in your hand. Dampened by the buckler strapped to your arm. The quest was a success. You defeated the minions of Ye Olde Evil and successfully defended the city. So why does it feel as if you are the one who lost in the end?
@@ -712,7 +754,12 @@ The goblin shaman gives one last squeak and keels over, overcome by the poison.
 	You drag yourself into the guild hall, [[head hanging low.]]
 &lt;/div&gt;
 
-{guildbg.png}</tw-passagedata><tw-passagedata pid="38" name="head hanging low." tags="" position="650,150" size="100,100">&lt;div&gt;
+{guildbg.png}
+&lt;%	
+	if(s.audio &amp;&amp; s.audio.pause) s.audio.pause();
+	s.audio = new Audio(&quot;https://opengameart.org/sites/default/files/magical_theme.flac&quot;);
+	s.audio.play();
+%&gt;</tw-passagedata><tw-passagedata pid="38" name="head hanging low." tags="" position="650,150" size="100,100">&lt;div&gt;
 	After you all have cleaned your gear and organized your treasures, your party regroups in the barracks, where you shed your armor for more comfortable clothes. 
 &lt;/div&gt;
 &lt;div&gt;
@@ -1334,13 +1381,21 @@ She finds what she was looking for, pulling out a scroll of parchment wrapped in
 &lt;br&gt;&lt;br&gt;
 [About]
 &lt;br&gt;&lt;br&gt;
+[Credits]
+&lt;br&gt;&lt;br&gt;
 [Help]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="87" name="About" tags="" position="345,31" size="100,100">&lt;div&gt;
+&lt;/div&gt;
+
+&lt;%	
+	if(s.audio &amp;&amp; s.audio.pause) s.audio.pause();
+	s.audio = new Audio(&quot;https://opengameart.org/sites/default/files/prologue.mp3&quot;);
+	s.audio.play();
+%&gt;</tw-passagedata><tw-passagedata pid="87" name="About" tags="" position="345,32" size="100,100">&lt;div&gt;
 Brought to you by the Dysphoria Guild:
 &lt;ul&gt;
 &lt;li&gt;Alex - Programming&lt;/li&gt;
-&lt;li&gt;Issa - Concept/Writing&lt;/li&gt;
-&lt;li&gt;Mikel - Programming&lt;/li&gt;
+&lt;li&gt;Issa - Concept / Writing&lt;/li&gt;
+&lt;li&gt;Mikel - Programming / Visuals&lt;/li&gt;
 &lt;li&gt;Regina - Art&lt;/li&gt;
 &lt;li&gt;Tyler - Writing&lt;/li&gt;
 &lt;/ul&gt;
@@ -1378,6 +1433,23 @@ Brutus turns to the rest of the party, ignoring your startled looks.
 &lt;/div&gt;
 &lt;div&gt;
 	You gave your party members the advantage they needed to slay the troll. You feel a surge of triumph fill you as the rest of the adventurers on the beach [[cheer.-&gt;cheer2]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="91" name="Help" tags="" position="345,149" size="100,100">If your screen appears too small or too large, you can zoom in/out safely.
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="91" name="Help" tags="" position="345,258" size="100,100">If your screen appears too small or too large, you can zoom in/out safely.
 &lt;br&gt;
-(On most web browsers this can be done with Ctrl+ and Ctrl-)</tw-passagedata></tw-storydata>
+(On most web browsers this can be done with Ctrl+ and Ctrl-)</tw-passagedata><tw-passagedata pid="92" name="set out for the Dark Forest." tags="" position="632,2865" size="100,100">
+
+
+&lt;%	
+	if(s.audio &amp;&amp; s.audio.pause) s.audio.pause();
+	s.audio = new Audio(&quot;https://opengameart.org/sites/default/files/TheLoomingBattle_0.OGG&quot;);
+	s.audio.play();
+%&gt;</tw-passagedata><tw-passagedata pid="93" name="Credits" tags="" position="348,145" size="100,100">&lt;div&gt;
+Soundtrack (OpenGameArt.com)
+&lt;br&gt;
+All tracks are licensed under Creative Commons
+&lt;ul&gt;
+&lt;li&gt;Prologue by Telaron&lt;/li&gt;
+&lt;li&gt;Magical Theme by remaxim&lt;/li&gt;
+&lt;li&gt;Gran Batalla by xXUnderTowerXx&lt;/li&gt;
+&lt;li&gt;Orchestral Battle Music by Zefz&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</tw-passagedata></tw-storydata>
