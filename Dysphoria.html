@@ -87,6 +87,7 @@ tooltip {
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">$(document).ready( () => {		      					       
 	$.getScript("https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js", () => {
 				toastr.options.timeOut = -1;
@@ -194,6 +195,7 @@ $(document).on('showpassage:after', () => {
 	}
 	
 });
+
 
 
 
@@ -771,7 +773,6 @@ The goblin shaman gives one last squeak and keels over, overcome by the poison.
 &lt;div&gt;
 	“My apologies. My Mends and Blinds did not work very well, did they,” you mutter sheepishly. A small thought squirms in the back of your mind: “You wouldn’t be apologizing if you were a &lt;%= s.ROLE %&gt;, now would you?” You grind your teeth in [[frustration.]]
 &lt;/div&gt;
-&lt;% Passage.levelUp(); %&gt;
 </tw-passagedata><tw-passagedata pid="39" name="frustration." tags="" position="650,275" size="100,100">&lt;div&gt; “It was your first real adventure. Some recruits struggle a bit in the beginnin’,” Brutus says kindly.
 &lt;/div&gt;
 &lt;div&gt;
@@ -881,9 +882,7 @@ The goblin shaman gives one last squeak and keels over, overcome by the poison.
             $(&#39;.&#39; + s.ROLE.toLowerCase()).fadeIn(0);
         }, 0);
     });
-%&gt;
-&lt;% Passage.levelUp(); %&gt;
-</tw-passagedata><tw-passagedata pid="44" name="fangs." tags="" position="900,275" size="100,100">&lt;div&gt;	
+%&gt;</tw-passagedata><tw-passagedata pid="44" name="fangs." tags="" position="900,275" size="100,100">&lt;div&gt;	
 	“This is true,” he mutters. “But we do not need another knight. I am the party’s knight. You are meant to be the party’s guardian.”
 &lt;/div&gt;
 &lt;div&gt;
@@ -1262,8 +1261,7 @@ Brutus hefts his shield, spitting on the frozen goblin warrior before advancing 
             $(&#39;.&#39; + s.SKILLCHOSE).fadeIn(0);
         }, 0);
     });
-%&gt;
-{</tw-passagedata><tw-passagedata pid="76" name="unfamiliar face" tags="" position="775,1775" size="100,100">The face that looks up towards you is rough, as though it was carved from stone.  It almost seems devoid of gender, save for the dark red hair pulled up into a bun.</tw-passagedata><tw-passagedata pid="77" name="being good enough?" tags="" position="650,2025" size="100,100">&lt;div&gt;	She scoffs lightly before digging around in the pouch hanging at her side. 
+%&gt;</tw-passagedata><tw-passagedata pid="76" name="unfamiliar face" tags="" position="775,1775" size="100,100">The face that looks up towards you is rough, as though it was carved from stone.  It almost seems devoid of gender, save for the dark red hair pulled up into a bun.</tw-passagedata><tw-passagedata pid="77" name="being good enough?" tags="" position="650,2025" size="100,100">&lt;div&gt;	She scoffs lightly before digging around in the pouch hanging at her side. 
 &lt;/div&gt;
 &lt;div&gt;
 	“I been hearing the stories. Some nice work your party did there. The guardian was a bit shite, but they’ll get the hang of it, hopefully.” 
@@ -1435,14 +1433,16 @@ Brutus turns to the rest of the party, ignoring your startled looks.
 	You gave your party members the advantage they needed to slay the troll. You feel a surge of triumph fill you as the rest of the adventurers on the beach [[cheer.-&gt;cheer2]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="91" name="Help" tags="" position="345,258" size="100,100">If your screen appears too small or too large, you can zoom in/out safely.
 &lt;br&gt;
-(On most web browsers this can be done with Ctrl+ and Ctrl-)</tw-passagedata><tw-passagedata pid="92" name="set out for the Dark Forest." tags="" position="632,2865" size="100,100">
-
+(On most web browsers this can be done with Ctrl+ and Ctrl-)</tw-passagedata><tw-passagedata pid="92" name="set out for the Dark Forest." tags="" position="632,2865" size="100,100">The journey to the Dark Forest is a fairly uneventful one, with Brutus and Orante taking the lead, and you and Incertus bringing up the rear. As the day wears on, what do you do?&lt;br&gt;
+[[Try talking to Incertus again.]]&lt;br&gt;
+[[Continue to walk in silence.]]
 
 &lt;%	
 	if(s.audio &amp;&amp; s.audio.pause) s.audio.pause();
 	s.audio = new Audio(&quot;https://opengameart.org/sites/default/files/TheLoomingBattle_0.OGG&quot;);
 	s.audio.play();
-%&gt;</tw-passagedata><tw-passagedata pid="93" name="Credits" tags="" position="348,145" size="100,100">&lt;div&gt;
+%&gt;
+{forestbg.png}</tw-passagedata><tw-passagedata pid="93" name="Credits" tags="" position="348,145" size="100,100">&lt;div&gt;
 Soundtrack (OpenGameArt.com)
 &lt;br&gt;
 All tracks are licensed under Creative Commons
@@ -1451,5 +1451,91 @@ All tracks are licensed under Creative Commons
 &lt;li&gt;Magical Theme by remaxim&lt;/li&gt;
 &lt;li&gt;Gran Batalla by xXUnderTowerXx&lt;/li&gt;
 &lt;li&gt;Orchestral Battle Music by Zefz&lt;/li&gt;
+&lt;li&gt;Mystical Theme by Alexandr Zhelanov&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;</tw-passagedata></tw-storydata>
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="94" name="Try talking to Incertus again." tags="" position="767,2872" size="100,100">You deliberately slow down while Brutus and Orante obliviously stride on ahead. Incertus matches your pace, until you two are out of earshot.
+  	“Listen,” you begin quickly, whispering, “I don’t mean to offend you, but I...I’m just a little confused. About the whole...you know...gender...”
+  	Incertus lets out a soft sigh of exasperation. He turns to look at you. He seems more tired than angered, as if this is something he has had to explain before. 
+“How odd. I thought you, of all people, would understand,” he murmurs. 
+He turns back to face forward and picks up the pace, moving ahead of you. You hurry to catch up with the party, mulling over your thoughts as you [[walk in silence-&gt;Continue to walk in silence.]].
+</tw-passagedata><tw-passagedata pid="95" name="Continue to walk in silence." tags="" position="631,2987" size="100,100">&lt;div&gt;
+	As the shadows begin to lengthen, you see a cluster of trees not too far away. As the sun sets, the forest only grows more terrifying. Your party decides to push on, determined to get as far in as you can before nightfall. As the shadows continue to grow, you hear faint noises of panting and leaves crackling under weight. As Brutus brings up his shield, three white wolves jump out from the woods on either side of the path, growling menacingly.&lt;br&gt;
+	“Let’s show these mutts who the true alphas are,” Brutus growls as he prepares to launch himself into battle. “&lt;name&gt;, I could use some extra damage, help cut these things down to size.” 
+What do you do?&lt;br&gt;&lt;br&gt;
+	[[You use Blind.-&gt;Blind2]]&lt;br&gt;
+	[[You use Bolster Defenses]]&lt;br&gt;
+	[[You use Bolster Damage]]&lt;br&gt;
+	[[“I’m not sure if I’m good enough to—”]]
+	&lt;/div&gt;</tw-passagedata><tw-passagedata pid="96" name="You use Bolster Defenses" tags="" position="914,2997" size="100,100">You decide to try and give Brutus some extra defense in case he gets hurt. You clasp your scepter in both hands, and try with all your might. You feel some level of power flow through you, and you think you actually [[did it]] for once.</tw-passagedata><tw-passagedata pid="97" name="You use Bolster Damage" tags="" position="1045,3001" size="100,100">You grasp your staff tightly, hoping that this new skill will come to you easier than the others before it. You try your hardest to channel the energy into bolstering Brutus’s attack power, but it doesn’t seem like [[much happens]].</tw-passagedata><tw-passagedata pid="98" name="“I’m not sure if I’m good enough to—”" tags="" position="1190,3004" size="100,100">You barely even begin to speak before you are interrupted.&lt;br&gt;
+	“No time for words, guardian!” Brutus spits out before he roars and [[charges at the wolves.]]
+</tw-passagedata><tw-passagedata pid="99" name="Blind2" tags="" position="776,2989" size="100,100">You decide to use a skill you’ve done before. You level your scepter at the white wolves and try your hardest to channel Blind. Your staff begins glowing, brighter than before, stopping the wolves momentarily before it flickers out again. You look at Brutus sheepishly, catching a look of disapproval on his face before he lets out a roar and [[charges at the wolves.]]</tw-passagedata><tw-passagedata pid="100" name="charges at the wolves." tags="" position="640,3116" size="100,100">&lt;div&gt;
+	Brutus runs toward the wolves, still roaring. You notice Incertus has disappeared again and Orante is flipping through her spellbook, muttering to herself about a new spell. Brutus uses his Shield Bash, slamming his kite shield into the first wolf, sending it flying backwards a foot or two. Incertus appears to materialize out of thin air just behind it, using his Bleed to open a pulsing vein at its throat, staining its white fur with dark crimson. It quickly bleeds out.
+&lt;/div&gt;&lt;div&gt;
+Orante finishes muttering, her hands moving in twisting ways, before unleashing a powerful bolt of blue lightning that strikes the second wolf in the head before bouncing off and colliding with the third wolf. The smell of burnt fur and flesh fills the air as they both fall over, [[dead.]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="101" name="did it" tags="" position="917,3113" size="100,100">“Well, good to know that I can take a hit. Not that I intend to,” you hear Incertus mutter quietly next to you. You look at Brutus sheepishly, catching a look of disapproval on his face before he lets out a roar and [[charges at the wolves.]]</tw-passagedata><tw-passagedata pid="102" name="much happens" tags="" position="1060,3120" size="100,100">“Many thanks younglin’!” Brutus calls as he flexes and grasps his sword more tightly. “I can feel the power already!” He does not sound very convincing.&lt;br&gt;
+You manage to catch a glance he makes in your direction, and can swear you see a look of disappointment on his face before he lets out a roar and [[charges at the wolves.]]
+</tw-passagedata><tw-passagedata pid="103" name="dead." tags="" position="639,3263" size="100,100">&lt;div&gt;
+Brutus bangs his chest and lets out a roar of triumph over the bodies of the wolves. He turns to you, baring his fangs in a grin. 
+“Taught those mutts a lesson, eh? Since it’s gettin’ dark, we’ll make camp here.” Brutus begins hauling the carcasses of the wolves away so they won’t attract any more animals. “Everyone, get your tents set up. I’ll be back with firewood.”
+&lt;/div&gt;&lt;div&gt;
+ The rest of you begin busying yourselves with setting up your small, one-person tents, while Orante begins unpacking provisions for dinner. After the fire is made and dinner is prepared and eaten, the issue of shifts comes up. It’s decided that Brutus will take the first shift, followed by Incertus, Orante, and you, before Brutus takes the final watch, by his own insistence. As the fire burns down to embers, Brutus takes his place on a stump and begins sharpening his sword. As you climb into your tent and lay down, you begin [[dozing off]] to the sound of a whetstone against metal.
+ &lt;/div&gt;</tw-passagedata><tw-passagedata pid="104" name="dozing off" tags="" position="634,3377" size="100,100">&lt;div&gt;
+It feels like not even a minute has passed before you feel a hand on your shoulder gently shaking you awake. You turn and see Orante, her hair almost looking like liquid silver in the moonlight.
+&lt;/div&gt;&lt;div&gt;
+  	“It is time for your watch, &lt;name&gt;.” she says quietly before exiting your tent, presumably to go to her own. 
+	&lt;/div&gt;&lt;div&gt;
+As you rub the sleep from your eyes, you grab your guardian gear and move to the stump Brutus had been sitting on, the light from the dying embers almost insubstantial in this darkness. You don’t know how long you have been watching for before you hear someone clear their throat, close to you. You instantly jump to your feet grasping your scepter tightly, ready to awaken the others before you feel a hand on your [[shoulder.]]
+&lt;/div&gt;
+&lt;%	
+	if(s.audio &amp;&amp; s.audio.pause) s.audio.pause();
+	s.audio = new Audio(&quot;https://www.google.com/url?q=https://opengameart.org/sites/default/files/Soliloquy_1.mp3&quot;);
+	s.audio.play();
+%&gt;
+{campbg.png}</tw-passagedata><tw-passagedata pid="105" name="shoulder." tags="" position="628,3514" size="100,100">&lt;div&gt;
+“Relax, it’s just me,” Incertus’s familiarly raspy voice whispers. He slinks out of the shadows and sits on the ground next to the stump. Staring into the fire, a sack by his side. After what feels like years of silence, he speaks again. 
+&lt;/div&gt;&lt;div&gt;
+“I am sorry for avoiding your questions all this time. I know you are merely curious.” You turn to look at him, but he is still [[staring into the fire]].
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="106" name="looks away." tags="" position="628,3663" size="100,100">&lt;div&gt;	“In any case, I brought you something. Stole it, to be honest. As rogues do.” He chuckles softly. “I suppose I ought to avoid the smithy for a time.”
+&lt;/div&gt;&lt;div&gt;
+With that, Incertus goes silent. When you turn to look at him, he is gone, an oddly lumpy sack slumped where he once sat. Curious, you [[peek inside the sack]].
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="107" name="staring into the fire" tags="" position="749,3519" size="100,100">&lt;div&gt;
+“I know how you feel. To look into the mirror and see a stranger, to walk through this world wondering if you will ever feel truly comfortable...it is a tiring thing indeed. And the thought that you may live the rest of your life plagued by these feelings—that thought alone can be [[unbearable at times.]]”
+&lt;/div&gt;
+
+</tw-passagedata><tw-passagedata pid="108" name="unbearable at times." tags="" position="889,3518" size="100,100">&lt;div&gt;
+You strain to see Incertus’s expression in what little light the embers provide, but his face is nigh unreadable. 
+“It takes a certain sort of strength to be honest, not only to yourself but to others. It may not always feel like courage or strength. In fact, at times it may feel like weakness. Trust me when I say it is not. Never feel shame. Never feel the way...the way…”
+He suddenly breaks off there and [[looks away.]]
+&lt;/div&gt;
+{roguebg.png}</tw-passagedata><tw-passagedata pid="109" name="peek inside the sack" tags="" position="1487,13" size="100,100">  	&lt;div hidden class=&quot;knight&quot;&gt; You let out a gasp; a sword and kite shield gleam within its rough folds. You quickly glance around before drawing the sword out of the sack, giving it a few experimental swings. It feels perfect, like an extension of your body. You quickly [[put it back in the sack]].
+	&lt;/div&gt;
+	&lt;div hidden class=&quot;mage&quot;&gt; You let out a gasp; a tome, marked with ancient runes, sits within the sack. You can feel the power radiating off of it as you gingerly reach in and pull it out. The pages are already dog-eared and marked, but as you flip through, you feel magic flowing through you, just begging to be released. Eager to try, but not wanting to wake your companions, you [[put the tome back in the sack-&gt;put it back in the sack]].
+	&lt;/div&gt;
+&lt;div hidden class=&quot;rogue&quot;&gt; Your brow furrows; the sack contains...a bundle of cloth. As you gingerly pull it out, it unrolls and several objects clatter to the ground. As you go to retrieve them, your heart swells. You recognize the two small metal objects as daggers, just like the ones Incertus uses. The other objects you now see are glass vials, attached to a bandolier. You quickly wrap everything back up and [[put them back in the sack-&gt;put it back in the sack]].
+&lt;/div&gt;
+
+&lt;%
+	s.SKILLCHOSE = &quot;Other&quot;;
+
+    $(&#39;#passage&#39;).ready( () =&gt; {
+        setTimeout( () =&gt; {
+            $(&#39;.&#39; + s.ROLE.toLowerCase()).fadeIn(0);
+        }, 0);
+    });
+%&gt;
+{charselectbg.png}</tw-passagedata><tw-passagedata pid="110" name="put it back in the sack" tags="" position="1486,159" size="100,100">&lt;div&gt;Just as you return your items to the bag, Brutus emerges from his tent, yawning.
+&lt;/div&gt;&lt;div&gt;
+“Eventful watch, &lt;%=s.NAME %&gt;?” he asks, walking up to you. “I’ll take it from here. Go get some more rest.” 
+&lt;/div&gt;&lt;div&gt;
+You oblige, quickly grabbing the sack and going into your tent, gingerly setting the sack down before lying down to fall asleep once more. This time, a new feeling fills you, one of hope and acceptance, as you drift off to sleep [[once more]].
+&lt;/div&gt;
+{campbg.png}</tw-passagedata><tw-passagedata pid="111" name="once more" tags="" position="1495,308" size="100,100">You are eventually awoken by the bellowing voice of Brutus informing your party that it is time to move out. As you all pack up your tents and provisions, you remember the sack that Incertus gave you. You decide to keep it close, just in case. With camp broken down and everything packed up, your party begins trekking through the Dark Forest, on your way to [[Ye Olde Evil’s lair.]]
+</tw-passagedata><tw-passagedata pid="112" name="Ye Olde Evil’s lair." tags="" position="1495,458" size="100,100">After a few hours of walking through the forest, the trees begin to press closer, and the dirt path that you were traveling along turns into stone. Brutus loosens his sword as the trees press closer and closer until it seems like they will swallow your party. Eventually, the trees clear away into a [stone courtyard] of some sort leading up to the gates of a [large castle]. As you walk up to the doors, they slowly swing open upon creaky hinges to reveal a large, [[mostly empty foyer]].
+{courtyardbg.png}
+
+&lt;%	
+	if(s.audio &amp;&amp; s.audio.pause) s.audio.pause();
+	s.audio = new Audio(&quot;https://opengameart.org/sites/default/files/%D0%BC%D0%B8%D1%81%D1%82%D0%B8%D1%87%D0%BD%D0%B0%D1%8F%20%D1%82%D0%B5%D0%BC%D0%B0.mp3&quot;);
+	s.audio.play();
+%&gt;</tw-passagedata><tw-passagedata pid="113" name="mostly empty foyer" tags="" position="1495,608" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="114" name="stone courtyard" tags="" position="1643,472" size="100,100">The courtyard isn’t much, with just a few stone walkways around an area of dead grass, with a dry fountain in the center, choked by weeds, and empty of water for who-knows-how-long.</tw-passagedata><tw-passagedata pid="115" name="large castle" tags="" position="1778,466" size="100,100">A rather intimidating castle made out of dark grey stone with vines creeping up it’s side. Its front side is dominated by a pair of wooden doors, at least twice as tall as Brutus, but the wood is cracked and splintered, with two rusty iron door knockers.</tw-passagedata></tw-storydata>
