@@ -88,6 +88,7 @@ tooltip {
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">$(document).ready( () => {		      					       
 	$.getScript("https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js", () => {
 				toastr.options.timeOut = -1;
@@ -195,6 +196,7 @@ $(document).on('showpassage:after', () => {
 	}
 	
 });
+
 
 
 
@@ -1558,7 +1560,7 @@ As soon as those words leave her mouth, the doors slam shut, the braziers along 
 The pool of shadow begins to build, swirling slowly in a [[circle.]]
 &lt;/div&gt;&lt;div&gt;
 
-</tw-passagedata><tw-passagedata pid="118" name="circle." tags="" position="1495,1057" size="100,100">&lt;div&gt;“You are all weak. I can smell it, your weakness, on each and every one of you.”&lt;/div&gt;&lt;div&gt;
+</tw-passagedata><tw-passagedata pid="118" name="circle." tags="" position="1500,1050" size="100,100">&lt;div&gt;“You are all weak. I can smell it, your weakness, on each and every one of you.”&lt;/div&gt;&lt;div&gt;
 	A nasty vein pulses at Brutus’s temple. The shadows laugh.
 “I shall take great pleasure in destroying you and your foolish pride.” 
 The shadow begins swirling faster, growing larger and larger, forming itself into the shape of a man.&lt;/div&gt;&lt;div&gt;
@@ -1570,9 +1572,13 @@ With a roar, Brutus charges ahead, [[ready for a fight.]]&lt;/div&gt;
 	if(s.audio &amp;&amp; s.audio.pause) s.audio.pause();
 	s.audio = new Audio(&quot;https://opengameart.org/sites/default/files/Dream%20Raid%20Full%20Version%20%28Mock%20Up%29.mp3&quot;);
 	s.audio.play();
-%&gt;</tw-passagedata><tw-passagedata pid="119" name="ready for a fight." tags="" position="1495,1208" size="100,100">The smoke laughs, a dark, throaty sound as it continues to grow, until it stands about twice Brutus’s height. Orante uses her Wind Gust to try and blow the figure away, but this merely removes the smoke, leaving [Ye Olde Evil] standing in its place.
+%&gt;</tw-passagedata><tw-passagedata pid="119" name="ready for a fight." tags="" position="1500,1200" size="100,100">&lt;div&gt;	
+	The smoke laughs, a dark, throaty sound as it continues to grow, until it stands about twice Brutus’s height. Orante uses her Wind Gust to try and blow the figure away, but this merely removes the smoke, leaving [Ye Olde Evil] standing in its place.
+&lt;/div&gt;
+&lt;div&gt;
 	His voice, a rumbling sound now, fills the [[hall.]]
-</tw-passagedata><tw-passagedata pid="120" name="hall." tags="" position="1495,1358" size="100,100">&lt;div&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="120" name="hall." tags="" position="1500,1350" size="100,100">&lt;div&gt;
 “So tell me, how would you care to leave my castle? In pieces? Fused together? Bleeding from the eyes?” 
 &lt;/div&gt;&lt;div&gt;
 He brings his hand up in a mighty fist and brings it crashing down. Your party scatters as the fist smashes the stone, sending cracks splintering through it. Brutus draws his sword and Incertus sinks into the shadows. What will you do?&lt;br&gt;
@@ -1593,7 +1599,74 @@ Incertus takes advantage of this opportunity, using Bleed as he jumps up and sla
 	[[Use Bolster Defenses]]&lt;br&gt;
 	[[Use Bolster Damage]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="123" name="Use the equipment in the sack" tags="" position="2218,1376" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="124" name="Use Blind" tags="" position="1468,1642" size="100,100">As you point your scepter towards the hulking mass of Ye Olde Evil, you feel energy surge through you, and a brilliant light shines in your staff. Unfortunately the light backfires, shining into the eyes of your allies, blinding them. They wail in protest as you try to smother the light under your tunic. Ye Olde Evil laughs as it [[begins to move towards you.]]</tw-passagedata><tw-passagedata pid="125" name="Use Bolster Defenses" tags="" position="1644,1648" size="100,100">You grasp your scepter firmly and bang it against your shield, the sound ringing through the castle. As you do, you see your party members shudder a bit, and Brutus even falls to one knee as their defense is decreased. Brutus glares at you.&lt;br&gt;
+</tw-passagedata><tw-passagedata pid="123" name="Use the equipment in the sack" tags="" position="2225,1375" size="100,100">&lt;div hidden class=&quot;knight&quot;&gt;
+	&lt;div&gt;	You quickly undo your buckler and and throw it and your staff to the side. You reach inside the bag and pull out the sword and kite shield that Incertus gave you. As you strap the shield on, you swear you can see a smirk on his face before he pulls back into the shadows. Brutus charges with a mighty bellow. As Ye Olde Evil reaches down to grab him, Brutus uses his Slash, slicing through Ye Olde Evil’s palm. Instead of blood, however, a thick, black liquid seeps out of the wound. Orante takes this moment to use Freeze, her hands working to make the symbols required. A layer of frost does manage to settle upon Ye Olde Evil, encasing him in a thin layer of ice. However, it begins to crack almost immediately. Incertus takes advantage of this opportunity, using Bleed as he jumps up and slashes Ye Olde Evil’s calves with both of his daggers, quickly retreating into the shadows as more of the black liquid spurts out.	
+	&lt;/div&gt;
+	&lt;div&gt;
+ You look towards Brutus as he looks you over, in your new knight gear. “What the hell are you doin’, &lt;%= s.NAME %&gt;?” He calls over to you.
+	&lt;/div&gt;
+	&lt;div&gt;
+	“Being who I am!” You call back as you take on a combative stance. What will you do?
+	&lt;/div&gt;
+	&lt;div&gt;
+	[[Use Slash]]
+	&lt;/div&gt;
+	&lt;div&gt;
+	[[Use Shield Bash]]
+	&lt;/div&gt;
+	&lt;div&gt;
+	[[Use Defend]]
+	&lt;/div&gt;
+	&lt;div&gt;
+	[[Use Taunt]]
+	&lt;/div&gt;
+	&lt;div&gt;
+	[[Use Rallying Shout]]
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div hidden class=&quot;mage&quot;&gt;
+&lt;div&gt;	You quickly undo your buckler and and throw it and your staff to the side. You reach inside the bag and pull out the tome that Incertus gave you. As you run your fingers along the runes on the cover, you swear you can see a smirk on his face before he pulls back into the shadows. Brutus charges with a mighty bellow. As Ye Olde Evil reaches down to grab him, Brutus uses his Slash, slicing through Ye Olde Evil’s palm. Instead of blood, however, a thick, black liquid seeps out of the wound. 
+	&lt;/div&gt;
+	&lt;div&gt;
+	Orante takes this moment to use Freeze, her hands working to make the symbols required. A layer of frost does manage to settle upon Ye Olde Evil, encasing him in a thin layer of ice. However, it begins to crack almost immediately. Incertus takes advantage of this opportunity, using Bleed as he jumps up and slashes Ye Olde Evil’s calves with both of his daggers, quickly retreating into the shadows as more of the black liquid spurts out. What will you do?
+	&lt;/div&gt;
+	&lt;div&gt;
+	[[Use Fireball]]
+	&lt;/div&gt;
+	&lt;div&gt;
+	[[Use Freeze]]
+	&lt;/div&gt;
+	&lt;div&gt;
+	[[Use Wind Gust]]
+	&lt;/div&gt;
+	&lt;div&gt;
+	[[Use Chain Lightning]]	
+	&lt;/div&gt;
+	&lt;div&gt;
+	[[Use Earthquake]]
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div hidden class=&quot;rogue&quot;&gt;
+	&lt;div&gt;
+	You quickly undo your buckler and and throw it and your staff to the side. You reach inside the bag and pull out the equipment that Incertus gave you. You quickly don the cloak, marvelling at how it feels, before attaching the bandolier and sheathing the daggers. As you run your fingers along the cloth, Incertus appears from behind you.  “Feels good, doesn’t it?  Now let’s take out this freak.”  With that, he fades into the shadows, taking you with him, while your other party members attack.  Brutus charges with a mighty bellow. As Ye Olde Evil reaches down to grab him, Brutus uses his Slash, slicing through Ye Olde Evil’s palm. Instead of blood, however, a thick, black liquid seeps out of the wound. 
+	&lt;/div&gt;
+	&lt;div&gt;
+	Orante takes this moment to use Freeze, her hands working to make the symbols required. A layer of frost does manage to settle upon Ye Olde Evil, encasing him in a thin layer of ice. However, it begins to crack almost immediately. Incertus leads you behind Ye Olde Evil, waiting for the perfect moment to strike.  What will you do?
+	&lt;/div&gt;
+	&lt;div&gt;
+	[[Use Up and Over]]
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;%
+    $(&#39;#passage&#39;).ready( () =&gt; {
+        setTimeout( () =&gt; {
+            $(&#39;.&#39; + s.ROLE.toLowerCase()).fadeIn(0);
+        }, 0);
+    });
+%&gt;</tw-passagedata><tw-passagedata pid="124" name="Use Blind" tags="" position="1500,1650" size="100,100">As you point your scepter towards the hulking mass of Ye Olde Evil, you feel energy surge through you, and a brilliant light shines in your staff. Unfortunately the light backfires, shining into the eyes of your allies, blinding them. They wail in protest as you try to smother the light under your tunic. Ye Olde Evil laughs as it [[begins to move towards you.]]</tw-passagedata><tw-passagedata pid="125" name="Use Bolster Defenses" tags="" position="1644,1648" size="100,100">You grasp your scepter firmly and bang it against your shield, the sound ringing through the castle. As you do, you see your party members shudder a bit, and Brutus even falls to one knee as their defense is decreased. Brutus glares at you.&lt;br&gt;
 “What are you doing?” he bellows, his face turning red. Ye Olde Evil laughs as it [[begins to move towards you.]]
 </tw-passagedata><tw-passagedata pid="126" name="Use Bolster Damage" tags="" position="1785,1655" size="100,100">You raise your scepter high into the air, hoping to bolster your party’s attack power to defeat Ye Olde Evil quicker. As you do so, you look at Orante, who has a flame burning in her hand. As soon as you finish channelling your power, the flame goes out, only to be reignited with some serious effort on her part. She glares at you, a very angry look on her face. Ye Olde Evil laughs as it [[begins to move towards you.]]</tw-passagedata><tw-passagedata pid="127" name="begins to move towards you." tags="" position="1456,1795" size="100,100">&lt;div&gt;
 The ice shell around Ye Olde Evil cracks and shatters as it begins moving towards your group. Looking for a target, its gaze falls onto Brutus as it opens its mouth and lets out a white-hot blast of fire. Brutus raises his kite shield to try and absorb the blast, but it pushes past, burning him with a bit of fire. He falls over, sword slipping from his grasp, still breathing, but barely. Your remaining party members scream his name at the same time, Incertus’s voice going back to its normal pitch. 
@@ -1603,23 +1676,23 @@ In anger, Orante prepares a new spell while Incertus sinks back into the shadows
 Like a flash, Incertus emerges from the shadows and rips his daggers across Ye Olde Evil’s throats in a flash of black blood, before stepping backwards as it grabs its throat. Orante lets out a cheer as it feels like some damage has been done. However, her Earthquake spell continues, and loosens a chunk of stone from the ceiling. It crashes down on her head. She slumps to the ground, unconscious. What do you do?
 &lt;/div&gt;&lt;div&gt;
 	[[Use Desperate Plea]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="128" name="Use Desperate Plea" tags="" position="1456,1945" size="100,100">You clasp your scepter with both hands and raise it above you, tongue fumbling over the incantation as your mind scrambles to remember the sacred words of power. Your heart pounds, sweat pouring down the sides of your face and pooling in your gauntlets. If you are successful, you will heal Brutus and Orante. If you are successful, you will have saved everyone and salvaged everything, overwriting every mistake you’ve ever made, every impotent spell and useless buff. If you are successful...they will finally accept you. They will all finally accept you. You will [[finally be one of them. ]]
-</tw-passagedata><tw-passagedata pid="129" name="finally be one of them. " tags="" position="1456,2095" size="100,100">You finish the incantation with a triumphant shout. You can feel the power building in the
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="128" name="Use Desperate Plea" tags="" position="1450,1950" size="100,100">You clasp your scepter with both hands and raise it above you, tongue fumbling over the incantation as your mind scrambles to remember the sacred words of power. Your heart pounds, sweat pouring down the sides of your face and pooling in your gauntlets. If you are successful, you will heal Brutus and Orante. If you are successful, you will have saved everyone and salvaged everything, overwriting every mistake you’ve ever made, every impotent spell and useless buff. If you are successful...they will finally accept you. They will all finally accept you. You will [[finally be one of them. ]]
+</tw-passagedata><tw-passagedata pid="129" name="finally be one of them. " tags="" position="1450,2100" size="100,100">You finish the incantation with a triumphant shout. You can feel the power building in the
 scepter, the force gathering in your hands. You direct this magic towards Orante and Brutus. It seems to rip free of you—and suddenly you are left feeling empty and spent. You have exhausted a guardian’s last but most powerful resort.&lt;br&gt;
-	[[And nothing happens. ]]</tw-passagedata><tw-passagedata pid="130" name="And nothing happens. " tags="" position="1456,2245" size="100,100">Instead, Incertus gives you a look. At first, his expression is simply confused. But as the spell works its magic on him, it changes. The blood begins to drain from his face and his daggers drop from his hands. His eyes lock with yours in a look of pure sadness and understanding before they roll up into the back of his head and he collapses onto the ground. Seeing this, Ye Olde Evil rears back and lets out a [[bellow of triumph.]]
+	[[And nothing happens. ]]</tw-passagedata><tw-passagedata pid="130" name="And nothing happens. " tags="" position="1450,2250" size="100,100">Instead, Incertus gives you a look. At first, his expression is simply confused. But as the spell works its magic on him, it changes. The blood begins to drain from his face and his daggers drop from his hands. His eyes lock with yours in a look of pure sadness and understanding before they roll up into the back of his head and he collapses onto the ground. Seeing this, Ye Olde Evil rears back and lets out a [[bellow of triumph.]]
 </tw-passagedata><tw-passagedata pid="131" name="bellow of triumph." tags="" position="1457,2368" size="100,100">Ye Olde Evil scoops your party members up in one hand before walking over to you and grabbing you in its other. “Foolish little guardian.” It lays extra stress on that word. “You couldn’t have done anything to save them, and you made it impossible for them to win. You are the cause of this.”
 &lt;br&gt;
 He walks over to the door, pushing it open and throwing you and your party members out into the courtyard, before the door closes with an [[echoing boom.]]
-</tw-passagedata><tw-passagedata pid="132" name="yours." tags="" position="1441,2630" size="100,100">&lt;div&gt;
+</tw-passagedata><tw-passagedata pid="132" name="yours." tags="" position="1450,2625" size="100,100">&lt;div&gt;
 “Do you have any idea what you’ve done &lt;%=s.NAME %&gt;? You nearly killed us all! You’re not cut out to be a member of our party! You’re not cut out to be a guardian! You’re not cut out to be an adventurer!”
 Those last words ring in your ears, as if Brutus had punched you rather than yelled. You look towards Orante and Incertus, in hopes that they may cool Brutus’s temper. Orante just looks at you coldly, rubbing the back of her head. Incertus gives you a disappointed look, but makes no other comment.
 &lt;/div&gt;&lt;div&gt;
 	“Now here’s what’s gonna happen. We’re gonna go back to Cysa, claim the reward for our quest, and tell the Guild that we need a new guardian, seeing as we left ours because they were completely incompetent!” 
 Brutus roars those words in your face before bringing himself back up to his full height, turning his back on you, and walking away. Orante and Incertus follow. The rogue is the only one to look back before they walk back to Cysa, leaving you alone at the site of [[your own failure.-&gt;end]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="133" name="echoing boom." tags="" position="1446,2499" size="100,100">&lt;div&gt;
+</tw-passagedata><tw-passagedata pid="133" name="echoing boom." tags="" position="1450,2500" size="100,100">&lt;div&gt;
 You quickly dig through the packs of your party members, hoping to find something, anything. Eventually, you manage to find three small health potions. You quickly give it to your party members, hoping it works. After a few moments, they open their eyes, dazed and confused. Brutus is the first to get to his feet. He lets out a roar of anger and punches a tree so hard the wood cracks and splinters. He whips around to face you, his face a few inches from [[yours.]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="134" name="end" tags="" position="1881,2768" size="100,100">&lt;h5&gt;Thanks for playing!&lt;/h5&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="134" name="end" tags="" position="1875,2775" size="100,100">&lt;h5&gt;Thanks for playing!&lt;/h5&gt;
 &lt;div class=&quot;mainmenu&quot;&gt;
 &lt;br&gt;
 [[Play Again-&gt;Begin Your Journey]]
@@ -1637,4 +1710,56 @@ You quickly dig through the packs of your party members, hoping to find somethin
 	if(s.audio &amp;&amp; s.audio.pause) s.audio.pause();
 	s.audio = new Audio(&quot;https://opengameart.org/sites/default/files/The%20Fall%20of%20Arcana_0.mp3&quot;);
 	s.audio.play();
+%&gt;</tw-passagedata><tw-passagedata pid="135" name="Use Slash" tags="" position="2225,1500" size="100,100">&lt;div&gt;	You grip your sword tightly as your rush towards Ye Olde Evil, darting between his legs as you slice your sword along his calves perpendicular to the slices Incertus made, black liquid spurting in your wake, some getting on your face. You stop on the other side, panting heavily, but with a wild gleam in your eye. This is what you were born to do: to be in the thick of the fight and to be arms deep in gore. Ye Olde Evil howls in pain as he [[lurches toward your group.(knight)]]</tw-passagedata><tw-passagedata pid="136" name="Use Shield Bash" tags="" position="2350,1500" size="100,100">&lt;div&gt;	You charge towards Ye Olde Evil, a cry being ripped from your throat as you jump and smash your shield into its kneecap, hearing a crack and feeling the bone underneath give way as you smash your kite shield into his kneecap. It howls in pain as it sinks down to one knee, as you dart away. It pushes itself back up and [[lurches toward your group.(knight)]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="137" name="Use Defend" tags="" position="2475,1500" size="100,100">&lt;div&gt;	You bring your shield up and maneuver yourself in front of your party, protecting them. Despite their initial reactions, you still care about them, and you will protect them with your life if you have to. Ye Olde Evil [[lurches towards your group-&gt;lurches toward your group.(knight)]], eyes on you.
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="138" name="Use Taunt" tags="" position="2600,1500" size="100,100">&lt;div&gt;	You grip your sword tightly and bash it against your shield a few times, the loud noise echoing through the castle. “Come and hit me, you smokey freak!” You spread your arms and assume a smug stance that just invites him to hit you. You can do this, for your party. You have to. Ye Olde Evil lets out a roar and [[lurches toward your group.(knight)]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="139" name="Use Rallying Shout" tags="" position="2725,1500" size="100,100">&lt;div&gt;	You look at Ye Olde Evil and focus on all that you’ve felt since you’ve joined. All the hatred, the pain, the sorrow, the insecurity, everything you’ve had to endure, you focus on it and let it out in a massive yell that echoes throughout the cave.  When you stop, you see Brutus looking at you, impressed.  Ye Olde Evil [[lurches toward your group.(knight)]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="140" name="lurches toward your group.(knight)" tags="" position="2225,1625" size="100,100">&lt;div&gt;	Ye Olde Evil lumbers towards you, it’s gaze fixed on this new target.  It opens its mouth before shooting a jet of white-hot fire at you.  Before it can hit you, however, Brutus charges up to you, locking shields with you.  The fire washes off your shields and dies off, leaving you both hot, but alive.  Brutus looks at you with a gleam in his eye.  “Can’t let you die yet, can I?”  He chuckles.  “I’ve got a plan.  Trust me.”  Orante whips her hands around as she casts Frost once more on Ye Olde Evil, encasing him in a thicker layer of ice than before.  Incertus uses Smoke Powder, taking a jar from his belt and throwing it at Ye Olde Evil’s feet, causing black smoke to rise up.  What will you do?
+&lt;/div&gt;
+&lt;div&gt;
+	[[Use Blade Storm]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="141" name="Use Blade Storm" tags="" position="2225,1750" size="100,100">&lt;div&gt;	Brutus charges towards Ye Olde Evil, but stops just short of him.  He instead crouches and raises his shield at an angle.  “Run at me, youngin’!”  You hesitate before charging towards Brutus as fast as your legs can carry you.  As you reach him, you run up onto his shield and, with a mighty roar, Brutus pushes up as hard as he can, sending you flying into the air.  As you reach the peak of your jump, you instinctively lash out with your sword, stabbing it deep into the mass of shadowy flesh in front of you.  Your sword sinks all the way to the hilt.  A bellow of pain fills your ears as your weight causes you to start sliding down, along with the sword, cutting a large slash from neck to navel in Ye Olde Evil’s body.  As you hit the ground, you and Brutus quickly move out of the way as the towering mass of evil falls forward, smashing into the ground with an [[earth-shattering thud.]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="142" name="earth-shattering thud." tags="" position="2225,2450" size="100,100">&lt;div&gt;
+	As Ye Olde Evil falls to the ground, you and the rest of your party move over to stare at the corpse. Before you can stare at it for too long though, it dissolves into smoke, vaporizing and drifting away.  Yet despite the happiness that this victory should bring, their is a looming issue not being addressed.  Once your party exits the castle and enters the courtyard, Brutus brings the matter up.
+&lt;/div&gt;
+&lt;div&gt;
+	“&lt;%= s.NAME %&gt;, what was that back there?  You weren’t using guardian skills again.”  He begins.
+&lt;/div&gt;
+&lt;div&gt;
+	“I’m not a guardian.” You respond.  You can’t keep it in any longer.  “It’s what I’ve been trying to tell you.  I’m not a guardian, and I’ve never wanted to be a guardian.  I’ve always wanted to be a &lt;%= s.ROLE.toLowerCase() %&gt;,”  You look at them expectantly, [[waiting for backlash.]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="143" name="Use Fireball" tags="" position="2225,1900" size="100,100">&lt;div&gt;	You flip through the book of magic, the pages coming to life in your hands.  You find the proper spell and begin twisting your fingers into the necessary motions.  A small ball of fire appears in your hand and you stare at it in wonder for a few moments before aiming at Ye Olde Evil and lobbing the fireball at it.  The flames splash over it, licking and burning for a few moments before going out.  Ye Olde Evil turns and [[lumbers towards you-&gt;lumbering towards you.]] angry at this new development.
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="144" name="Use Freeze" tags="" position="2350,1900" size="100,100">&lt;div&gt;	You flip through the book of magic, the pages coming to life in your hands.  You find the proper spell and begin twisting your fingers into the necessary motions. As you finish your spell, a layer of frost begins building over Ye Olde Evil. It quickly grows, covering the being in about an inch of solid ice.  However, it is too poweful and manages to shatter the ice before turning and [[lumbering towards you.]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="145" name="Use Wind Gust" tags="" position="2475,1900" size="100,100">&lt;div&gt;	You flip through the book of magic, the pages coming to life in your hands.  You find the proper spell and begin twisting your fingers into the necessary motions. As you finish your incantation, you push your hand towards Ye Olde Evil.  A powerful gust of wind howls against it, causing him to force himself to stay in the same position.  Unfortunately, that’s as much effect as it could have.  Ye Olde Evil then begins [[lumbering towards you.]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="146" name="Use Chain Lightning" tags="" position="2600,1900" size="100,100">&lt;div&gt;	You flip through the book of magic, the pages coming to life in your hands.  You find the proper spell and begin twisting your fingers into the necessary motions. As you finish the motions, a bolt of lightning shoots out of your hand and strikes Ye Olde Evil right in the chest, rippling along its entire body.  It howls in pain before setting its sights on you, [[lumbering towards you.]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="147" name="Use Earthquake" tags="" position="2725,1900" size="100,100">&lt;div&gt;	You flip through the book of magic, the pages coming to life in your hands.  You find the proper spell and begin twisting your fingers into the necessary motions. You place your hand on the ground and send the magical energy racing through the ground, causing the entire floor of the mansion to begin rumbling.  Ye Olde Evil falls over, hitting the ground with a thud, but manages to get back up and begins [[lumbering towards you.]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="148" name="lumbering towards you." tags="" position="2225,2025" size="100,100">&lt;div&gt;	
+	Ye Olde Evil lumbers towards you, it’s gaze fixed on this new target.  It opens its mouth before shooting a jet of white-hot fire at you.  Before it can hit you, however, Orante uses Wind Gust, blasting the fire with wind, slowing it a bit.  You quickly follow suit, and you both manage to keep the flames at bay with your wind until Ye Olde Evil runs out of breath.  
+&lt;/div&gt;
+&lt;div&gt;
+	“&lt;%= s.NAME %&gt;, prepare a fire spell.”  Orante says, looking at you meaningfully.  “I have a plan to defeat this being once and for all.”  What will you do?
+&lt;/div&gt;
+&lt;div&gt;
+	[[Use Burning Frost]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="149" name="Use Burning Frost" tags="" position="2225,2150" size="100,100">&lt;div&gt;	As you gather fire within your palm, you see Orante doing the same with frost.  She looks at you and nods. “Now!” she cries.  You both send your spells surging forward, striking Ye Olde Evil in the chest with a mixture of alternating cold and heat, fire and ice.  The combined magic eventually just becomes too much for him as his body begins steaming, before falling to the ground with an [[earth-shattering thud.]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="150" name="Use Up and Over" tags="" position="2225,2300" size="100,100">&lt;div&gt;	Incertus darts out from the shadows, until he gets just behind Ye Olde Evil, he turns to you and gets down on one knee, forming a little platform with his hands.  He gestures for you to come on, and you quickly unsheath your daggers and dart towards him from out of the shadows.  You step into the platform of his hands and push off just as he pushes you upward.  You go flying up, instinctively plunging your daggers into the mass of shadowy flesh in front of you.  As you plunge them in, your weight causes you to drag them down, creating two huge gouges of flesh to be carved out of Ye Olde Evil’s back.  As you land, you and Incertus both use Dodge as Ye Olde Evil’s corpse no falls to the ground with an [[earth-shattering thud.]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="151" name="waiting for backlash." tags="" position="2225,2575" size="100,100">&lt;div&gt;	
+	“Well then we still have a problem, &lt;%= s.NAME %&gt;, because our party needs four people, and one of them needs to be a guardian, so either accept it, or leave.”
+&lt;/div&gt;
+&lt;div&gt;
+	Incertus moves to stand by your side, keeping his hood up.  “If &lt;%= s.NAME %&gt; leaves, so do I.  They’re like me, just in a different way.  They deserve to be the role they are, not the role they’re given.” He says, keeping a hand firmly [[on your shoulder.]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="152" name="on your shoulder." tags="" position="2225,2700" size="100,100">&lt;div hidden class=&quot;knight&quot;&gt;	“Besides, Brutus, wouldn’t you like to be able to do more of those vicious attacks in combat?  How are you going to do them without another knight?”
+
+&lt;div hidden class=&quot;mage&quot;&gt;	“Besides, Orante, wouldn’t you like to weave magic into more powerful attacks?  How are you going to do that without another mage?”
+&lt;/div&gt;
+&lt;div&gt;
+	You begin to tear up slightly at Incertus’s standing up for you.  You still aren’t sure about their decision though, as Brutus walks up and looks down at you.  Then, unexpectantly, he grabs you and lifts you off the ground in a spine-shattering bearhug.  “Guardian or not, you’re part of the team.  Besides, you work a lot better as a &lt;role&gt; then a guardian.” He sets you down and Orante rests her hand on your shoulder.  “Agreed.  From now on, please stay away from using guardian skills.”  As you all laugh, you begin to head back towards Cysa, with a new tale to tell.  And for once, you feel like you’re [[finally heading home.-&gt;end]]
+&lt;/div&gt;
+
+&lt;%
+    $(&#39;#passage&#39;).ready( () =&gt; {
+        setTimeout( () =&gt; {
+            $(&#39;.&#39; + s.ROLE.toLowerCase()).fadeIn(0);
+        }, 0);
+    });
 %&gt;</tw-passagedata></tw-storydata>
